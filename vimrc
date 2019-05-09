@@ -51,6 +51,7 @@ call plug#begin('~/.vim/plugged')
     "-------------------=== python & YCM ===-----------------------------
     Plug 'klen/python-mode', { 'branch': 'develop' }    " Python mode (docs, refactor, lints...)
     Plug 'Valloric/YouCompleteMe'  " {'tag': 'e018777'}   Autocomplete plugin 
+    Plug 'fatih/vim-go', { 'do': ':GoUpdateBinaries' }
 
     "-------------------=== Git  ===-----------------------------
     Plug 'tpope/vim-fugitive'
@@ -561,3 +562,16 @@ let g:ctrlsf_default_view_mode = 'compact'
 "=====================================================
 let g:omni_sql_no_default_maps = 1
 
+
+"=====================================================
+" indentLine
+"=====================================================
+let g:indentLine_color_term = 239
+
+
+"=====================================================
+" git 
+"=====================================================
+highlight GitGutterAdd    guifg=#009900 guibg=<X> ctermfg=2 
+highlight GitGutterChange guifg=#bbbb00 guibg=<X> ctermfg=3 
+highlight GitGutterDelete guifg=#ff2222 guibg=<X> ctermfg=1 
