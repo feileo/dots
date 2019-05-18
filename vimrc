@@ -226,6 +226,6 @@ call plug#begin('~/.vim/plugged')
 
 call plug#end()
 
-source ~/.vim.plugs.conf                                 " load plug config
+source ~/.vplugs.conf.vim                                 " load plug config
 
 colorscheme wombat256mod                                " set color scheme
