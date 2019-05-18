@@ -17,4 +17,5 @@ ln -s ~/optimus/vimplugs.conf .vimplugs.conf
 cd ~/.config/nvim/
 ln -s ~/.vimrc init.vim
 
-
+# zsh
+ln -s ~/optimus/zshrc .zshrc

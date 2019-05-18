@@ -4,6 +4,7 @@
 #  / /_\__ \ | | | | | (__
 # /____|___/_| |_|_|  \___|
 
+
 # If you come from bash you might have to change your $PATH.
 export PATH=$HOME/bin:/usr/local/bin:$PATH
 
@@ -14,7 +15,9 @@ export ZSH="/Users/jiawei/.oh-my-zsh"
 # load a random theme each time oh-my-zsh is loaded, in which case,
 # to know which specific one was loaded, run: echo $RANDOM_THEME
 # See https://github.com/robbyrussell/oh-my-zsh/wiki/Themes
+
 # ZSH_THEME="agnoster"
+# ZSH_THEME="robbyrussell"
 ZSH_THEME="powerlevel10k/powerlevel10k"
 
 # POWERLEVEL9K_PROMPT_ON_NEWLINE=true
@@ -37,13 +40,13 @@ export TERM="xterm-256color"
 
 # Uncomment the following line to use hyphen-insensitive completion.
 # Case-sensitive completion must be off. _ and - will be interchangeable.
-# HYPHEN_INSENSITIVE="true"
+HYPHEN_INSENSITIVE="true"
 
 # Uncomment the following line to disable bi-weekly auto-update checks.
-DISABLE_AUTO_UPDATE="true"
+# DISABLE_AUTO_UPDATE="true"
 
 # Uncomment the following line to change how often to auto-update (in days).
-# export UPDATE_ZSH_DAYS=13
+export UPDATE_ZSH_DAYS=30
 
 # Uncomment the following line to disable colors in ls.
 # DISABLE_LS_COLORS="true"
@@ -52,7 +55,7 @@ DISABLE_AUTO_UPDATE="true"
 # DISABLE_AUTO_TITLE="true"
 
 # Uncomment the following line to enable command auto-correction.
-# ENABLE_CORRECTION="true"
+ENABLE_CORRECTION="true"
 
 # Uncomment the following line to display red dots whilst waiting for completion.
 COMPLETION_WAITING_DOTS="true"
@@ -78,7 +81,6 @@ HIST_STAMPS="yyyy-mm-dd"
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-#
 
 plugins=(
     git 
@@ -102,11 +104,11 @@ source $ZSH/oh-my-zsh.sh
 export LANG=en_US.UTF-8
 
 # Preferred editor for local and remote sessions
-# if [[ -n $SSH_CONNECTION ]]; then
-#   export EDITOR='vim'
-# else
-#   export EDITOR='mvim'
-# fi
+if [[ -n $SSH_CONNECTION ]]; then
+  export EDITOR='vim'
+else
+  export EDITOR='mvim'
+fi
 
 setopt HIST_IGNORE_DUPS
 
@@ -117,18 +119,16 @@ setopt HIST_IGNORE_DUPS
 # plugins, and themes. Aliases can be placed here, though oh-my-zsh
 # users are encouraged to define aliases within the ZSH_CUSTOM folder.
 # For a full list of active aliases, run `alias`.
-#
-# Example aliases
-# alias zshconfig="mate ~/.zshrc"
-# alias ohmyzsh="mate ~/.oh-my-zsh"
 
 # neovim
 alias ope="nvim"
+alias vim='nvim'
 alias vi='nvim'
 
 # zshrc
 alias opezrc='nvim ~/.zshrc'
 alias sourcezrc='source ~/.zshrc'
+alias opeohmyzsh="nvim ~/.oh-my-zsh"
 
 # git
 alias gs="git status"
@@ -154,6 +154,11 @@ alias lsenv='lsvirtualenv'
 alias mkenv='mkvirtualenv'
 alias rmenv="rmvirtualenv"
 
+# tmux
+alias tnew='tmux new -s'
+alias tatt='tmux attach'
+alias tdet='tmux detach'
+ 
 # common
 alias cls='clear'
 alias ll='ls -l'
@@ -178,9 +183,6 @@ alias -s tgz='tar -xzvf'
 alias -s zip='unzip'
 alias -s bz2='tar -xjvf'
 
-# tmux
-alias tnew='tmux new -s'
- 
 DEFAULT_USER="jiawei"
 
 # virtualenvwrapper
