@@ -61,6 +61,8 @@ set exrc                                        " enable usage of additional .vi
 set secure                                      " prohibit .vimrc files to execute shell, create files, etc...
 set textwidth=119
 set lazyredraw
+set foldlevelstart=99
+" set foldmethod=manual
 
 set splitbelow
 set splitright
@@ -144,7 +146,6 @@ augroup tab_set
     autocmd FileType json set textwidth=80 shiftwidth=2
     autocmd FileType json set softtabstop=2 tabstop=8
     autocmd FileType json set expandtab
-    autocmd FileType json set foldmethod=syntax
 augroup END
 
 " au FileType python set nocursorcolumn

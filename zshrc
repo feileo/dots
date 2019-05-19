@@ -124,7 +124,7 @@ setopt HIST_IGNORE_DUPS
 alias ope="nvim"
 alias vim='nvim'
 alias vi='nvim'
-alias opevimrc='nvim ~/.vimrc'
+alias vimrc='nvim ~/.vimrc'
 alias vimconf='nvim ~/.vplugs.conf.vim'
 
 # zshrc
