@@ -124,6 +124,8 @@ setopt HIST_IGNORE_DUPS
 alias ope="nvim"
 alias vim='nvim'
 alias vi='nvim'
+alias opevimrc='nvim ~/.vimrc'
+alias vimconf='nvim ~/.vplugs.conf.vim'
 
 # zshrc
 alias opezrc='nvim ~/.zshrc'
@@ -182,6 +184,7 @@ alias -s gz='tar -xzvf'
 alias -s tgz='tar -xzvf'
 alias -s zip='unzip'
 alias -s bz2='tar -xjvf'
+
 
 DEFAULT_USER="jiawei"
 

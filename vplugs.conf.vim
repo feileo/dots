@@ -1,5 +1,7 @@
 " Plugs config
 
+colorscheme wombat256mod                                    " set color scheme
+
 "=====================================================
 "  airline
 "=====================================================
@@ -47,7 +49,6 @@ autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTreeType") && b:NERDTree
 autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isTabTree()) | q | endif
 
 
-
 "=====================================================
 "" NERDTree git
 "=====================================================
@@ -89,7 +90,6 @@ let g:NERDTreeIndicatorMapCustom = {
 " let g:jsx_ext_required = 0
 
 
-
 "=====================================================
 "" Python-mode settings
 "=====================================================
@@ -111,13 +111,13 @@ let g:pymode_doc = 0                                        " Doc
 " let g:pymode_doc_bind = 'K'
 
 let g:pymode_virtualenv = 0                                 " Support virtualenv
-let g:pymode_paths = reverse(split(globpath(getcwd().'/eggs', '*'), '\n'))                                                       " support zc.buildout
+let g:pymode_paths = reverse(split(globpath(getcwd().'/eggs', '*'), '\n'))  " Support zc.buildout
 
 let g:pymode_run = 1                                        " Run code
 let g:pymode_run_bind = '<leader>r'
 
 let g:pymode_breakpoint = 1                                 " Breakpoints
-let g:pymode_breakpoint_cmd = "import ipdb;\n ipdb.set_trace()  # TODO @guojiawei REMOVE THE BREAKPOINT"
+let g:pymode_breakpoint_cmd = "import ipdb; ipdb.set_trace()  # TODO @guojiawei REMOVE THE BREAKPOINT"
 
 let g:pymode_lint = 0                                       " Code checking
 
@@ -140,27 +140,6 @@ let g:pymode_rope_goto_definition_bind = '<C-g>'
 " Command for open window when definition has been found
 " Values are (`e`, `new`, `vnew`)                   *'g:pymode_rope_goto_definition_cmd'*
 let g:pymode_rope_goto_definition_cmd = 'vnew'
-
-" Syntax
-let g:pymode_syntax=1
-let g:pymode_syntax_slow_sync=1
-let g:pymode_syntax_all=1
-let g:pymode_syntax_print_as_function=g:pymode_syntax_all
-let g:pymode_syntax_highlight_async_await=g:pymode_syntax_all
-let g:pymode_syntax_highlight_equal_operator=g:pymode_syntax_all
-let g:pymode_syntax_highlight_stars_operator=g:pymode_syntax_all
-let g:pymode_syntax_highlight_self=g:pymode_syntax_all
-let g:pymode_syntax_indent_errors=g:pymode_syntax_all
-let g:pymode_syntax_string_formatting=g:pymode_syntax_all
-" let g:pymode_syntax_space_errors=g:pymode_syntax_all
-let g:pymode_syntax_space_errors=0
-let g:pymode_syntax_string_format=g:pymode_syntax_all
-let g:pymode_syntax_string_templates=g:pymode_syntax_all
-let g:pymode_syntax_doctests=g:pymode_syntax_all
-let g:pymode_syntax_builtin_objs=g:pymode_syntax_all
-let g:pymode_syntax_builtin_types=g:pymode_syntax_all
-let g:pymode_syntax_highlight_exceptions=g:pymode_syntax_all
-let g:pymode_syntax_docstrings=g:pymode_syntax_all
 
 " Custom syntax -----------------------------
 hi pythonDocstring ctermfg=8
@@ -188,6 +167,27 @@ hi pythonNumber ctermfg=147
 
 " hi pythonFunction ctermfg=45
 " hi pythonExtraOperator ctermfg=170
+
+" Syntax
+let g:pymode_syntax=1
+let g:pymode_syntax_slow_sync=1
+let g:pymode_syntax_all=1
+let g:pymode_syntax_print_as_function=g:pymode_syntax_all
+let g:pymode_syntax_highlight_async_await=g:pymode_syntax_all
+let g:pymode_syntax_highlight_equal_operator=g:pymode_syntax_all
+let g:pymode_syntax_highlight_stars_operator=g:pymode_syntax_all
+let g:pymode_syntax_highlight_self=g:pymode_syntax_all
+let g:pymode_syntax_indent_errors=g:pymode_syntax_all
+let g:pymode_syntax_string_formatting=g:pymode_syntax_all
+" let g:pymode_syntax_space_errors=g:pymode_syntax_all
+let g:pymode_syntax_space_errors=0
+let g:pymode_syntax_string_format=g:pymode_syntax_all
+let g:pymode_syntax_string_templates=g:pymode_syntax_all
+let g:pymode_syntax_doctests=g:pymode_syntax_all
+let g:pymode_syntax_builtin_objs=g:pymode_syntax_all
+let g:pymode_syntax_builtin_types=g:pymode_syntax_all
+let g:pymode_syntax_highlight_exceptions=g:pymode_syntax_all
+let g:pymode_syntax_docstrings=g:pymode_syntax_all
 
 
 "=====================================================
