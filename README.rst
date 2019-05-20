@@ -12,9 +12,17 @@ It's my optimus, which includes:
 
 * 🐉 A vim/neovim configuration file sufficient for pythoner and gopher.
 
+  - vimrc
+  - vplugs.conf.vim
+
 * 🚀 An efficient oh-my-zsh configuration file.
 
+  - zshrc
+
 * 🏝  A pretty tmux configuration file based on oh-my-tmux_.
+
+  - tmux.conf
+  - tmux.conf.local
 
 
 usage
@@ -25,7 +33,7 @@ Get optimus:
 .. code-block:: console
 
    cd
-   git clone https://github.com/acthse/optimus.git
+   git clone https://github.com/acthse/optimus.git .optimus
 
 
 vim/veovim
@@ -49,8 +57,8 @@ vim/veovim
 
   .. code-block:: console
 
-     ln -s ~/optimus/vimrc .vimrc
-     ln -s ~/optimus/vimplugs.conf .vimplugs.conf
+     ln -s ~/.optimus/vimrc .vimrc
+     ln -s ~/.optimus/vimplugs.conf .vimplugs.conf
 
   Extra, for neovim:
 
@@ -65,15 +73,16 @@ oh-my-zsh
 
 .. code-block:: console
 
-   ln -s ~/optimus/zshrc .zshrc
+   ln -s ~/.optimus/zshrc .zshrc
 
 tmux
 ****
 
 .. code-block:: console
 
-   ln -s optimus/tmux.conf .tmux.conf
-   ln -s optimus/tmux.conf.local .tmux.conf.local
+   ln -s ~/.optimus/tmux.conf .tmux.conf
+   ln -s ~/.optimus/tmux.conf.local .tmux.conf.local
+
 
 .. _neovim: https://neovim.io/
 .. _oh-my-zsh_: https://github.com/robbyrussell/oh-my-zsh
