@@ -6,7 +6,8 @@ optimus 🚒
 
 My neovim_ + oh-my-zsh_ + tmux_ configuration file. I will synchronize frequently.
 
-This is the favorite weapon of the terminal developer, like writing poetry in the garden.
+This is the favorite weapon for engineers who use terminals(recommend iTerm2_ or terminus_) for development,
+like writing poetry in the garden.
 
 It's my optimus, which includes:
 
@@ -91,3 +92,5 @@ tmux
 .. _tmux: https://github.com/tmux/tmux
 .. _oh-my-tmux: https://github.com/gpakosz/.tmux/tree/master
 .. _plug.vim: https://github.com/junegunn/vim-plug
+.. _iTerm2: https://www.iterm2.com/
+.. _terminus: https://eugeny.github.io/terminus/
