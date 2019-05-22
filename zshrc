@@ -1,9 +1,9 @@
-#  _____    _
-# |__  /___| |__  _ __ ___
-#   / // __| '_ \| '__/ __|
-#  / /_\__ \ | | | | | (__
-# /____|___/_| |_|_|  \___|
-
+#          __                                     __
+#   ____  / /_     ____ ___  __  __   ____  _____/ /_  __ _______
+#  / __ \/ __ \   / __ `__ \/ / / /  /_  / / ___/ __ \'__ __/____|
+# / /_/ / / / /  / / / / / / /_/ /    / /_(__  ) / / // /   //
+# \____/_/ /_/  /_/ /_/ /_/\__, /    /___/____/_/ /_//_/   /(__
+#                         /____/
 
 # If you come from bash you might have to change your $PATH.
 export PATH=$HOME/bin:/usr/local/bin:$PATH
@@ -15,14 +15,16 @@ export ZSH=$HOME/.oh-my-zsh
 # load a random theme each time oh-my-zsh is loaded, in which case,
 # to know which specific one was loaded, run: echo $RANDOM_THEME
 # See https://github.com/robbyrussell/oh-my-zsh/wiki/Themes
-
 # ZSH_THEME="agnoster"
 # ZSH_THEME="robbyrussell"
 ZSH_THEME="powerlevel10k/powerlevel10k"
 
-# POWERLEVEL9K_PROMPT_ON_NEWLINE=true
-# POWERLEVEL9K_MULTILINE_FIRST_PROMPT_PREFIX="🙈"
-# POWERLEVEL9K_MULTILINE_LAST_PROMPT_PREFIX="👉👉 "
+# POWERLEVEL9K_MODE=nerdfont-complete
+POWERLEVEL9K_PROMPT_ON_NEWLINE=true
+# POWERLEVEL9K_TIME_BACKGROUND=magenta
+# POWERLEVEL9K_STATUS_OK_BACKGROUND=grey53
+POWERLEVEL9K_MULTILINE_FIRST_PROMPT_PREFIX="╭ 🍑 "
+POWERLEVEL9K_MULTILINE_LAST_PROMPT_PREFIX="╰ ☘️  "
 
 POWERLEVEL9K_LEFT_PROMPT_ELEMENTS=(context dir dir_writable vcs)
 POWERLEVEL9K_RIGHT_PROMPT_ELEMENTS=(status root_indicator background_jobs virtualenv ip time)
@@ -96,19 +98,21 @@ plugins=(
 
 source $ZSH/oh-my-zsh.sh
 
-# User configuration
 
+# =====================================================
+# User configuration
+# =====================================================
 # export MANPATH="/usr/local/man:$MANPATH"
 
 # You may need to manually set your language environment
 export LANG=en_US.UTF-8
 
 # Preferred editor for local and remote sessions
-if [[ -n $SSH_CONNECTION ]]; then
-  export EDITOR='vim'
-else
-  export EDITOR='mvim'
-fi
+# if [[ -n $SSH_CONNECTION ]]; then
+#   export EDITOR='vim'
+# else
+#   export EDITOR='mvim'
+# fi
 
 setopt HIST_IGNORE_DUPS
 
@@ -119,7 +123,6 @@ setopt HIST_IGNORE_DUPS
 # plugins, and themes. Aliases can be placed here, though oh-my-zsh
 # users are encouraged to define aliases within the ZSH_CUSTOM folder.
 # For a full list of active aliases, run `alias`.
-
 # neovim
 alias ope="nvim"
 alias vim='nvim'
@@ -187,6 +190,9 @@ alias -s zip='unzip'
 alias -s bz2='tar -xjvf'
 
 
+# =====================================================
+#  Personal settings
+# =====================================================
 DEFAULT_USER="jiawei"
 
 # virtualenvwrapper
