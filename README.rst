@@ -26,7 +26,13 @@ It's my optimus, which includes:
   - ``tmux.conf.local``: Override settings by editing this file.
 
 
-usage
+Screenshot
+----------
+
+.. imgae:: http://ps3u41v9q.bkt.clouddn.com/WX20190526-172529.png
+
+
+Usage
 -----
 
 Get optimus:
@@ -37,7 +43,7 @@ Get optimus:
    git clone https://github.com/acthse/optimus.git .optimus
 
 
-for vim/neovim
+For vim/neovim
 **************
 
 * Before that, install plug.vim_:
@@ -73,7 +79,7 @@ for vim/neovim
   If you are not familiar with these plugins, it is recommended that you go to each plugin repository to learn how to use them.
 
 
-for tmux
+For tmux
 ********
 
 .. code-block:: console
@@ -82,7 +88,7 @@ for tmux
    ln -s ~/.optimus/tmux.conf.local .tmux.conf.local
 
 
-for oh-my-zsh
+For oh-my-zsh
 *************
 
 * Insatll:
