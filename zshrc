@@ -205,3 +205,9 @@ export PATH
 export DYLD_LIBRARY_PATH=/usr/local/mysql/lib/
 export VERSIONER_PYTHON_PREFER_64_BIT=no
 export VERSIONER_PYTHON_PREFER_32_BIT=yes
+
+# go
+export GOROOT=$HOME/.go
+export PATH=$PATH:$GOROOT/bin
+export GOPATH=$HOME/apps/go
+
