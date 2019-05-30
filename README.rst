@@ -29,7 +29,7 @@ It's my optimus, which includes:
 Screenshot
 ----------
 
-.. image:: http://ps3u41v9q.bkt.clouddn.com/WX20190526-172529.png
+.. image:: http://ps3u41v9q.bkt.clouddn.com/WX20190526-180900.png
 
 
 Usage
