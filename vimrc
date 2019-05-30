@@ -172,8 +172,8 @@ call plug#begin('~/.vim/plugged')
 
     "--------------------- language ide -----------------------------
     Plug 'klen/python-mode', { 'branch': 'develop' }    " Python mode (docs, refactor, lints...)
-    Plug 'Valloric/YouCompleteMe', {'tag': 'e018777'}   " Autocomplete
-    Plug 'fatih/vim-go', { 'do': ':GoUpdateBinaries' }
+    Plug 'fatih/vim-go', { 'do': ':GoUpdateBinaries' }  " Go mode
+    Plug 'Valloric/YouCompleteMe', {'tag': 'e018777'}   " Great autocomplete plug
 
     "--------------------- syntax highlighting ----------------------
     Plug 'vim-scripts/nginx.vim'
