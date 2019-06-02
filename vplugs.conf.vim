@@ -1,13 +1,21 @@
-" Plugs config
+"==============================================================================
+"  Plugins Settings
+"
+"  If you are not familiar with these plugins, it is recommended that you go to 
+"  each plugin repository to learn how to use them.
+"==============================================================================
 
-colorscheme wombat256mod                                    " set color scheme
 
-"=====================================================
-"  airline
-"=====================================================
+" -----------------------------------------------------------------------------
+"  Plugin: bling/vim-airline
+" -----------------------------------------------------------------------------
 let g:airline_theme='badwolf'
 let g:airline_powerline_fonts = 1
-
+" Enable top tabline.
+let g:airline#extensions#tabline#enabled = 1
+" Disable showing tabs in the tabline. This will ensure that the buffers are
+" what is shown in the tabline at all times.
+let g:airline#extensions#tabline#show_tabs = 0
 let g:airline#extensions#tabline#enabled = 1                " 开启 tabline
 let g:airline#extensions#tabline#buffer_nr_show = 1         " 显示 buffer编号
 let g:airline#extensions#tabline#formatter='unique_tail'
@@ -18,26 +26,62 @@ let g:airline_left_sep = '▶'                                " unicode symbols
 let g:airline_left_alt_sep = '❯'
 let g:airline_right_sep = '◀'
 let g:airline_right_alt_sep = '❮'
+if !exists('g:airline_symbols')
+    let g:airline_symbols = {}
+endif
 
 
-"=====================================================
-" tagbar
-"=====================================================
+" -----------------------------------------------------------------------------
+"  Plugin: majutsushi/tagbar
+" -----------------------------------------------------------------------------
 map <Leader>* :TagbarToggle <CR>
+autocmd BufWinLeave *.py :TagbarClose
 
 let g:tagbar_autofocus=1
-let g:tagbar_width=35
+let g:tagbar_width=30
 let g:tagbar_autopreview = 0                                " 关闭自动预览
 let g:tagbar_sort = 0                                       " 关闭排序,即按标签本身在文件中的位置排序
 
-autocmd BufWinLeave *.py :TagbarClose
+" For Golang
+let g:tagbar_type_go = {
+    \ 'ctagstype' : 'go',
+    \ 'kinds'     : [
+        \ 'p:package',
+        \ 'i:imports:1',
+        \ 'c:constants',
+        \ 'v:variables',
+        \ 't:types',
+        \ 'n:interfaces',
+        \ 'w:fields',
+        \ 'e:embedded',
+        \ 'm:methods',
+        \ 'r:constructor',
+        \ 'f:functions'
+    \ ],
+    \ 'sro' : '.',
+    \ 'kind2scope' : {
+        \ 't' : 'ctype',
+        \ 'n' : 'ntype'
+    \ },
+    \ 'scope2kind' : {
+        \ 'ctype' : 't',
+        \ 'ntype' : 'n'
+    \ },
+    \ 'ctagsbin'  : 'gotags',
+    \ 'ctagsargs' : '-sort -silent'
+    \ }
 
-"=====================================================
-"" NERDTree 
-"=====================================================
-nmap " :NERDTreeToggle<CR>
-nmap < :NERDTreeFind<cr>
 
+" -----------------------------------------------------------------------------
+" Plugin: plasticboy/vim-markdown
+" -----------------------------------------------------------------------------
+let g:vim_markdown_folding_disabled = 1                     " Disable folding 
+let g:vim_markdown_toc_autofit = 1                          " Auto shrink the TOC
+
+
+" -----------------------------------------------------------------------------
+" Plugin: scrooloose/nerdtree
+" -----------------------------------------------------------------------------
 let NERDTreeWinSize=26
 let NERDTreeShowHidden=0                                    " 是否显示隐藏文件
 let NERDTreeMinimalUI=0                                     " NERDTree 子窗口中是否显示冗余帮助信息
@@ -45,61 +89,20 @@ let NERDTreeAutoDeleteBuffer=1
 let NERDTreeIgnore=['\.pyc','\~$','\.swp','__pycache__','\.git$','\.DS_Store']
 let g:NERDTreeShowLineNumbers=0
 
-autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTreeType") && b:NERDTreeType == "primary") | q | endif
+nmap " :NERDTreeToggle<cr>
+nmap < :NERDTreeFind<cr>
 autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isTabTree()) | q | endif
 
 
-"=====================================================
-"" NERDTree git
-"=====================================================
-let g:NERDTreeIndicatorMapCustom = {
-            \ "Modified"  : "✹",
-            \ "Staged"    : "✚",
-            \ "Untracked" : "✭",
-            \ "Renamed"   : "➜",
-            \ "Unmerged"  : "═",
-            \ "Deleted"   : "✖",
-            \ "Dirty"     : "✗",
-            \ "Clean"     : "✔︎",
-            \ 'Ignored'   : '☒',
-            \ "Unknown"   : "?"
-            \ }
-
-
-"=====================================================
-" js react
-"=====================================================
-" let g:javascript_plugin_jsdoc = 1
-" let g:javascript_plugin_ngdoc = 1
-" let g:javascript_plugin_flow = 1
-" let g:javascript_conceal_function             = "ƒ"
-" let g:javascript_conceal_null                 = "ø"
-" let g:javascript_conceal_this                 = "@"
-" let g:javascript_conceal_return               = "⇚"
-" let g:javascript_conceal_undefined            = "¿"
-" let g:javascript_conceal_NaN                  = "ℕ"
-" let g:javascript_conceal_prototype            = "¶"
-" let g:javascript_conceal_static               = "•"
-" let g:javascript_conceal_super                = "Ω"
-" let g:javascript_conceal_arrow_function       = "⇒"
-" let g:javascript_conceal_noarg_arrow_function = "?"
-" let g:javascript_conceal_underscore_arrow_function = "?"
-
-" set conceallevel=0
-
-" let g:jsx_ext_required = 0
-
-
-"=====================================================
-"" Python-mode settings
-"=====================================================
+" -----------------------------------------------------------------------------
+" Plugin: klen/python-mode
+" Language: Python
+" -----------------------------------------------------------------------------
 let g:pymode = 1                                            " Common functionality
 let g:pymode_warnings = 0
 let g:pymode_options_max_line_length = 119
 let g:pymode_options = 0
 let g:pymode_options_colorcolumn = 0
-
-" let g:pymode_python='python3'                             " Python version: 'python' or 'python3'
 
 let g:pymode_indent = 1                                     " Python indentation
 
@@ -108,12 +111,12 @@ let g:pymode_folding = 0                                    " Python folding
 let g:pymode_motion = 1                                     " Vim motion
 
 let g:pymode_doc = 0                                        " Doc
-" let g:pymode_doc_bind = 'K'
+let g:pymode_doc_bind = 'K'
 
 let g:pymode_virtualenv = 0                                 " Support virtualenv
 let g:pymode_paths = reverse(split(globpath(getcwd().'/eggs', '*'), '\n'))  " Support zc.buildout
 
-let g:pymode_run = 1                                        " Run code
+let g:pymode_run = 0                                        " Run code
 let g:pymode_run_bind = '<leader>r'
 
 let g:pymode_breakpoint = 1                                 " Breakpoints
@@ -134,41 +137,36 @@ let g:pymode_rope_organize_imports_bind = '<C-c>ro'
 let g:pymode_rope_autoimport_bind = '<C-c>ra'
 let g:pymode_rope_module_to_package_bind = '<C-c>r1p'
 let g:pymode_rope_use_function_bind = '<C-c>ru'
-
 let g:pymode_rope_goto_definition_bind = '<C-g>'
 
 " Command for open window when definition has been found
-" Values are (`e`, `new`, `vnew`)                   *'g:pymode_rope_goto_definition_cmd'*
+" Values are (`e`, `new`, `vnew`)
 let g:pymode_rope_goto_definition_cmd = 'vnew'
 
-" Custom syntax -----------------------------
+" Custom syntax
+hi pythonBuiltinObj ctermfg=105
+hi pythonBuiltinType ctermfg=45
+hi pythonBuiltinFunc ctermfg=45
 hi pythonDocstring ctermfg=8
 " hi pythonString ctermfg=78
-hi pythonRawString ctermfg=220 cterm=italic
-hi pythonUniString ctermfg=220 cterm=italic
-
+hi pythonRawString ctermfg=214 " cterm=italic
+hi pythonUniString ctermfg=214 " cterm=italic
 hi pythonStrFormat ctermfg=99
 hi pythonStrTemplate ctermfg=99
-
 hi pythonClass ctermfg=45
 hi pythonClassParameters ctermfg=45
-
 hi pythonSelf ctermfg=215 cterm=italic
 hi pythonParam ctermfg=215
 hi pythonParameters ctermfg=215
-
-hi pythonBuiltinObj ctermfg=99
-hi pythonBuiltinType ctermfg=45
-hi pythonBuiltinFunc ctermfg=45
-hi pythonDottedName ctermfg=147
 hi pythonLambdaExpr ctermfg=247 cterm=italic
-hi pythonOperator ctermfg=170
 hi pythonNumber ctermfg=147
-
-" hi pythonFunction ctermfg=45
+hi pythonOperator ctermfg=171
+hi pythonRepeat ctermfg=63
+hi pythonExClass ctermfg=32
 " hi pythonExtraOperator ctermfg=170
+hi pythonDecorator ctermfg=208
+hi pythonDottedName ctermfg=139
 
-" Syntax
 let g:pymode_syntax=1
 let g:pymode_syntax_slow_sync=1
 let g:pymode_syntax_all=1
@@ -190,11 +188,58 @@ let g:pymode_syntax_highlight_exceptions=g:pymode_syntax_all
 let g:pymode_syntax_docstrings=g:pymode_syntax_all
 
 
-"=====================================================
-"  YouCompleteMe settings
-"=====================================================
-" set completeopt=preview,menu
-set completeopt=menu,menuone
+" -----------------------------------------------------------------------------
+" Plugin: fatih/vim-go
+" Language: Golang
+" -----------------------------------------------------------------------------
+" hi link goBuiltins Keyword
+
+hi goPackage ctermfg=52
+
+let g:go_highlight_array_whitespace_error = 0
+let g:go_highlight_chan_whitespace_error = 0
+let g:go_highlight_trailing_whitespace_error = 0
+
+let g:go_highlight_extra_types = 1
+let g:go_highlight_space_tab_error = 1
+let g:go_highlight_operators = 1
+let g:go_highlight_functions = 1
+let g:go_highlight_function_parameters = 1
+let g:go_highlight_function_calls = 1
+let g:go_highlight_types = 1
+let g:go_highlight_fields = 1
+let g:go_highlight_build_constraints = 1
+let g:go_highlight_generate_tags = 1
+let g:go_highlight_string_spellcheck = 1
+let g:go_highlight_format_strings = 1
+let g:go_highlight_variable_declarations = 1
+let g:go_highlight_variable_assignments = 1
+let g:go_highlight_methods = 1
+let g:go_highlight_structs = 1
+
+let g:go_fmt_fail_silently = 1
+" let g:go_auto_type_info = 1
+" let g:go_auto_sameids = 1
+" let g:go_info_mode = 'gocode'
+" let g:go_updatetime = 1000
+let g:go_code_completion_enabled = 0
+
+let g:go_doc_max_height = 25
+
+" let g:go_fmt_command = "goimports"
+
+au FileType go nmap <C-g> <Plug>(go-def)
+au FileType go nmap <leader><leader>u :GoDeclsDir<cr>
+au FileType go nmap <leader>rt <Plug>(go-run-tab)
+au FileType go nmap <leader>rs <Plug>(go-run-split)
+au FileType go nmap <leader>r <Plug>(go-run-vertical)
+
+
+" -----------------------------------------------------------------------------
+" Plugin: 'Valloric/YouCompleteMe'
+" Support: Python, Golang, Js, Ts...
+" -----------------------------------------------------------------------------
+set completeopt=menu,menuone                                " preview
 
 let g:ycm_add_preview_to_completeopt = 0
 let g:ycm_show_diagnostics_ui = 0
@@ -206,27 +251,21 @@ let g:ycm_complete_in_comments = 1                          " 在注释输入中
 let g:ycm_complete_in_strings = 1                           " 在字符串输入中也能补全
 let g:ycm_collect_identifiers_from_tags_files=1             " 开启 YCM 基于标签引擎
 let g:ycm_autoclose_preview_window_after_completion = 1
-
-let g:ycm_goto_buffer_command = 'vertical-split'            " 'same-buffer'  'new-tab' 在实现和声明之间跳转,并分屏打开
-let g:ycm_global_ycm_extra_conf='~/.vim/ycm_extra_conf.py'
+let g:ycm_goto_buffer_command = 'vertical-split'            " 'same-buffer' 'new-tab'
 let g:ycm_confirm_extra_conf=0
-
 let g:ycm_key_list_select_completion = ['<TAB>', '<Down>'] 
-
-nmap <leader>d :YcmCompleter GoToDefinitionElseDeclaration<CR>
-nmap <leader>g :YcmCompleter GoTo<CR>
-" nmap <leader>d :YcmCompleter GoToDefinition<CR>
 let g:ycm_enable_diagnostic_highlighting = 0 
 let g:ycm_filepath_completion_use_working_dir = 1
 
+nmap <leader>d :YcmCompleter GoTo<CR>
+nmap <leader>g :YcmCompleter GoToDefinitionElseDeclaration<CR>
 
-"=====================================================
-"  Ctrlp settings
-"=====================================================
-" 显示缓冲区文件，并可通过序号进行跳转
-nmap <Leader><Tab> :CtrlPBuffer<CR>
 
-"设置搜索时忽略的文件
+" -----------------------------------------------------------------------------
+" Plugin: kien/ctrlp.vim
+" -----------------------------------------------------------------------------
+nmap <Leader><Tab> :CtrlPBuffer<cr>                         " 显示缓冲区文件，并可通过序号进行跳转
+
 set wildignore+=*/tmp/*,*.so,*.swp,*.zip " */node_modulues/*,*/eggs/*    " MacOSX/Linux
 let g:ctrlp_custom_ignore = {
             \ 'dir':  '\v[\/](node_modules|DS_Store|dist|build|doc|tmp|coverage|eggs)|(\.(git|hg|svn|rvm|idea|ropeproject)$)',
@@ -250,9 +289,9 @@ let g:ctrlp_regexp = 0                                      " 默认不使用正
 let g:ctrlp_line_prefix = '♪ '                              " 自定义搜索列表的提示符
 
 
-"=====================================================
-" Ctrlp-funky settings
-"=====================================================
+" -----------------------------------------------------------------------------
+" Plugin: tacahiroy/ctrlp-funky
+" -----------------------------------------------------------------------------
 nnoremap <Leader><Leader>u :CtrlPFunky<Cr>
 " narrow the list down with a word under cursor
 nnoremap <Leader><Leader>U :execute 'CtrlPFunky ' . expand('<cword>')<Cr>
@@ -261,95 +300,9 @@ let g:ctrlp_funky_syntax_highlight = 1
 let g:ctrlp_extensions = ['funky']
 
 
-"=====================================================
-" ALe settings
-"=====================================================
-nmap <silent> <C-s>k <Plug>(ale_previous_wrap)
-nmap <silent> <C-s>j <Plug>(ale_next_wrap)
-
-let g:ale_completion_enabled = 0
-let g:ale_sign_column_always = 0
-
-let g:ale_linters = {
-            \    'javascript': ['eslint','babel-eslint'],
-            \}
-let g:ale_fixers = {
-            \    'javascript': ['eslint', 'babel-eslint'],
-            \}
-let g:ale_python_flake8_executable = 'python3'
-
-let g:ale_set_highlights = 0
-let g:ale_lint_on_save = 1                                  " save file auto check
-let g:ale_lint_on_text_changed = 0                          " for ale_lint_on_save = 1
-let g:ale_lint_on_enter = 0                                 " for ale_lint_on_save = 1
-let g:ale_fix_on_save = 0
-
-let g:ale_statusline_format = ['✗ %d', '⚡ %d', '✔ OK']     " 添加状态栏信息
-let g:ale_sign_error = "😡"                                 " 自定义error和warning图标
-let g:ale_sign_warning = "☹️'"
-" let g:ale_sign_error = '●'
-" let g:ale_sign_warning = '▶'
-" let g:ale_sign_error = '>>'
-" let g:ale_sign_warning = '--'
-
-" 显示Linter名称, 出错或警告等相关信息
-let g:ale_echo_msg_error_str = 'Error'
-let g:ale_echo_msg_warning_str = 'Warning'
-let g:ale_echo_msg_format = '[%linter%] [%severity%] %s '
-
-let g:airline#extensions#ale#enabled = 1
-let g:ale_list_window_size = 5                              " Show 5 lines of errors (default: 10)
-
-" map <F6> :ALEToggle \| echo 'g:ale_enabled =' g:ale_enabled<CR>
-
-function! LinterStatus() abort
-    let l:counts = ale#statusline#Count(bufnr(''))
-    let l:all_errors = l:counts.error + l:counts.style_error
-    let l:all_non_errors = l:counts.total - l:all_errors
-    return l:counts.total == 0 ? '老铁没毛病' : printf(
-                \   '%dW %dE',
-                \   all_non_errors,
-                \   all_errors
-                \)
-endfunction
-set statusline=%{LinterStatus()}
-
-highlight clear ALEErrorSign
-highlight clear ALEWarningSign
-highlight ALEWarning ctermbg=DarkMagenta
-
-
-" =====================================================
-" AutoFormat
-" =====================================================
-" au BufWrite * :Autoformat
-" let g:formatters_python = ['autopep8']
-noremap <leader>p :Autoformat<cr>
-
-
-" =====================================================
-" Autopep8
-" =====================================================
-let g:autopep8_max_line_length=119
-let g:autopep8_on_save=1
-let g:autopep8_disable_show_diff=1
-
-
-" =====================================================
-" file Headers
-" =====================================================
-autocmd BufNewFile *.c,*.cpp,*.sh,*.py,*.java exec ":call SetTitle()"
-func! SetTitle()
-    if &filetype == 'python'
-        call setline(1, "\#!/usr/bin/env python")
-        call setline(2, "\# -*- coding=utf8 -*-")
-    endif
-endfunc
-autocmd BufNewfile * normal G
-
-"=====================================================
-" ctrlsf.vim settings
-"=====================================================
+" -----------------------------------------------------------------------------
+" Plugin: dyng/ctrlsf.vim
+" -----------------------------------------------------------------------------
 let g:ctrlsf_ackprg = 'ag'
 nnoremap <Leader><Leader>f :CtrlSF<Space>
 nnoremap <Leader><Leader>ff :execute 'CtrlSF ' . expand('<cword>')<Cr>
@@ -369,27 +322,106 @@ let g:ctrlsf_search_mode = 'async'
 let g:ctrlsf_default_view_mode = 'compact'
 
 
-"=====================================================
-"  SQL
-"=====================================================
-let g:omni_sql_no_default_maps = 1
+" -----------------------------------------------------------------------------
+" Plugin: w0rp/ale
+" -----------------------------------------------------------------------------
+nmap <silent> <C-s>k <Plug>(ale_previous_wrap)
+nmap <silent> <C-s>j <Plug>(ale_next_wrap)
+
+let g:ale_completion_enabled = 0
+let g:ale_sign_column_always = 0
+let g:ale_linters = {
+            \    'javascript': ['eslint','babel-eslint'],
+            \}
+let g:ale_fixers = {
+            \    'javascript': ['eslint', 'babel-eslint'],
+            \}
+let g:ale_python_flake8_executable = 'python3'
+let g:ale_set_highlights = 0
+let g:ale_lint_on_save = 1                                  " save file auto check
+let g:ale_lint_on_text_changed = 0                          " for ale_lint_on_save = 1
+let g:ale_lint_on_enter = 0                                 " for ale_lint_on_save = 1
+let g:ale_fix_on_save = 0
+let g:ale_statusline_format = ['✗ %d', '⚡ %d', '✔ OK']     " 添加状态栏信息
+let g:ale_sign_error = "😡"                                 " 自定义error和warning图标
+let g:ale_sign_warning = "☹️'"
+let g:ale_echo_msg_error_str = 'Error'
+let g:ale_echo_msg_warning_str = 'Warning'
+let g:ale_echo_msg_format = '[%linter%] [%severity%] %s '
+let g:airline#extensions#ale#enabled = 1
+let g:ale_list_window_size = 5                              " Show 5 lines of errors (default: 10)
+
+" map <F6> :ALEToggle \| echo 'g:ale_enabled =' g:ale_enabled<CR>
+
+function! LinterStatus() abort
+    let l:counts = ale#statusline#Count(bufnr(''))
+    let l:all_errors = l:counts.error + l:counts.style_error
+    let l:all_non_errors = l:counts.total - l:all_errors
+    return l:counts.total == 0 ? 'OK' : printf(
+                \   '%dW %dE',
+                \   all_non_errors,
+                \   all_errors
+                \)
+endfunction
+set statusline=%{LinterStatus()}
+
+highlight clear ALEErrorSign
+highlight clear ALEWarningSign
+highlight ALEWarning ctermbg=DarkMagenta
 
 
-"=====================================================
-" IndentLine
-"=====================================================
-let g:indentLine_color_term = 239
+" -----------------------------------------------------------------------------
+" Plugin: airblade/vim-gitgutter
+" -----------------------------------------------------------------------------
+let g:NERDTreeIndicatorMapCustom = {
+            \ "Modified"  : "✹",
+            \ "Staged"    : "✚",
+            \ "Untracked" : "✭",
+            \ "Renamed"   : "➜",
+            \ "Unmerged"  : "═",
+            \ "Deleted"   : "✖",
+            \ "Dirty"     : "✗",
+            \ "Clean"     : "✔︎",
+            \ 'Ignored'   : '☒',
+            \ "Unknown"   : "?"
+            \ }
 
 
-"=====================================================
-" Git 
-"=====================================================
+" -----------------------------------------------------------------------------
+" Plugin: airblade/vim-gitgutter
+" -----------------------------------------------------------------------------
 highlight GitGutterAdd    guifg=#009900 guibg=<X> ctermfg=2 
 highlight GitGutterChange guifg=#bbbb00 guibg=<X> ctermfg=3 
 highlight GitGutterDelete guifg=#ff2222 guibg=<X> ctermfg=1 
 
+" -----------------------------------------------------------------------------
+" Plugin: tell-k/vim-autopep8
+" -----------------------------------------------------------------------------
+let g:autopep8_max_line_length=115
+let g:autopep8_on_save=1
+let g:autopep8_disable_show_diff=1
 
-"====================================================================
-"  Rainbow 
-"====================================================================
+
+" -----------------------------------------------------------------------------
+" Plugin: Chiel92/vim-autoformat
+" -----------------------------------------------------------------------------
+" let g:formatters_python = ['autopep8']
+noremap <leader>p :Autoformat<cr>
+
+
+" -----------------------------------------------------------------------------
+" Language: SQL
+" -----------------------------------------------------------------------------
+let g:omni_sql_no_default_maps = 1
+
+
+" -----------------------------------------------------------------------------
+" Plugin: yggdroot/indentline
+" -----------------------------------------------------------------------------
+let g:indentLine_color_term = 239
+
+
+" -----------------------------------------------------------------------------
+" Plugin: 'luochen1990/rainbow'
+" -----------------------------------------------------------------------------
 " let g:rainbow_active = 1

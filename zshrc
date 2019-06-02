@@ -128,12 +128,11 @@ alias ope="nvim"
 alias vim='nvim'
 alias vi='nvim'
 alias vimrc='nvim ~/.vimrc'
-alias vimconf='nvim ~/.vplugs.conf.vim'
+alias vimconf='nvim ~/.optimus/vplugs.conf.vim'
 
 # zshrc
 alias opezrc='nvim ~/.zshrc'
 alias sourcezrc='source ~/.zshrc'
-alias opeohmyzsh="nvim ~/.oh-my-zsh"
 
 # git
 alias gs="git status"
@@ -210,4 +209,3 @@ export VERSIONER_PYTHON_PREFER_32_BIT=yes
 export GOROOT=$HOME/.go
 export PATH=$PATH:$GOROOT/bin
 export GOPATH=$HOME/apps/go
-
