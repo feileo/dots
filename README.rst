@@ -108,7 +108,7 @@ For oh-my-zsh
 
 * **Step 1**: Insatll prerequisites.
 
-  - `zsh`
+  - zsh
 
   - `oh-my-zsh <https://github.com/robbyrussell/oh-my-zsh/>`_
 

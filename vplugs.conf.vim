@@ -144,28 +144,29 @@ let g:pymode_rope_goto_definition_bind = '<C-g>'
 let g:pymode_rope_goto_definition_cmd = 'vnew'
 
 " Custom syntax
-hi pythonBuiltinObj ctermfg=105
-hi pythonBuiltinType ctermfg=45
-hi pythonBuiltinFunc ctermfg=45
-hi pythonDocstring ctermfg=8
-" hi pythonString ctermfg=78
-hi pythonRawString ctermfg=214 " cterm=italic
-hi pythonUniString ctermfg=214 " cterm=italic
-hi pythonStrFormat ctermfg=99
-hi pythonStrTemplate ctermfg=99
-hi pythonClass ctermfg=45
+hi pythonBuiltinObj      ctermfg=105
+hi pythonBuiltinType     ctermfg=45
+hi pythonBuiltinFunc     ctermfg=45
+hi pythonDocstring       ctermfg=8
+" hi pythonString        ctermfg=78
+hi pythonRawString       ctermfg=214 " cterm=italic
+hi pythonUniString       ctermfg=214 " cterm=italic
+hi pythonStrFormat       ctermfg=99
+hi pythonStrTemplate     ctermfg=99
+hi pythonClass           ctermfg=45
 hi pythonClassParameters ctermfg=45
-hi pythonSelf ctermfg=215 cterm=italic
-hi pythonParam ctermfg=215
-hi pythonParameters ctermfg=215
-hi pythonLambdaExpr ctermfg=247 cterm=italic
-hi pythonNumber ctermfg=147
-hi pythonOperator ctermfg=171
-hi pythonRepeat ctermfg=63
-hi pythonExClass ctermfg=32
+hi pythonSelf            ctermfg=215 cterm=italic
+hi pythonParam           ctermfg=215
+hi pythonParameters      ctermfg=215
+hi pythonLambdaExpr      ctermfg=247 cterm=italic
+hi pythonNumber          ctermfg=147
+hi pythonOperator        ctermfg=171
+hi pythonRepeat          ctermfg=63
+hi pythonExClass         ctermfg=32
 " hi pythonExtraOperator ctermfg=170
-hi pythonDecorator ctermfg=208
-hi pythonDottedName ctermfg=139
+hi pythonDecorator       ctermfg=208
+hi pythonDottedName      ctermfg=139
+
 
 let g:pymode_syntax=1
 let g:pymode_syntax_slow_sync=1
@@ -192,9 +193,34 @@ let g:pymode_syntax_docstrings=g:pymode_syntax_all
 " Plugin: fatih/vim-go
 " Language: Golang
 " -----------------------------------------------------------------------------
-" hi link goBuiltins Keyword
+" hi Type ctermfg=39
+hi goType              ctermfg=39
+hi goSignedInts        ctermfg=39
+hi goUnsignedInts      ctermfg=39
+hi goFloats            ctermfg=39
+hi goComplexes         ctermfg=39
+hi goReceiverType      ctermfg=39
+hi goTypeConstructor   ctermfg=39
+hi goTypeName          ctermfg=39
 
-hi goPackage ctermfg=52
+hi goVarDefs           ctermfg=253
+hi goVarAsgsign        ctermfg=253
+hi goReceiverVar       ctermfg=253
+
+hi goPackage           ctermfg=99
+hi goImport            ctermfg=136
+hi goVar               ctermfg=105
+hi goConst             ctermfg=216
+hi goDeclaration       ctermfg=45
+hi goConditional       ctermfg=141
+hi goRepeat            ctermfg=153
+hi goBuiltins          ctermfg=12
+
+hi goFunction          ctermfg=11
+hi goFunctionCall      ctermfg=11
+
+hi goSimpleParams      ctermfg=215
+hi goParamName         ctermfg=215
 
 let g:go_highlight_array_whitespace_error = 0
 let g:go_highlight_chan_whitespace_error = 0
