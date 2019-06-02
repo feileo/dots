@@ -160,9 +160,9 @@ hi pythonParam           ctermfg=215
 hi pythonParameters      ctermfg=215
 hi pythonLambdaExpr      ctermfg=247 cterm=italic
 hi pythonNumber          ctermfg=147
-hi pythonOperator        ctermfg=171
-hi pythonRepeat          ctermfg=63
-hi pythonExClass         ctermfg=32
+hi pythonOperator        ctermfg=168
+hi pythonRepeat          ctermfg=4
+hi pythonExClass         ctermfg=33
 " hi pythonExtraOperator ctermfg=170
 hi pythonDecorator       ctermfg=208
 hi pythonDottedName      ctermfg=139
