@@ -80,7 +80,7 @@ For vim/neovim
      
      GOPATH=$(realpath ../../../..) go build
  
-* Finished, enjoy it.
+* **Step 5**: Finished, enjoy it.
 
   If you are not familiar with these plugins, it is recommended that you go to each plugin repository to learn how to use them.
 
