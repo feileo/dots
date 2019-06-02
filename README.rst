@@ -11,7 +11,7 @@ like writing poetry in the garden.
 
 It's my optimus, which includes:
 
-* 🐉 A **vim/neovim** configuration file sufficient for *Pythoner* and *Gopher*,
+* 🐉 A **vim/neovim** configuration file sufficient for Pythoner\ :sup:`✔️` and Gopher\ :sup:`✔️`,
   with unique custom syntax highlighting.
 
   - ``vimrc``: General built-in settings and plugin management.
