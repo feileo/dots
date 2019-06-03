@@ -160,9 +160,11 @@ hi pythonParam           ctermfg=215
 hi pythonParameters      ctermfg=215
 hi pythonLambdaExpr      ctermfg=247 cterm=italic
 hi pythonNumber          ctermfg=147
-hi pythonOperator        ctermfg=171
-hi pythonRepeat          ctermfg=63
-hi pythonExClass         ctermfg=32
+hi pythonOperator        ctermfg=204
+hi pythonRepeat          ctermfg=177
+hi pythonConditional     ctermfg=177
+hi pythonExClass         ctermfg=210
+
 " hi pythonExtraOperator ctermfg=170
 hi pythonDecorator       ctermfg=208
 hi pythonDottedName      ctermfg=139
@@ -210,7 +212,6 @@ hi goBoolean           ctermfg=141
 hi goVarDefs           ctermfg=253
 hi goVarAsgsign        ctermfg=253
 " hi goVarArgs           ctermfg=253
-hi goReceiverVar       ctermfg=253
 
 hi goPackage           ctermfg=177
 hi goImport            ctermfg=138
@@ -228,6 +229,7 @@ hi goFunction          ctermfg=222
 hi goFunctionCall      ctermfg=222
 hi goSimpleParams      ctermfg=208
 hi goParamName         ctermfg=208
+hi goReceiverVar       ctermfg=208
 
 let g:go_highlight_array_whitespace_error = 0
 let g:go_highlight_chan_whitespace_error = 0
