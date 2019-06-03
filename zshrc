@@ -21,8 +21,6 @@ ZSH_THEME="powerlevel10k/powerlevel10k"
 
 # POWERLEVEL9K_MODE=nerdfont-complete
 POWERLEVEL9K_PROMPT_ON_NEWLINE=true
-# POWERLEVEL9K_TIME_BACKGROUND=magenta
-# POWERLEVEL9K_STATUS_OK_BACKGROUND=grey53
 POWERLEVEL9K_MULTILINE_FIRST_PROMPT_PREFIX="╭ 🍑 "
 POWERLEVEL9K_MULTILINE_LAST_PROMPT_PREFIX="╰ ☘️  "
 
@@ -162,7 +160,7 @@ alias rmenv="rmvirtualenv"
 # tmux
 alias tnew='tmux new -s'
 alias tatt='tmux attach'
-alias tdet='tmux detach'
+alias tdtt='tmux detach'
  
 # common
 alias cls='clear'

@@ -160,13 +160,12 @@ hi pythonParam           ctermfg=215
 hi pythonParameters      ctermfg=215
 hi pythonLambdaExpr      ctermfg=247 cterm=italic
 hi pythonNumber          ctermfg=147
-hi pythonOperator        ctermfg=168
-hi pythonRepeat          ctermfg=4
-hi pythonExClass         ctermfg=33
+hi pythonOperator        ctermfg=171
+hi pythonRepeat          ctermfg=63
+hi pythonExClass         ctermfg=32
 " hi pythonExtraOperator ctermfg=170
 hi pythonDecorator       ctermfg=208
 hi pythonDottedName      ctermfg=139
-
 
 let g:pymode_syntax=1
 let g:pymode_syntax_slow_sync=1
@@ -193,53 +192,60 @@ let g:pymode_syntax_docstrings=g:pymode_syntax_all
 " Plugin: fatih/vim-go
 " Language: Golang
 " -----------------------------------------------------------------------------
-" hi Type ctermfg=39
 hi goType              ctermfg=39
 hi goSignedInts        ctermfg=39
 hi goUnsignedInts      ctermfg=39
 hi goFloats            ctermfg=39
 hi goComplexes         ctermfg=39
+
+hi goExtraType         ctermfg=39
+
 hi goReceiverType      ctermfg=39
 hi goTypeConstructor   ctermfg=39
 hi goTypeName          ctermfg=39
 
+hi goDeclType          ctermfg=217
+hi goBoolean           ctermfg=141
+
 hi goVarDefs           ctermfg=253
 hi goVarAsgsign        ctermfg=253
+" hi goVarArgs           ctermfg=253
 hi goReceiverVar       ctermfg=253
 
-hi goPackage           ctermfg=99
-hi goImport            ctermfg=136
+hi goPackage           ctermfg=177
+hi goImport            ctermfg=138
 hi goVar               ctermfg=105
 hi goConst             ctermfg=216
-hi goDeclaration       ctermfg=45
-hi goConditional       ctermfg=141
-hi goRepeat            ctermfg=153
-hi goBuiltins          ctermfg=12
+hi goConditional       ctermfg=205
+hi goRepeat            ctermfg=205
+hi goDeclaration       ctermfg=45 cterm=italic
+hi goBuiltins          ctermfg=45
+hi goTypeDecl          ctermfg=45 cterm=italic
 
-hi goFunction          ctermfg=11
-hi goFunctionCall      ctermfg=11
+hi goFormatSpecifier   ctermfg=99
 
-hi goSimpleParams      ctermfg=215
-hi goParamName         ctermfg=215
+hi goFunction          ctermfg=222
+hi goFunctionCall      ctermfg=222
+hi goSimpleParams      ctermfg=208
+hi goParamName         ctermfg=208
 
 let g:go_highlight_array_whitespace_error = 0
 let g:go_highlight_chan_whitespace_error = 0
 let g:go_highlight_trailing_whitespace_error = 0
-
 let g:go_highlight_extra_types = 1
-let g:go_highlight_space_tab_error = 1
+let g:go_highlight_space_tab_error = 0
 let g:go_highlight_operators = 1
 let g:go_highlight_functions = 1
 let g:go_highlight_function_parameters = 1
 let g:go_highlight_function_calls = 1
 let g:go_highlight_types = 1
-let g:go_highlight_fields = 1
+let g:go_highlight_fields = 0
 let g:go_highlight_build_constraints = 1
 let g:go_highlight_generate_tags = 1
 let g:go_highlight_string_spellcheck = 1
 let g:go_highlight_format_strings = 1
-let g:go_highlight_variable_declarations = 1
-let g:go_highlight_variable_assignments = 1
+" let g:go_highlight_variable_declarations = 1
+" let g:go_highlight_variable_assignments = 1
 let g:go_highlight_methods = 1
 let g:go_highlight_structs = 1
 
@@ -263,7 +269,7 @@ au FileType go nmap <leader>r <Plug>(go-run-vertical)
 
 " -----------------------------------------------------------------------------
 " Plugin: 'Valloric/YouCompleteMe'
-" Support: Python, Golang, Js, Ts...
+" Support: Python, Golang, JS, TS, etc...
 " -----------------------------------------------------------------------------
 set completeopt=menu,menuone                                " preview
 
