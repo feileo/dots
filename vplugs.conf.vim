@@ -215,7 +215,7 @@ hi goVarAsgsign        ctermfg=253
 
 hi goPackage           ctermfg=177
 hi goImport            ctermfg=138
-hi goVar               ctermfg=105
+hi goVar               ctermfg=141
 hi goConst             ctermfg=216
 hi goConditional       ctermfg=205
 hi goRepeat            ctermfg=205
