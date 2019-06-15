@@ -129,7 +129,7 @@ set clipboard=unnamed                                   " use system clipboard
 set showcmd                                             " show input cmd
 set exrc                                                " enable usage of additional .vimrc files from working directory
 set secure                                              " prohibit .vimrc files to execute shell, create files, etc...
-set textwidth=119
+" set textwidth=119
 set lazyredraw
 set foldlevelstart=99
 " set foldmethod=syntax
@@ -248,7 +248,7 @@ augroup tab_set
     au FileType coffee,html,css,xml,jsx,javascript,fish,gitconfig,less,proto,sql,thrift set softtabstop=2
     au FileType coffee,html,css,xml,jsx,javascript,fish,gitconfig,less,proto,sql,thrift set tabstop=2
     au FileType python set nocursorcolumn
-    au FileType python syntax sync minlines=128
+    au FileType python syntax sync minlines=200
     au FileType python set synmaxcol=128
     au FileType python set re=1
     au FileType yaml setlocal tabstop=2 expandtab shiftwidth=2 softtabstop=2
