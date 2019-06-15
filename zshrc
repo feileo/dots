@@ -148,6 +148,7 @@ alias gl="git log"
 alias gc="git commit -m"
 alias gm="git merge"
 alias gcl='git clone'
+
 alias gop='git-open'
 
 # virtualenvwrapper
