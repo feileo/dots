@@ -82,6 +82,7 @@ call plug#begin('~/.vim/plugged')
     Plug 'mhinz/vim-startify'
     Plug 'godlygeek/tabular'                            " This must come before plasticboy/vim-markdown
     Plug 'plasticboy/vim-markdown'                      " Markdown syntax highlighting
+    Plug 'iamcco/markdown-preview.nvim', {'do': 'cd app & yarn install'}
 
 call plug#end()
 
