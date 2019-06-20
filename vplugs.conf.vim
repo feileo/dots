@@ -156,6 +156,9 @@ hi pythonDocstring       ctermfg=8
 hi pythonRawString       ctermfg=214 " cterm=italic
 hi pythonUniString       ctermfg=214 " cterm=italic
 hi pythonStrFormat       ctermfg=99
+hi pythonStrFormatting   ctermfg=99
+hi pythonDocTest         ctermfg=99
+hi pythonDocTest2        ctermfg=99
 hi pythonStrTemplate     ctermfg=99
 hi pythonClass           ctermfg=45
 hi pythonClassParameters ctermfg=45
