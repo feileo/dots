@@ -64,7 +64,7 @@ call plug#begin('~/.vim/plugged')
     Plug 'flazz/vim-colorschemes'                       " Colorschemes
     Plug 'bling/vim-airline'                            " Lean & mean status/tabline for vim
     Plug 'vim-airline/vim-airline-themes'               " Themes for airline
-    Plug 'powerline/powerline'                           " Powerline fonts plugin
+    Plug 'Lokaltog/vim-powerline'                       " Powerline fonts plugin
 
     " Front-end
     Plug 'mitsuhiko/vim-sparkup'                        " sparkup(XML/jinja/htlm-django/etc.) support

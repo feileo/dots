@@ -197,13 +197,14 @@ DEFAULT_USER="jiawei"
 export WORKON_HOME=~/.pyenvs
 source /usr/local/bin/virtualenvwrapper.sh
 
+# go
+export GOROOT=$HOME/go
+export PATH=$PATH:$GOROOT/bin
+export GOPATH=$HOME/goapps/ext:$HOME/goapps/dev
+
 # mysql
 PATH="/usr/local/mysql/bin:${PATH}"
 export PATH
 export DYLD_LIBRARY_PATH=/usr/local/mysql/lib/
 export VERSIONER_PYTHON_PREFER_64_BIT=no
 export VERSIONER_PYTHON_PREFER_32_BIT=yes
-
-# go
-export PATH=$PATH:$GOROOT/bin
-export GOPATH=$HOME/apps/go
