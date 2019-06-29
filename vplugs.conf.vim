@@ -90,7 +90,7 @@ let NERDTreeWinSize=26
 let NERDTreeShowHidden=0                                    " 是否显示隐藏文件
 let NERDTreeMinimalUI=0                                     " NERDTree 子窗口中是否显示冗余帮助信息
 let NERDTreeAutoDeleteBuffer=1
-let NERDTreeIgnore=['\.pyc','\~$','\.swp','__pycache__','\.git$','\.DS_Store']
+let NERDTreeIgnore=['\.pyc','\~$','\.swp','__pycache__','\.git$','\.DS_Store', '\.a']
 let g:NERDTreeShowLineNumbers=0
 
 nmap " :NERDTreeToggle<cr>
@@ -201,42 +201,88 @@ let g:pymode_syntax_docstrings=g:pymode_syntax_all
 " Plugin: fatih/vim-go
 " Language: Golang
 " -----------------------------------------------------------------------------
+hi goPackage           ctermfg=130
+hi goImport            ctermfg=130
+
+hi goVar               ctermfg=45
+hi goConst             ctermfg=45
+" hi goConst             ctermfg=216
+hi goDeclaration       ctermfg=45 "cterm=italic
+hi goTypeDecl          ctermfg=45 "cterm=italic
+
+" Keywords within functions
+" defer go goto return break continue fallthrough
+" if else switch select
+" for range
+" case default
+hi goStatement         ctermfg=111  
+hi goConditional       ctermfg=210
+hi goRepeat            ctermfg=210
+hi goLabel             ctermfg=210
+
+" Predefined types
+" chan map bool string error
+" int int8 int16 int32 int64 rune
+" byte uint uint8 uint16 uint32 uint64 uintptr
+" float32 float64
+" complex64 complex128
 hi goType              ctermfg=39
 hi goSignedInts        ctermfg=39
 hi goUnsignedInts      ctermfg=39
 hi goFloats            ctermfg=39
 hi goComplexes         ctermfg=39
 
-hi goExtraType         ctermfg=39
+" Number Integers
+hi  goDecimalInt        ctermfg=139"95
+hi  goHexadecimalInt    ctermfg=139"95
+hi  goOctalInt          ctermfg=139"95
+hi  goOctalError        ctermfg=139"95
+hi  Integer             ctermfg=139"95
+hi  goFloat             ctermfg=139"95
 
-hi goReceiverType      ctermfg=39
-hi goTypeConstructor   ctermfg=39
-hi goTypeName          ctermfg=39
+" Predefined functions and values
+" append cap close complex copy delete imag len
+" make new panic print println real recover
+" true false
+" nil iota
+hi goBuiltins          ctermfg=45
+hi goBoolean           ctermfg=12
+hi goPredefinedIdentifiers ctermfg=12
 
-hi goDeclType          ctermfg=217
-hi goBoolean           ctermfg=141
+" Extra types commonly seen
+hi goExtraType         ctermfg=136
 
+" Operators
+hi goOperator          ctermfg=151"138
+hi goPointerOperator   ctermfg=151
+hi goVarArgs           ctermfg=244
+
+" Functions
+hi goFunction          ctermfg=11"227
+hi goSimpleParams      ctermfg=215
+hi goParamName         ctermfg=215
+hi goReceiverVar       ctermfg=215 cterm=italic
+hi goParamType         ctermfg=39
+hi goFunctionReturn    ctermfg=39
+hi goFunctionCall      ctermfg=158
+
+" Fields;
+hi goField             ctermfg=158
+
+" Structs & Interfaces
+hi goTypeName          ctermfg=219
+hi goReceiverType      ctermfg=219
+hi goTypeConstructor   ctermfg=143
+hi goDeclType          ctermfg=180 "struct interface
+
+" Variable Assignments
 hi goVarDefs           ctermfg=253
 hi goVarAsgsign        ctermfg=253
-" hi goVarArgs           ctermfg=253
 
-hi goPackage           ctermfg=177
-hi goImport            ctermfg=138
-hi goVar               ctermfg=141
-hi goConst             ctermfg=216
-hi goConditional       ctermfg=205
-hi goRepeat            ctermfg=205
-hi goDeclaration       ctermfg=45 cterm=italic
-hi goBuiltins          ctermfg=45
-hi goTypeDecl          ctermfg=45 cterm=italic
-
+" Strings and their contents
+hi goRawString         ctermfg=76
 hi goFormatSpecifier   ctermfg=99
-
-hi goFunction          ctermfg=222
-hi goFunctionCall      ctermfg=222
-hi goSimpleParams      ctermfg=208
-hi goParamName         ctermfg=208
-hi goReceiverVar       ctermfg=208
+hi goCharacter         ctermfg=208
 
 let g:go_highlight_array_whitespace_error = 0
 let g:go_highlight_chan_whitespace_error = 0
@@ -248,32 +294,40 @@ let g:go_highlight_functions = 1
 let g:go_highlight_function_parameters = 1
 let g:go_highlight_function_calls = 1
 let g:go_highlight_types = 1
-let g:go_highlight_fields = 0
+let g:go_highlight_fields = 1
 let g:go_highlight_build_constraints = 1
 let g:go_highlight_generate_tags = 1
 let g:go_highlight_string_spellcheck = 1
 let g:go_highlight_format_strings = 1
-" let g:go_highlight_variable_declarations = 1
-" let g:go_highlight_variable_assignments = 1
+let g:go_highlight_variable_declarations = 0
+let g:go_highlight_variable_assignments = 0
 let g:go_highlight_methods = 1
 let g:go_highlight_structs = 1
 
 let g:go_fmt_fail_silently = 1
-" let g:go_auto_type_info = 1
-" let g:go_auto_sameids = 1
+let g:go_auto_type_info = 1
 " let g:go_info_mode = 'gocode'
-" let g:go_updatetime = 1000
+" let g:go_auto_sameids = 1
+let g:go_updatetime = 5000
 let g:go_code_completion_enabled = 0
+let g:go_term_mode = "vsplit"
+let g:go_decls_includes = 'func,type'
+let g:go_decls_mode = ''
 
 let g:go_doc_max_height = 25
+let g:go_def_reuse_buffe = 1
 
 " let g:go_fmt_command = "goimports"
 
-au FileType go nmap <C-g> <Plug>(go-def)
+" au FileType go nmap <C-g> <Plug>(go-def)
+au FileType go nmap <C-g> <Plug>(go-def-vertical)
 au FileType go nmap <leader><leader>u :GoDeclsDir<cr>
-au FileType go nmap <leader>rt <Plug>(go-run-tab)
+" au FileType go nmap <leader>rt <Plug>(go-run-tab)
+" au FileType go nmap <leader>rv <Plug>(go-run-vertical)
 au FileType go nmap <leader>rs <Plug>(go-run-split)
-au FileType go nmap <leader>r <Plug>(go-run-vertical)
+au FileType go nmap <leader>rb <Plug>(go-build)
+au FileType go nmap <leader>rn <Plug>(go-rename)
+au FileType go nmap <leader>rc <Plug>(go-import)
 
 
 " -----------------------------------------------------------------------------
@@ -321,7 +375,7 @@ let g:ctrlp_working_path_mode = 'ra'                        " 0 or '' or 'c' or 
                                                             " ‘w’--和r类似，以cwd开始搜索，而非以当前文件目录
 
 let g:ctrlp_match_window_bottom = 1
-let g:ctrlp_max_height = 11                                 " 修改 QuickFix 窗口显示的最大条目数
+let g:ctrlp_max_height = 15                                 " 修改 QuickFix 窗口显示的最大条目数
 let g:ctrlp_match_window_reversed = 0
 let g:ctrlp_mruf_max = 500                                  " 设置MRU最大条目数为500
 let g:ctrlp_follow_symlinks = 1
@@ -345,9 +399,12 @@ let g:ctrlp_extensions = ['funky']
 " Plugin: dyng/ctrlsf.vim
 " -----------------------------------------------------------------------------
 let g:ctrlsf_ackprg = 'ag'
-nnoremap <Leader><Leader>f :CtrlSF<Space>
-nnoremap <Leader><Leader>ff :execute 'CtrlSF ' . expand('<cword>')<Cr>
-nnoremap <Leader><Leader>fo :CtrlSFOpen
+nmap <Leader><Leader>s <Plug>CtrlSFPrompt 
+vmap <Leader><Leader>s <Plug>CtrlSFVwordExec
+nmap <Leader><Leader>f <Plug>CtrlSFCwordPath
+" nmap <Leader><Leader>p <Plug>CtrlSFPwordPath
+
+nnoremap <Leader><Leader>of :CtrlSFOpen
 
 let g:ctrlsf_ignore_dir = ["node_modules", "eggs", ".idea", ".ropeproject"]
 
@@ -359,8 +416,8 @@ let g:ctrlsf_auto_close = {
     \ "compact": 0
     \}
 let g:ctrlsf_search_mode = 'async'
-" let g:ctrlsf_position = 'bottom'
-let g:ctrlsf_default_view_mode = 'compact'
+"flet g:ctrlsf_position = 'bottom'
+let g:ctrlsf_default_view_mode ='compact'               " 'normal' and 'compact''
 
 
 " -----------------------------------------------------------------------------
