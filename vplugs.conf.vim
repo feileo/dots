@@ -264,7 +264,7 @@ hi goParamName             ctermfg=215
 hi goReceiverVar           ctermfg=215 cterm=italic
 hi goParamType             ctermfg=247
 hi goFunctionReturn        ctermfg=247
-hi goFunctionCall          ctermfg=158
+hi goFunctionCall          ctermfg=153"158
 
 " Fields;
 " hi goField               ctermfg=158
