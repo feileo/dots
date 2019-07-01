@@ -255,15 +255,15 @@ hi goExtraType             ctermfg=137
 " Operators
 " hi goOperator            ctermfg=151"138
 " hi goPointerOperator     ctermfg=151
-hi goVarArgs               ctermfg=244
+hi goVarArgs               ctermfg=247
 
 " Functions
 " hi goFunction            ctermfg=228
 " hi goSimpleParams        ctermfg=215
 hi goParamName             ctermfg=215
 hi goReceiverVar           ctermfg=215 cterm=italic
-hi goParamType             ctermfg=245
-hi goFunctionReturn        ctermfg=245
+hi goParamType             ctermfg=247
+hi goFunctionReturn        ctermfg=247
 hi goFunctionCall          ctermfg=158
 
 " Fields;
@@ -271,13 +271,16 @@ hi goFunctionCall          ctermfg=158
 
 " Structs & Interfaces
 hi goTypeName              ctermfg=174
-hi goReceiverType          ctermfg=174
+hi goReceiverType          ctermfg=247
 hi goTypeConstructor       ctermfg=174
 hi goDeclType              ctermfg=219 "struct interface
 
 " Variable Assignments
 hi goVarDefs               ctermfg=253
 hi goVarAsgsign            ctermfg=253
+
+" Comment
+hi goComment               ctermfg=243
 
 " Strings and their contents
 hi goRawString             ctermfg=76
