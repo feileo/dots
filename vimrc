@@ -106,9 +106,11 @@ set t_Co=256                                            " set 256 colors
 set number                                              " show line numbers
 " set relativenumber                                    " show relative numbers in the ruler
 set encoding=utf-8
+" set langmenu=zh_CN.UTF-8
+" language message zh_CN.UTF-8
 set fileencodings=utf-8,gbk,gb2312,big5,latin1
 set fencs=utf-8,gb2312,gbk                              " Sets the default encoding
-set formatoptions=tcqronj         " set vims text formatting options
+set formatoptions=tcqronj                               " set vims text formatting options
 set tabstop=4                                           " 4 whitespaces for tabs visual presentation
 set shiftwidth=4                                        " shift lines by 4 spaces
 set softtabstop=4
@@ -126,7 +128,7 @@ set nowritebackup                                       " only in case you don't
 set noswapfile                                          " no swap files
 set backspace=indent,eol,start                          " backspace removes all (indents, EOLs, start) What is start?
 set whichwrap+=<,>,h,l
-set scrolloff=8                                         " let 10 lines before/after cursor during scroll
+set scrolloff=8                                         " let 8 lines before/after cursor during scroll
 set clipboard=unnamed                                   " use system clipboard
 set showcmd                                             " show input cmd
 set exrc                                                " enable usage of additional .vimrc files from working directory
@@ -137,7 +139,7 @@ set foldlevelstart=99
 " set foldmethod=syntax
 set switchbuf=useopen
 set laststatus=2
-set wildignore=*.o,*~,*.pyc                             " ignore compiled files
+set wildignore=*.o,*~,*.pyc,*.a                         " ignore compiled files
 " Make the keyboard faaaaaaast
 set ttyfast                                             " terminal acceleration
 set timeout timeoutlen=1000 ttimeoutlen=50
