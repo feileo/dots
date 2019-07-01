@@ -250,7 +250,7 @@ hi goBoolean               ctermfg=12
 hi goPredefinedIdentifiers ctermfg=12
 
 " Extra types commonly seen
-hi goExtraType             ctermfg=137
+hi goExtraType             ctermfg=45"137
 
 " Operators
 " hi goOperator            ctermfg=151"138
