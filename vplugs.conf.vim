@@ -201,8 +201,8 @@ let g:pymode_syntax_docstrings=g:pymode_syntax_all
 " Plugin: fatih/vim-go
 " Language: Golang
 " -----------------------------------------------------------------------------
-hi goPackage           ctermfg=130
-hi goImport            ctermfg=130
+hi goPackage           ctermfg=166
+hi goImport            ctermfg=166
 
 hi goVar               ctermfg=45
 hi goConst             ctermfg=45
@@ -233,12 +233,12 @@ hi goFloats            ctermfg=39
 hi goComplexes         ctermfg=39
 
 " Number Integers
-hi  goDecimalInt        ctermfg=139"95
-hi  goHexadecimalInt    ctermfg=139"95
-hi  goOctalInt          ctermfg=139"95
-hi  goOctalError        ctermfg=139"95
-hi  Integer             ctermfg=139"95
-hi  goFloat             ctermfg=139"95
+hi  goDecimalInt        ctermfg=12"147
+hi  goHexadecimalInt    ctermfg=12"147
+hi  goOctalInt          ctermfg=12"147
+hi  goOctalError        ctermfg=12"147
+hi  Integer             ctermfg=12"147
+hi  goFloat             ctermfg=12"147
 
 " Predefined functions and values
 " append cap close complex copy delete imag len
@@ -250,30 +250,30 @@ hi goBoolean           ctermfg=12
 hi goPredefinedIdentifiers ctermfg=12
 
 " Extra types commonly seen
-hi goExtraType         ctermfg=136
+hi goExtraType         ctermfg=137
 
 " Operators
-hi goOperator          ctermfg=151"138
-hi goPointerOperator   ctermfg=151
+" hi goOperator          ctermfg=151"138
+" hi goPointerOperator   ctermfg=151
 hi goVarArgs           ctermfg=244
 
 " Functions
-hi goFunction          ctermfg=11"227
-hi goSimpleParams      ctermfg=215
+" hi goFunction          ctermfg=228
+" hi goSimpleParams      ctermfg=215
 hi goParamName         ctermfg=215
 hi goReceiverVar       ctermfg=215 cterm=italic
-hi goParamType         ctermfg=39
-hi goFunctionReturn    ctermfg=39
+hi goParamType         ctermfg=245
+hi goFunctionReturn    ctermfg=245
 hi goFunctionCall      ctermfg=158
 
 " Fields;
-hi goField             ctermfg=158
+" hi goField             ctermfg=158
 
 " Structs & Interfaces
-hi goTypeName          ctermfg=219
-hi goReceiverType      ctermfg=219
-hi goTypeConstructor   ctermfg=143
-hi goDeclType          ctermfg=180 "struct interface
+hi goTypeName          ctermfg=174
+hi goReceiverType      ctermfg=174
+hi goTypeConstructor   ctermfg=174
+hi goDeclType          ctermfg=219 "struct interface
 
 " Variable Assignments
 hi goVarDefs           ctermfg=253
@@ -294,7 +294,7 @@ let g:go_highlight_functions = 1
 let g:go_highlight_function_parameters = 1
 let g:go_highlight_function_calls = 1
 let g:go_highlight_types = 1
-let g:go_highlight_fields = 1
+let g:go_highlight_fields = 0
 let g:go_highlight_build_constraints = 1
 let g:go_highlight_generate_tags = 1
 let g:go_highlight_string_spellcheck = 1
@@ -305,10 +305,10 @@ let g:go_highlight_methods = 1
 let g:go_highlight_structs = 1
 
 let g:go_fmt_fail_silently = 1
-let g:go_auto_type_info = 1
+let g:go_auto_type_info = 0
 " let g:go_info_mode = 'gocode'
 " let g:go_auto_sameids = 1
-let g:go_updatetime = 5000
+" let g:go_updatetime = 5000
 let g:go_code_completion_enabled = 0
 let g:go_term_mode = "vsplit"
 let g:go_decls_includes = 'func,type'
@@ -523,3 +523,8 @@ let g:indentLine_color_term = 239
 " Plugin: 'luochen1990/rainbow'
 " -----------------------------------------------------------------------------
 " let g:rainbow_active = 1
+
+" ---------------------------------------------------------------------------
+" Plugin: 'guns/xterm-color-table.vim'
+" -------------------------------------------------------------------------
+nmap <leader>xct :XtermColorTable<cr>

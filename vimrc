@@ -83,6 +83,7 @@ call plug#begin('~/.vim/plugged')
     Plug 'godlygeek/tabular'                            " This must come before plasticboy/vim-markdown
     Plug 'plasticboy/vim-markdown'                      " Markdown syntax highlighting
     Plug 'iamcco/markdown-preview.nvim', {'do': 'cd app & yarn install'}
+    Plug 'guns/xterm-color-table.vim'
 
 call plug#end()
 
