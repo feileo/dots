@@ -201,24 +201,24 @@ let g:pymode_syntax_docstrings=g:pymode_syntax_all
 " Plugin: fatih/vim-go
 " Language: Golang
 " -----------------------------------------------------------------------------
-hi goPackage           ctermfg=166
-hi goImport            ctermfg=166
+hi goPackage               ctermfg=166
+hi goImport                ctermfg=166
 
-hi goVar               ctermfg=45
-hi goConst             ctermfg=45
-" hi goConst             ctermfg=216
-hi goDeclaration       ctermfg=45 "cterm=italic
-hi goTypeDecl          ctermfg=45 "cterm=italic
+hi goVar                   ctermfg=45
+hi goConst                 ctermfg=45
+" hi goConst                 ctermfg=216
+hi goDeclaration           ctermfg=45 "cterm=italic
+hi goTypeDecl              ctermfg=45 "cterm=italic
 
 " Keywords within functions
 " defer go goto return break continue fallthrough
 " if else switch select
 " for range
 " case default
-hi goStatement         ctermfg=111  
-hi goConditional       ctermfg=210
-hi goRepeat            ctermfg=210
-hi goLabel             ctermfg=210
+hi goStatement             ctermfg=111  
+hi goConditional           ctermfg=210
+hi goRepeat                ctermfg=210
+hi goLabel                 ctermfg=210
 
 " Predefined types
 " chan map bool string error
@@ -226,63 +226,63 @@ hi goLabel             ctermfg=210
 " byte uint uint8 uint16 uint32 uint64 uintptr
 " float32 float64
 " complex64 complex128
-hi goType              ctermfg=39
-hi goSignedInts        ctermfg=39
-hi goUnsignedInts      ctermfg=39
-hi goFloats            ctermfg=39
-hi goComplexes         ctermfg=39
+hi goType                  ctermfg=39
+hi goSignedInts            ctermfg=39
+hi goUnsignedInts          ctermfg=39
+hi goFloats                ctermfg=39
+hi goComplexes             ctermfg=39
 
 " Number Integers
-hi  goDecimalInt        ctermfg=12"147
-hi  goHexadecimalInt    ctermfg=12"147
-hi  goOctalInt          ctermfg=12"147
-hi  goOctalError        ctermfg=12"147
-hi  Integer             ctermfg=12"147
-hi  goFloat             ctermfg=12"147
+hi  goDecimalInt           ctermfg=12"147
+hi  goHexadecimalInt       ctermfg=12"147
+hi  goOctalInt             ctermfg=12"147
+hi  goOctalError           ctermfg=12"147
+hi  Integer                ctermfg=12"147
+hi  goFloat                ctermfg=12"147
 
 " Predefined functions and values
 " append cap close complex copy delete imag len
 " make new panic print println real recover
 " true false
 " nil iota
-hi goBuiltins          ctermfg=45
-hi goBoolean           ctermfg=12
+hi goBuiltins              ctermfg=45
+hi goBoolean               ctermfg=12
 hi goPredefinedIdentifiers ctermfg=12
 
 " Extra types commonly seen
-hi goExtraType         ctermfg=137
+hi goExtraType             ctermfg=137
 
 " Operators
-" hi goOperator          ctermfg=151"138
-" hi goPointerOperator   ctermfg=151
-hi goVarArgs           ctermfg=244
+" hi goOperator            ctermfg=151"138
+" hi goPointerOperator     ctermfg=151
+hi goVarArgs               ctermfg=244
 
 " Functions
-" hi goFunction          ctermfg=228
-" hi goSimpleParams      ctermfg=215
-hi goParamName         ctermfg=215
-hi goReceiverVar       ctermfg=215 cterm=italic
-hi goParamType         ctermfg=245
-hi goFunctionReturn    ctermfg=245
-hi goFunctionCall      ctermfg=158
+" hi goFunction            ctermfg=228
+" hi goSimpleParams        ctermfg=215
+hi goParamName             ctermfg=215
+hi goReceiverVar           ctermfg=215 cterm=italic
+hi goParamType             ctermfg=245
+hi goFunctionReturn        ctermfg=245
+hi goFunctionCall          ctermfg=158
 
 " Fields;
-" hi goField             ctermfg=158
+" hi goField               ctermfg=158
 
 " Structs & Interfaces
-hi goTypeName          ctermfg=174
-hi goReceiverType      ctermfg=174
-hi goTypeConstructor   ctermfg=174
-hi goDeclType          ctermfg=219 "struct interface
+hi goTypeName              ctermfg=174
+hi goReceiverType          ctermfg=174
+hi goTypeConstructor       ctermfg=174
+hi goDeclType              ctermfg=219 "struct interface
 
 " Variable Assignments
-hi goVarDefs           ctermfg=253
-hi goVarAsgsign        ctermfg=253
+hi goVarDefs               ctermfg=253
+hi goVarAsgsign            ctermfg=253
 
 " Strings and their contents
-hi goRawString         ctermfg=76
-hi goFormatSpecifier   ctermfg=99
-hi goCharacter         ctermfg=208
+hi goRawString             ctermfg=76
+hi goFormatSpecifier       ctermfg=99
+hi goCharacter             ctermfg=208
 
 let g:go_highlight_array_whitespace_error = 0
 let g:go_highlight_chan_whitespace_error = 0
