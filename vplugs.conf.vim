@@ -201,8 +201,8 @@ let g:pymode_syntax_docstrings=g:pymode_syntax_all
 " Plugin: fatih/vim-go
 " Language: Golang
 " -----------------------------------------------------------------------------
-hi goPackage               ctermfg=166
-hi goImport                ctermfg=166
+hi goPackage               ctermfg=109
+hi goImport                ctermfg=209
 
 hi goVar                   ctermfg=45
 hi goConst                 ctermfg=45
