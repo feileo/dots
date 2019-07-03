@@ -200,7 +200,7 @@ source /usr/local/bin/virtualenvwrapper.sh
 # go
 export GOROOT=$HOME/go
 export PATH=$PATH:$GOROOT/bin
-export GOPATH=$HOME/goapps/ext:$HOME/goapps/dev
+export GOPATH=$HOME/gos/ext:$HOME/gos/dev
 
 # mysql
 PATH="/usr/local/mysql/bin:${PATH}"
