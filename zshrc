@@ -191,6 +191,7 @@ alias -s bz2='tar -xjvf'
 # =====================================================
 #  Personal settings
 # =====================================================
+# prompt_context() {}
 DEFAULT_USER=$USER
 
 # virtualenvwrapper
