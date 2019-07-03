@@ -7,98 +7,6 @@
 
 
 " -----------------------------------------------------------------------------
-"  Plugin: bling/vim-airline
-" -----------------------------------------------------------------------------
-let g:airline_theme='badwolf'
-let g:airline_powerline_fonts = 1
-" Enable top tabline.
-let g:airline#extensions#tabline#enabled = 1
-" Disable showing tabs in the tabline. This will ensure that the buffers are
-" what is shown in the tabline at all times.
-let g:airline#extensions#tabline#show_tabs = 0
-let g:airline#extensions#tabline#enabled = 1                " 开启 tabline
-let g:airline#extensions#tabline#buffer_nr_show = 1         " 显示 buffer编号
-let g:airline#extensions#tabline#formatter='unique_tail'
-let g:airline#extensions#tabline#left_sep ="🐥"             " tabline 中当前 buffer 两端的分隔字符
-let g:airline#extensions#tabline#left_alt_sep = "🐣"        " tabline 中未激活 buffer 两端的分隔字符
-
-let g:airline_left_sep = '▶'                                " unicode symbols
-let g:airline_left_alt_sep = '❯'
-let g:airline_right_sep = '◀'
-let g:airline_right_alt_sep = '❮'
-if !exists('g:airline_symbols')
-    let g:airline_symbols = {}
-endif
-
-
-" -----------------------------------------------------------------------------
-"  Plugin: majutsushi/tagbar
-" -----------------------------------------------------------------------------
-map <Leader>* :TagbarToggle <CR>
-autocmd BufWinLeave *.py :TagbarClose
-
-let g:tagbar_autofocus=1
-let g:tagbar_width=30
-let g:tagbar_autopreview = 0                                " 关闭自动预览
-let g:tagbar_sort = 0                                       " 关闭排序,即按标签本身在文件中的位置排序
-
-" For Golang
-let g:tagbar_type_go = {
-    \ 'ctagstype' : 'go',
-    \ 'kinds'     : [
-        \ 'p:package',
-        \ 'i:imports:1',
-        \ 'c:constants',
-        \ 'v:variables',
-        \ 't:types',
-        \ 'n:interfaces',
-        \ 'w:fields',
-        \ 'e:embedded',
-        \ 'm:methods',
-        \ 'r:constructor',
-        \ 'f:functions'
-    \ ],
-    \ 'sro' : '.',
-    \ 'kind2scope' : {
-        \ 't' : 'ctype',
-        \ 'n' : 'ntype'
-    \ },
-    \ 'scope2kind' : {
-        \ 'ctype' : 't',
-        \ 'ntype' : 'n'
-    \ },
-    \ 'ctagsbin'  : 'gotags',
-    \ 'ctagsargs' : '-sort -silent'
-    \ }
-
-
-" -----------------------------------------------------------------------------
-" Plugin: plasticboy/vim-markdown
-" -----------------------------------------------------------------------------
-let g:vim_markdown_folding_disabled = 1                     " Disable folding 
-let g:vim_markdown_toc_autofit = 1                          " Auto shrink the TOC
-let g:vim_markdown_conceal = 0
-let g:tex_conceal = ""
-let g:vim_markdown_math = 1
-let g:vim_markdown_conceal_code_blocks = 0
-
-
-" -----------------------------------------------------------------------------
-" Plugin: scrooloose/nerdtree
-" -----------------------------------------------------------------------------
-let NERDTreeWinSize=26
-let NERDTreeShowHidden=0                                    " 是否显示隐藏文件
-let NERDTreeMinimalUI=0                                     " NERDTree 子窗口中是否显示冗余帮助信息
-let NERDTreeAutoDeleteBuffer=1
-let NERDTreeIgnore=['\.pyc','\~$','\.swp','__pycache__','\.git$','\.DS_Store', '\.a']
-let g:NERDTreeShowLineNumbers=0
-
-nmap " :NERDTreeToggle<cr>
-nmap < :NERDTreeFind<cr>
-autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isTabTree()) | q | endif
-
-
-" -----------------------------------------------------------------------------
 " Plugin: klen/python-mode
 " Language: Python
 " -----------------------------------------------------------------------------
@@ -470,6 +378,98 @@ set statusline=%{LinterStatus()}
 highlight clear ALEErrorSign
 highlight clear ALEWarningSign
 highlight ALEWarning ctermbg=DarkMagenta
+
+
+" -----------------------------------------------------------------------------
+"  Plugin: bling/vim-airline
+" -----------------------------------------------------------------------------
+let g:airline_theme='badwolf'
+let g:airline_powerline_fonts = 1
+" Enable top tabline.
+let g:airline#extensions#tabline#enabled = 1
+" Disable showing tabs in the tabline. This will ensure that the buffers are
+" what is shown in the tabline at all times.
+let g:airline#extensions#tabline#show_tabs = 1
+let g:airline#extensions#tabline#enabled = 1                  " 开启 tabline
+let g:airline#extensions#tabline#buffer_nr_show = 0           " 显示 buffer编号
+let g:airline#extensions#tabline#formatter='unique_tail'      "'jsformatter'
+" let g:airline#extensions#tabline#left_sep ="🐥"             " tabline 中当前 buffer 两端的分隔字符
+" let g:airline#extensions#tabline#left_alt_sep = "🐣"        " tabline 中未激活 buffer 两端的分隔字符
+
+let g:airline_left_sep = '▶'                                  " unicode symbols
+let g:airline_left_alt_sep = '❯'
+let g:airline_right_sep = '◀'
+let g:airline_right_alt_sep = '❮'
+if !exists('g:airline_symbols')
+    let g:airline_symbols = {}
+endif
+
+
+" -----------------------------------------------------------------------------
+"  Plugin: majutsushi/tagbar
+" -----------------------------------------------------------------------------
+map <Leader>* :TagbarToggle <CR>
+autocmd BufWinLeave *.py :TagbarClose
+
+let g:tagbar_autofocus=1
+let g:tagbar_width=30
+let g:tagbar_autopreview = 0                                " 关闭自动预览
+let g:tagbar_sort = 0                                       " 关闭排序,即按标签本身在文件中的位置排序
+
+" For Golang
+let g:tagbar_type_go = {
+    \ 'ctagstype' : 'go',
+    \ 'kinds'     : [
+        \ 'p:package',
+        \ 'i:imports:1',
+        \ 'c:constants',
+        \ 'v:variables',
+        \ 't:types',
+        \ 'n:interfaces',
+        \ 'w:fields',
+        \ 'e:embedded',
+        \ 'm:methods',
+        \ 'r:constructor',
+        \ 'f:functions'
+    \ ],
+    \ 'sro' : '.',
+    \ 'kind2scope' : {
+        \ 't' : 'ctype',
+        \ 'n' : 'ntype'
+    \ },
+    \ 'scope2kind' : {
+        \ 'ctype' : 't',
+        \ 'ntype' : 'n'
+    \ },
+    \ 'ctagsbin'  : 'gotags',
+    \ 'ctagsargs' : '-sort -silent'
+    \ }
+
+
+" -----------------------------------------------------------------------------
+" Plugin: plasticboy/vim-markdown
+" -----------------------------------------------------------------------------
+let g:vim_markdown_folding_disabled = 1                     " Disable folding 
+let g:vim_markdown_toc_autofit = 1                          " Auto shrink the TOC
+let g:vim_markdown_conceal = 0
+let g:tex_conceal = ""
+let g:vim_markdown_math = 1
+let g:vim_markdown_conceal_code_blocks = 0
+
+
+" -----------------------------------------------------------------------------
+" Plugin: scrooloose/nerdtree
+" -----------------------------------------------------------------------------
+let NERDTreeWinSize=26
+let NERDTreeShowHidden=0                                    " 是否显示隐藏文件
+let NERDTreeMinimalUI=0                                     " NERDTree 子窗口中是否显示冗余帮助信息
+let NERDTreeAutoDeleteBuffer=1
+let NERDTreeIgnore=['\.pyc','\~$','\.swp','__pycache__','\.git$','\.DS_Store', '\.a']
+let g:NERDTreeShowLineNumbers=0
+
+nmap " :NERDTreeToggle<cr>
+nmap < :NERDTreeFind<cr>
+autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isTabTree()) | q | endif
 
 
 " -----------------------------------------------------------------------------
