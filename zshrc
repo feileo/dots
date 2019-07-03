@@ -191,7 +191,7 @@ alias -s bz2='tar -xjvf'
 # =====================================================
 #  Personal settings
 # =====================================================
-DEFAULT_USER="jiawei"
+DEFAULT_USER=$USER
 
 # virtualenvwrapper
 export WORKON_HOME=~/.pyenvs
