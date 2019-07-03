@@ -460,7 +460,7 @@ let g:vim_markdown_conceal_code_blocks = 0
 " -----------------------------------------------------------------------------
 " Plugin: scrooloose/nerdtree
 " -----------------------------------------------------------------------------
-let NERDTreeWinSize=26
+let NERDTreeWinSize=30
 let NERDTreeShowHidden=0                                    " 是否显示隐藏文件
 let NERDTreeMinimalUI=0                                     " NERDTree 子窗口中是否显示冗余帮助信息
 let NERDTreeAutoDeleteBuffer=1
