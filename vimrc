@@ -36,7 +36,7 @@ call plug#begin('~/.vim/plugged')
     Plug 'elzr/vim-json'
     Plug 'kylef/apiblueprint.vim'
     " Plug 'luochen1990/rainbow'                        " Rainbow brackets
-    
+
     " Efficiency tool
     Plug 'terryma/vim-multiple-cursors'
     Plug 'tpope/vim-surround'                           " Parentheses, brackets, quotes, XML tags, and more
@@ -143,6 +143,13 @@ set wildignore=*.o,*~,*.pyc,*.a                         " ignore compiled files
 " Make the keyboard faaaaaaast
 set ttyfast                                             " terminal acceleration
 set timeout timeoutlen=1000 ttimeoutlen=50
+
+autocmd! BufWritePost ~/.vimrc source ~/.vimrc          " When vimrc is edited, reload it
+
+
+"=================================================================================================
+"  Mappings
+"=================================================================================================
 let mapleader="\<Space>"                                " my leader
 
 
@@ -165,7 +172,22 @@ colorscheme wombat256mod                                " set color scheme
 
 
 "=================================================================================================
-" Searching
+"  Modes
+"=================================================================================================
+set pastetoggle=<F3>                                    " toggle paste
+inoremap jj <Esc>
+
+inoremap <leader>w <Esc>:w<cr>
+noremap <leader>w :w<cr>
+noremap <leader>q :q<cr>
+noremap <leader>Q :q!<cr>
+noremap <leader>y "+y<cr>
+
+noremap <leader>r bdw
+
+
+"=================================================================================================
+" Searching (/, ?)
 "=================================================================================================
 set incsearch                                           " incremental search
 set hlsearch                                            " highlight search results
@@ -181,9 +203,9 @@ endif
 nnoremap n nzzzv
 nnoremap N Nzzzv
 
-" Enable highlighting when you enter a lookup command 
-" noremap n :set hlsearch<cr>n
-" noremap N :set hlsearch<cr>N
+" Enable highlighting when you enter a lookup command
+noremap n :set hlsearch<cr>n
+noremap N :set hlsearch<cr>N
 " noremap / :set hlsearch<cr>/
 " noremap ? :set hlsearch<cr>?
 " noremap * *:set hlsearch<cr>
@@ -195,11 +217,14 @@ nnoremap N Nzzzv
 nmap <leader>c :noh<cr>
 hi Search ctermfg=255 ctermbg=32 cterm=none guifg=#99CCFF guibg=#636066 gui=none
 
+" word
+nnoremap <leader>s yiw:vimgrep /\C\<<C-R>0\>/ % <CR>:copen<CR>
+
 
 "=================================================================================================
-" Key mapping and Navigation
+" Navigation (tabs, buffers and windows)
 "=================================================================================================
-set pastetoggle=<F3>                                    " toggle paste
+"windows
 set splitbelow
 set splitright
 
@@ -208,32 +233,19 @@ nnoremap <C-H> <C-W><C-H>
 nnoremap <C-J> <C-W><C-J>
 nnoremap <C-K> <C-W><C-K>
 
-" quick resize split
-nnoremap ˙ <C-W><
-nnoremap ¬ <C-W>>
-nnoremap ∆ <C-W>+
-nnoremap ˚ <C-W>-
-
-inoremap jj <Esc>
-
-inoremap <leader>w <Esc>:w<cr>
-noremap <leader>w :w<cr>
-noremap <leader>q :q<cr>
-noremap <leader>Q :q!<cr>
-noremap <leader>y "+y<cr>
-
 nnoremap <leader>v :vsplit<cr>
 " nnoremap <leader>h :split<cr>
 
-" search word
-nnoremap <leader>s yiw:vimgrep /\C\<<C-R>0\>/ % <CR>:copen<CR>
+" tabs
+" tab sball
+set showtabline=1
+nnoremap <leader>tn :tabnew<cr>
+nnoremap <leader>9 :tabclose<cr>
 
-" tabs, buffers
-tab sball                                           
-nmap <leader><Tab> :bprev<CR>
-nmap <Tab> :bnext<CR>
-
-autocmd! BufWritePost ~/.vimrc source ~/.vimrc          " When vimrc is edited, reload it
+" buffers
+nmap <Tab> :bnext<cr>
+nnoremap <leader>0 :bdelete<cr>
+" nmap <Tab> :bprev<cr>
 
 
 "=================================================================================================
