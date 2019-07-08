@@ -126,7 +126,7 @@ hi goTypeDecl              ctermfg=45 "cterm=italic
 hi goStatement             ctermfg=111  
 hi goConditional           ctermfg=210
 hi goRepeat                ctermfg=210
-hi goLabel                 ctermfg=210
+hi goLabel                 ctermfg=109
 
 " Predefined types
 " chan map bool string error
