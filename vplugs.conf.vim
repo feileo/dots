@@ -126,7 +126,7 @@ hi goTypeDecl              ctermfg=45 "cterm=italic
 hi goStatement             ctermfg=111  
 hi goConditional           ctermfg=210
 hi goRepeat                ctermfg=210
-hi goLabel                 ctermfg=109
+hi goLabel                 ctermfg=210
 
 " Predefined types
 " chan map bool string error
@@ -141,12 +141,12 @@ hi goFloats                ctermfg=39
 hi goComplexes             ctermfg=39
 
 " Number Integers
-hi  goDecimalInt           ctermfg=12"147
-hi  goHexadecimalInt       ctermfg=12"147
-hi  goOctalInt             ctermfg=12"147
-hi  goOctalError           ctermfg=12"147
-hi  Integer                ctermfg=12"147
-hi  goFloat                ctermfg=12"147
+hi  goDecimalInt           ctermfg=109"12
+hi  goHexadecimalInt       ctermfg=109"12
+hi  goOctalInt             ctermfg=109"12
+hi  goOctalError           ctermfg=109"12
+hi  Integer                ctermfg=109"12
+hi  goFloat                ctermfg=109"12
 
 " Predefined functions and values
 " append cap close complex copy delete imag len
@@ -354,7 +354,7 @@ let g:ale_lint_on_enter = 0                                 " for ale_lint_on_sa
 let g:ale_fix_on_save = 0
 let g:ale_statusline_format = ['✗ %d', '⚡ %d', '✔ OK']     " 添加状态栏信息
 let g:ale_sign_error = "😡"                                 " 自定义error和warning图标
-let g:ale_sign_warning = "☹️"
+let g:ale_sign_warning = "😨"
 let g:ale_echo_msg_error_str = 'Error'
 let g:ale_echo_msg_warning_str = 'Warning'
 let g:ale_echo_msg_format = '[%linter%] [%severity%] %s '
@@ -393,8 +393,8 @@ let g:airline#extensions#tabline#show_tabs = 1
 let g:airline#extensions#tabline#enabled = 1                  " 开启 tabline
 let g:airline#extensions#tabline#buffer_nr_show = 0           " 显示 buffer编号
 let g:airline#extensions#tabline#formatter='unique_tail'      "'jsformatter'
-" let g:airline#extensions#tabline#left_sep ="🐥"             " tabline 中当前 buffer 两端的分隔字符
-" let g:airline#extensions#tabline#left_alt_sep = "🐣"        " tabline 中未激活 buffer 两端的分隔字符
+" let g:airline#extensions#tabline#left_sep =' '             " tabline 中当前 buffer 两端的分隔字符
+" let g:airline#extensions#tabline#left_alt_sep = '|'        " tabline 中未激活 buffer 两端的分隔字符
 
 let g:airline_left_sep = '▶'                                  " unicode symbols
 let g:airline_left_alt_sep = '❯'
