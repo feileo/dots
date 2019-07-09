@@ -468,7 +468,8 @@ let NERDTreeIgnore=['\.pyc','\~$','\.swp','__pycache__','\.git$','\.DS_Store', '
 let g:NERDTreeShowLineNumbers=0
 
 nmap " :NERDTreeToggle<cr>
-nmap < :NERDTreeFind<cr>
+nmap ' :NERDTreeFind<cr>
+let NERDTreeNodeDelimiter="😀"       "smiley face
 autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isTabTree()) | q | endif
 
 
