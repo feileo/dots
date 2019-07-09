@@ -233,7 +233,7 @@ nnoremap <C-J> <C-W><C-J>
 nnoremap <C-K> <C-W><C-K>
 
 nnoremap <leader>v :vsplit<cr>
-" nnoremap <leader>h :split<cr>
+nnoremap <leader>h :split<cr>
 
 " tabs
 " tab sball
