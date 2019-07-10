@@ -51,6 +51,7 @@ call plug#begin('~/.vim/plugged')
     Plug 'tell-k/vim-autopep8'
 
     " Search
+    Plug 'justinmk/vim-sneak'
     Plug 'kien/ctrlp.vim'                               " Fast transitions on project files
     Plug 'dyng/ctrlsf.vim'
     Plug 'tacahiroy/ctrlp-funky'
@@ -65,6 +66,7 @@ call plug#begin('~/.vim/plugged')
     Plug 'bling/vim-airline'                            " Lean & mean status/tabline for vim
     Plug 'vim-airline/vim-airline-themes'               " Themes for airline
     Plug 'Lokaltog/vim-powerline'                       " Powerline fonts plugin
+    Plug 'mg979/vim-xtabline'
 
     " Front-end
     Plug 'mitsuhiko/vim-sparkup'                        " sparkup(XML/jinja/htlm-django/etc.) support
@@ -235,16 +237,8 @@ nnoremap <C-K> <C-W><C-K>
 nnoremap <leader>v :vsplit<cr>
 nnoremap <leader>h :split<cr>
 
-" tabs
-" tab sball
-set showtabline=1
-nnoremap <leader>tn :tabnew<cr>
-nnoremap <leader>9 :tabclose<cr>
-
-" buffers
-nmap <Tab> :bnext<cr>
-nnoremap <leader>0 :bdelete<cr>
-" nmap <Tab> :bprev<cr>
+" tabs and buffers
+" Use https://github.com/mg979/vim-xtabline 
 
 
 "=================================================================================================

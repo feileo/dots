@@ -390,66 +390,63 @@ let g:airline#extensions#tabline#enabled = 1
 " Disable showing tabs in the tabline. This will ensure that the buffers are
 " what is shown in the tabline at all times.
 let g:airline#extensions#tabline#show_tabs = 1
-let g:airline#extensions#tabline#enabled = 1                  " 开启 tabline
+let g:airline#extensions#tabline#enabled = 0                  " 开启 tabline
 let g:airline#extensions#tabline#buffer_nr_show = 0           " 显示 buffer编号
-let g:airline#extensions#tabline#formatter='unique_tail'      "'jsformatter'
+let g:airline#extensions#tabline#formatter='unique_tail'
+let g:airline#extensions#tabline#fnamemod = ':p:.'
+let g:airline#extensions#tabline#fnamecollapse = 1
+let g:airline#extensions#tabline#fnametruncate = 1
+let g:airline#extensions#tabline#show_close_button = 1
 " let g:airline#extensions#tabline#left_sep =' '             " tabline 中当前 buffer 两端的分隔字符
 " let g:airline#extensions#tabline#left_alt_sep = '|'        " tabline 中未激活 buffer 两端的分隔字符
 
-let g:airline_left_sep = '▶'                                  " unicode symbols
+let g:airline_left_sep = '▶'                                 " unicode symbols
 let g:airline_left_alt_sep = '❯'
 let g:airline_right_sep = '◀'
 let g:airline_right_alt_sep = '❮'
-if !exists('g:airline_symbols')
-    let g:airline_symbols = {}
-endif
+let g:airline#extensions#tabline#close_symbol = 'X'
 
+let airline#extensions#tabline#ignore_bufadd_pat = '\c\vgundo|undotree|vimfiler|tagbar|nerd_tree'
+
+nmap <leader>- <Plug>AirlineSelectPrevTab
+nmap <leader>= <Plug>AirlineSelectNextTab
+
+
+" -----------------------------------------------------------------------------
+"  Plugin: 'mg979/vim-xtabline'
+" -----------------------------------------------------------------------------
+let g:xtabline_settings = {}
+let g:xtabline_settings.close_buffer_can_close_tab = 1
+let g:xtabline_settings.close_buffer_can_quit_vim  = 1
+let g:xtabline_settings.theme='dracula'
+let g:xtabline_settings.tab_icon=['📍', '']
+let g:xtabline_settings.named_tab_icon=['📍', '']
+
+
+nmap <CR> <Plug>(XT-Select-Buffer) 
+nmap <Tab> <Plug>(XT-Next-Buffer)
+nmap <leader>0 <Plug>(XT-Close-Buffer)
+
+nmap <leader>tn <Plug>(XT-Tab-New)
+nmap <leader>td <Plug>(XTabDeleteTab)
 
 " -----------------------------------------------------------------------------
 "  Plugin: majutsushi/tagbar
 " -----------------------------------------------------------------------------
 map <Leader>* :TagbarToggle <CR>
 autocmd BufWinLeave *.py :TagbarClose
+autocmd BufWinLeave *.go :TagbarClose
 
 let g:tagbar_autofocus=1
-let g:tagbar_width=30
+let g:tagbar_width=28
 let g:tagbar_autopreview = 0                                " 关闭自动预览
 let g:tagbar_sort = 0                                       " 关闭排序,即按标签本身在文件中的位置排序
-
-" For Golang
-let g:tagbar_type_go = {
-    \ 'ctagstype' : 'go',
-    \ 'kinds'     : [
-        \ 'p:package',
-        \ 'i:imports:1',
-        \ 'c:constants',
-        \ 'v:variables',
-        \ 't:types',
-        \ 'n:interfaces',
-        \ 'w:fields',
-        \ 'e:embedded',
-        \ 'm:methods',
-        \ 'r:constructor',
-        \ 'f:functions'
-    \ ],
-    \ 'sro' : '.',
-    \ 'kind2scope' : {
-        \ 't' : 'ctype',
-        \ 'n' : 'ntype'
-    \ },
-    \ 'scope2kind' : {
-        \ 'ctype' : 't',
-        \ 'ntype' : 'n'
-    \ },
-    \ 'ctagsbin'  : 'gotags',
-    \ 'ctagsargs' : '-sort -silent'
-    \ }
 
 
 " -----------------------------------------------------------------------------
 " Plugin: plasticboy/vim-markdown
 " -----------------------------------------------------------------------------
-let g:vim_markdown_folding_disabled = 1                     " Disable folding 
+let g:vim_markdown_folding_disabled = 1                     " Disable folding
 let g:vim_markdown_toc_autofit = 1                          " Auto shrink the TOC
 let g:vim_markdown_conceal = 0
 let g:tex_conceal = ""
