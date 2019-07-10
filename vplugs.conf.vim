@@ -419,8 +419,8 @@ let g:xtabline_settings = {}
 let g:xtabline_settings.close_buffer_can_close_tab = 1
 let g:xtabline_settings.close_buffer_can_quit_vim  = 1
 let g:xtabline_settings.theme='dracula'
-let g:xtabline_settings.tab_icon=['📍', '']
-let g:xtabline_settings.named_tab_icon=['📍', '']
+let g:xtabline_settings.tab_icon=['📍','']
+let g:xtabline_settings.named_tab_icon=['📍','']
 
 
 nmap <CR> <Plug>(XT-Select-Buffer) 
@@ -464,9 +464,10 @@ let NERDTreeAutoDeleteBuffer=1
 let NERDTreeIgnore=['\.pyc','\~$','\.swp','__pycache__','\.git$','\.DS_Store', '\.a']
 let g:NERDTreeShowLineNumbers=0
 
-nmap " :NERDTreeToggle<cr>
-nmap ' :NERDTreeFind<cr>
-let NERDTreeNodeDelimiter="😀"       "smiley face
+nmap ' :NERDTreeToggle<cr>
+nmap " :NERDTreeFind<cr>
+let NERDTreeNodeDelimiter="😀"                              "smiley face
+
 autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isTabTree()) | q | endif
 
 
