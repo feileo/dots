@@ -29,7 +29,6 @@ let g:pymode_virtualenv = 0                                 " Support virtualenv
 let g:pymode_paths = reverse(split(globpath(getcwd().'/eggs', '*'), '\n'))  " Support zc.buildout
 
 let g:pymode_run = 0                                        " Run code
-let g:pymode_run_bind = '<leader>r'
 
 let g:pymode_breakpoint = 1                                 " Breakpoints
 let g:pymode_breakpoint_cmd = "import ipdb; ipdb.set_trace()  # TODO @guojiawei REMOVE THE BREAKPOINT"
@@ -236,10 +235,10 @@ au FileType go nmap <C-g> <Plug>(go-def-vertical)
 au FileType go nmap <leader><leader>u :GoDeclsDir<cr>
 " au FileType go nmap <leader>rt <Plug>(go-run-tab)
 " au FileType go nmap <leader>rv <Plug>(go-run-vertical)
-au FileType go nmap <leader>rs <Plug>(go-run-split)
-au FileType go nmap <leader>rb <Plug>(go-build)
-au FileType go nmap <leader>rn <Plug>(go-rename)
-au FileType go nmap <leader>rc <Plug>(go-import)
+" au FileType go nmap <leader>rs <Plug>(go-run-split)
+" au FileType go nmap <leader>rb <Plug>(go-build)
+au FileType go nmap <C-c>rr <Plug>(go-rename)
+au FileType go nmap <C-c>ro <Plug>(go-import)
 
 
 " -----------------------------------------------------------------------------
@@ -314,9 +313,8 @@ let g:ctrlsf_ackprg = 'ag'
 nmap <Leader><Leader>s <Plug>CtrlSFPrompt 
 vmap <Leader><Leader>s <Plug>CtrlSFVwordExec
 nmap <Leader><Leader>f <Plug>CtrlSFCwordPath
-" nmap <Leader><Leader>p <Plug>CtrlSFPwordPath
 
-nnoremap <Leader><Leader>of :CtrlSFOpen
+" nnoremap <Leader><Leader>of :CtrlSFOpen
 
 let g:ctrlsf_ignore_dir = ["node_modules", "eggs", ".idea", ".ropeproject"]
 
