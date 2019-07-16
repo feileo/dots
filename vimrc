@@ -1,17 +1,3 @@
-" vvvvvvv           vvvvvvviiiiiii    mmmmmmm    mmmmmmm   rrrrr   rrrrrrrrr       cccccccccccccccc
-" v:::::v         v:::::v i:::::i  mm:::::::m  m:::::::mm r::::rrr:::::::::r    cc:::::::::::::::c
-"  v:::::v       v:::::v   i::::i m::::::::::mm::::::::::mr:::::::::::::::::r  c:::::::::::::::::c
-"   v:::::v     v:::::v    i::::i m::::::::::::::::::::::mrr::::::rrrrr::::::rc:::::::cccccc:::::c
-"    v:::::v   v:::::v     i::::i m:::::mmm::::::mmm:::::m r:::::r     r:::::rc::::::c     ccccccc
-"     v:::::v v:::::v      i::::i m::::m   m::::m   m::::m r:::::r     rrrrrrrc:::::c
-"      v:::::v:::::v       i::::i m::::m   m::::m   m::::m r:::::r            c:::::c
-"       v:::::::::v        i::::i m::::m   m::::m   m::::m r:::::r            c::::::c     ccccccc
-"        v:::::::v        i::::::im::::m   m::::m   m::::m r:::::r            c:::::::cccccc:::::c
-"         v:::::v         i::::::im::::m   m::::m   m::::m r:::::r             c:::::::::::::::::c
-"          v:::v          i::::::im::::m   m::::m   m::::m r:::::r              cc:::::::::::::::c
-"           vvv           iiiiiiiimmmmmm   mmmmmm   mmmmmm rrrrrrr                cccccccccccccccc
-
-
 "=================================================================================================
 "  Plugin management
 "
@@ -37,13 +23,15 @@ call plug#begin('~/.vim/plugged')
     Plug 'kylef/apiblueprint.vim'
     " Plug 'luochen1990/rainbow'                        " Rainbow brackets
 
-    " Efficiency tool
+    " Efficiency
     Plug 'terryma/vim-multiple-cursors'
     Plug 'tpope/vim-surround'                           " Parentheses, brackets, quotes, XML tags, and more
     Plug 'tpope/vim-commentary'                         " Comment stuff out
     Plug 'easymotion/vim-easymotion'
     Plug 'lfv89/vim-interestingwords'
     Plug 'yggdroot/indentline'
+    Plug 'jiangmiao/auto-pairs'
+    Plug 'voldikss/vim-translate-me'
 
     " Lint and Fixer
     Plug 'w0rp/ale'
@@ -51,7 +39,6 @@ call plug#begin('~/.vim/plugged')
     Plug 'tell-k/vim-autopep8'
 
     " Search
-    Plug 'justinmk/vim-sneak'
     Plug 'kien/ctrlp.vim'                               " Fast transitions on project files
     Plug 'dyng/ctrlsf.vim'
     Plug 'tacahiroy/ctrlp-funky'
@@ -80,12 +67,17 @@ call plug#begin('~/.vim/plugged')
     " Input
     Plug 'ybian/smartim'
 
-    " Other
-    Plug 'mhinz/vim-startify'
+    " markdown
     Plug 'godlygeek/tabular'                            " This must come before plasticboy/vim-markdown
     Plug 'plasticboy/vim-markdown'                      " Markdown syntax highlighting
     Plug 'iamcco/markdown-preview.nvim', {'do': 'cd app & yarn install'}
+
+    " Other
+    Plug 'mhinz/vim-startify'
     Plug 'guns/xterm-color-table.vim'
+
+    " Dash: Mac os only supported
+    " Plug 'rizzatti/dash.vim'
 
 call plug#end()
 
@@ -106,25 +98,29 @@ set autoread                                            " auto read when file is
 set t_Co=256                                            " set 256 colors
 " set mouse=a                                             " use mouse
 set number                                              " show line numbers
-" set relativenumber                                    " show relative numbers in the ruler
 set encoding=utf-8
-" set langmenu=zh_CN.UTF-8
-" language message zh_CN.UTF-8
 set fileencodings=utf-8,gbk,gb2312,big5,latin1
 set fencs=utf-8,gb2312,gbk                              " Sets the default encoding
 set formatoptions=tcqronj                               " set vims text formatting options
+
 set tabstop=4                                           " 4 whitespaces for tabs visual presentation
 set shiftwidth=4                                        " shift lines by 4 spaces
 set softtabstop=4
 set smarttab                                            " set tabs for a shifttabs logic
 set expandtab                                           " expand tabs into spaces
-set autoindent                                          " indent when moving to the next line while writing code
-set smartindent
 " set cindent
+" set autoindent                                         
+set smartindent
+
+set showmatch                                           " shows matching part of bracket pairs (), [], {}
+set matchtime=1
+
+" set list
+" set listchars=tab:>-  
+
 set shiftround
 set autoread                                            " reload file if the file changes on the disk
 set cursorline                                          " shows line under the cursor's line
-set showmatch                                           " shows matching part of bracket pairs (), [], {}
 set nobackup                                            " no backup files
 set nowritebackup                                       " only in case you don't want a backup file while editing
 set noswapfile                                          " no swap files
@@ -136,14 +132,14 @@ set showcmd                                             " show input cmd
 set exrc                                                " enable usage of additional .vimrc files from working directory
 set secure                                              " prohibit .vimrc files to execute shell, create files, etc...
 " set textwidth=119
-set lazyredraw
 set foldlevelstart=99
 " set foldmethod=syntax
 set switchbuf=useopen
 set laststatus=2
 set wildignore=*.o,*~,*.pyc,*.a                         " ignore compiled files
-" Make the keyboard faaaaaaast
-set ttyfast                                             " terminal acceleration
+
+set ttyfast                                             " terminal acceleration, Make the keyboard faaaaaaast
+set lazyredraw
 set timeout timeoutlen=1000 ttimeoutlen=50
 
 autocmd! BufWritePost ~/.vimrc source ~/.vimrc          " When vimrc is edited, reload it
@@ -152,7 +148,8 @@ autocmd! BufWritePost ~/.vimrc source ~/.vimrc          " When vimrc is edited, 
 "=================================================================================================
 "  Mappings
 "=================================================================================================
-let mapleader="\<Space>"                                " my leader
+let mapleader="\<Space>"
+let maplocalleader = ";"
 
 
 "=================================================================================================
@@ -242,36 +239,48 @@ nnoremap <leader>h :split<cr>
 
 
 "=================================================================================================
+"  Insert 
+"=================================================================================================
+inoremap <leader>rr <Esc>bdwi
+
+
+"=================================================================================================
 "  FileType
 "=================================================================================================
 augroup tab_set
     au!
-    au FileType php,python,c,cpp,java,perl,shell,bash,vim,ruby,go,apiblueprint set autoindent
-    au FileType php,python,c,cpp,java,perl,shell,bash,vim,ruby,go,apiblueprint set expandtab
-    au FileType php,python,c,cpp,java,perl,shell,bash,vim,ruby,go,apiblueprint set shiftwidth=4
-    au FileType php,python,c,cpp,java,perl,shell,bash,vim,ruby,go,apiblueprint set softtabstop=4
-    au FileType php,python,c,cpp,java,perl,shell,bash,vim,ruby,go,apiblueprint set tabstop=4
-    au FileType coffee,html,css,xml,jsx,javascript,fish,gitconfig,less,proto,sql,thrift set autoindent
-    au FileType coffee,html,css,xml,,javascript,fish,gitconfig,less,proto,sql,thrift set expandtab
+    au FileType python set smartindent
+    au FileType go set cindent
+    au FileType python,go set expandtab smarttab shiftwidth=4 softtabstop=4 tabstop=4
+    au FileType python,go set nocursorcolumn
+    au FileType python,go syntax sync minlines=200
+    au FileType python,go set synmaxcol=128
+    au FileType python,go set re=1
+
+    au FileType php,c,cpp,java,perl,shell,bash,vim,ruby,go,apiblueprint set cindent
+    au FileType php,c,cpp,java,perl,shell,bash,vim,ruby,go,apiblueprint set expandtab
+    au FileType php,c,cpp,java,perl,shell,bash,vim,ruby,go,apiblueprint set smarttab
+    au FileType php,c,cpp,java,perl,shell,bash,vim,ruby,go,apiblueprint set shiftwidth=4
+    au FileType php,c,cpp,java,perl,shell,bash,vim,ruby,go,apiblueprint set softtabstop=4
+    au FileType php,c,cpp,java,perl,shell,bash,vim,ruby,go,apiblueprint set tabstop=4
+
+    au FileType coffee,html,css,xml,jsx,javascript,fish,gitconfig,less,proto,sql,thrift set smartindent "autoindent
+    au FileType coffee,html,css,xml,jsx,javascript,fish,gitconfig,less,proto,sql,thrift set expandtab
+    au FileType coffee,html,css,xml,jsx,javascript,fish,gitconfig,less,proto,sql,thrift set smarttab
     au FileType coffee,html,css,xml,jsx,javascript,fish,gitconfig,less,proto,sql,thrift set shiftwidth=2
     au FileType coffee,html,css,xml,jsx,javascript,fish,gitconfig,less,proto,sql,thrift set softtabstop=2
     au FileType coffee,html,css,xml,jsx,javascript,fish,gitconfig,less,proto,sql,thrift set tabstop=2
-    au FileType python set nocursorcolumn
-    au FileType python syntax sync minlines=200
-    au FileType python set synmaxcol=128
-    au FileType python set re=1
+
     au FileType yaml setlocal tabstop=2 expandtab shiftwidth=2 softtabstop=2
-    au FileType json set autoindent
-    au FileType json set formatoptions=tcq2l
-    au FileType json set textwidth=80 shiftwidth=2
-    au FileType json set softtabstop=2 tabstop=8
-    au FileType json set expandtab
+
+    au FileType json set smartindent expandtab formatoptions=tcq2l
+    au FileType json set textwidth=80 shiftwidth=2 softtabstop=2 tabstop=8 
+
     au FileType gitcommit setlocal textwidth=80
-    au FileType markdown set expandtab
-    au FileType markdown set shiftwidth=4
-    au FileType markdown set softtabstop=4
-    au FileType markdown set tabstop=4
-    au FileType markdown set syntax=markdown
+
+    au FileType makefile set noexpandtab
+
+    au FileType markdown set expandtab shiftwidth=4 softtabstop=4 tabstop=4 syntax=markdown
 augroup END
 
 if has("win32")
@@ -279,13 +288,6 @@ if has("win32")
 else
     set fileformats=unix,mac,dos
 endif
-
-
-"=================================================================================================
-"  Other
-"=================================================================================================
-noremap <leader>rr bdw
-inoremap <leader>rr <Esc>bdwi
 
 
 "=================================================================================================

@@ -170,7 +170,7 @@ tmux_conf_theme_left_separator_sub=''   #   you only need fonts patched with
 #     - #{username}
 #     - #{username_ssh}
 tmux_conf_theme_status_left=' 🏠 #S | 💻#{?uptime_d, #{uptime_d}d,}#{?uptime_h, #{uptime_h}h,}#{?uptime_m, #{uptime_m}m,} '
-tmux_conf_theme_status_right='#{prefix}#{pairing}#{synchronized} #{?battery_status, #{battery_status},}#{?battery_bar, #{battery_bar},}#{?battery_percentage, #{battery_percentage},} , #(curl wttr.in?format=3) , %R , %d %b | #{username}#{root} | #{hostname} '
+tmux_conf_theme_status_right='#{prefix}#{pairing}#{synchronized} #{?battery_status, #{battery_status},}#{?battery_bar, #{battery_bar},}#{?battery_percentage, #{battery_percentage},}, #(curl wttr.in?format=3) , %R , %d %b | #{username}#{root} | #{hostname}'
 
 
 # status left style
