@@ -529,3 +529,11 @@ let g:indentLine_color_term = 239
 " Plugin: 'guns/xterm-color-table.vim'
 " -------------------------------------------------------------------------
 nmap <leader>xct :XtermColorTable<cr>
+
+" ---------------------------------------------------------------------------
+" Plugin: 'lfv89/vim-interestingwords'
+" -------------------------------------------------------------------------
+nnoremap <silent> <leader>l :call InterestingWords('n')<cr>
+nnoremap <silent> <leader>L :call UncolorAllWords()<cr>
+
+let g:interestingWordsRandomiseColors = 1
