@@ -12,7 +12,7 @@ call plug#begin('~/.vim/plugged')
     Plug 'fatih/vim-go', { 'do': ':GoUpdateBinaries' }  " Go mode
     Plug 'Valloric/YouCompleteMe'                       " Great autocomplete plug
 
-    " Project
+    " Navigation 
     Plug 'scrooloose/nerdtree'                          " Project and file navigation
     Plug 'majutsushi/tagbar'                            " Class/module browser
 
@@ -32,6 +32,9 @@ call plug#begin('~/.vim/plugged')
     Plug 'yggdroot/indentline'
     Plug 'jiangmiao/auto-pairs'
     Plug 'voldikss/vim-translate-me'
+    Plug 'mbbill/undotree'
+    Plug 'farmergreg/vim-lastplace'
+    Plug 'MattesGroeger/vim-bookmarks'
 
     " Lint and Fixer
     Plug 'w0rp/ale'
@@ -182,6 +185,7 @@ noremap <leader>w :w<cr>
 noremap <leader>q :q<cr>
 noremap <leader>Q :q!<cr>
 noremap <leader>y "+y<cr>
+noremap <leader>e <C-Z><cr>
 
 
 "=================================================================================================

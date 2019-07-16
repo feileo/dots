@@ -140,12 +140,12 @@ hi goFloats                ctermfg=39
 hi goComplexes             ctermfg=39
 
 " Number Integers
-hi  goDecimalInt           ctermfg=109"12
-hi  goHexadecimalInt       ctermfg=109"12
-hi  goOctalInt             ctermfg=109"12
-hi  goOctalError           ctermfg=109"12
-hi  Integer                ctermfg=109"12
-hi  goFloat                ctermfg=109"12
+hi  goDecimalInt           ctermfg=147"12
+hi  goHexadecimalInt       ctermfg=147"12
+hi  goOctalInt             ctermfg=147"12
+hi  goOctalError           ctermfg=147"12
+hi  Integer                ctermfg=147"12
+hi  goFloat                ctermfg=147"12
 
 " Predefined functions and values
 " append cap close complex copy delete imag len
@@ -529,14 +529,14 @@ let g:indentLine_color_term = 239
 " -----------------------------------------------------------------------------
 " let g:rainbow_active = 1
 
-" ---------------------------------------------------------------------------
+" -----------------------------------------------------------------------------
 " Plugin: 'guns/xterm-color-table.vim'
-" -------------------------------------------------------------------------
+" -----------------------------------------------------------------------------
 nmap <leader>xct :XtermColorTable<cr>
 
-" ---------------------------------------------------------------------------
+" -----------------------------------------------------------------------------
 " Plugin: 'lfv89/vim-interestingwords'
-" -------------------------------------------------------------------------
+" -----------------------------------------------------------------------------
 map <Plug>DisableInterestingWords <Plug>InterestingWords
 
 nnoremap <silent> <leader>l :call InterestingWords('n')<cr>
@@ -548,9 +548,9 @@ nnoremap <silent> N :call WordNavigation(0)<cr>
 let g:interestingWordsRandomiseColors = 1
 
 
-" ---------------------------------------------------------------------------
+" -----------------------------------------------------------------------------
 " Plugin: 'voldikss/vim-translate-me'
-" -------------------------------------------------------------------------
+" -----------------------------------------------------------------------------
 let g:vtm_default_mapping = 0
 let g:vtm_enable_history = 0
 
@@ -561,9 +561,36 @@ vmap <silent> <Leader>tv <Plug>TranslateWV
 nmap <silent> <Leader>tr <Plug>TranslateR
 
 
-" ---------------------------------------------------------------------------
+" -----------------------------------------------------------------------------
 " Plugin: 'airblade/vim-gitgutter'
-" -------------------------------------------------------------------------
+" -----------------------------------------------------------------------------
 map <Plug>DisableGitGutterPreviewHunk <Plug>GitGutterPreviewHunk
 map <Plug>DisableGitGutterUndoHunk <Plug>GitGutterUndoHunk
 map <Plug>DisableGitGutterStageHunk <Plug>GitGutterStageHunk
+
+
+" -----------------------------------------------------------------------------
+" Plugin: 'mbbill/undotree'
+" -----------------------------------------------------------------------------
+if has("persistent_undo")
+    set undodir=$HOME"/.vimundodir"
+    set undofile
+endif
+
+nnoremap <F5> :UndotreeToggle<cr>
+
+
+" -----------------------------------------------------------------------------
+" Plugin: 'farmergreg/vim-lastplace'
+" -----------------------------------------------------------------------------
+let g:lastplace_ignore = "gitcommit,gitrebase,svn,hgcommit"
+let g:lastplace_ignore_buftype = "quickfix,nofile,help"
+
+
+" -----------------------------------------------------------------------------
+" Plugin: 'MattesGroeger/vim-bookmarks'
+" -----------------------------------------------------------------------------
+highlight BookmarkSign ctermbg=NONE ctermfg=160
+highlight BookmarkLine ctermbg=194 ctermfg=NONE
+let g:bookmark_sign = '🔖'
+let g:bookmark_highlight_lines = 0
