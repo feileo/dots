@@ -13,10 +13,11 @@ It's my optimus, which includes:
 
 * 🐉 A **vim/neovim** configuration file sufficient for **Pythoneer** and **Gopher**,
   with unique custom syntax highlighting.
-  For floating window support, please check and upgrade neovim to the latest_ version.
 
   - ``vimrc``: General built-in settings and plugin management.
   - ``vplugs.conf.vim``: Plugin settings.
+
+  For floating window support, please check and upgrade neovim to the latest_ version.
 
 * 🏝  A pretty **tmux** configuration file based on `gpakosz/.tmux <https://github.com/gpakosz/.tmux/tree/master>`_.
 
