@@ -1,5 +1,5 @@
 ==========
-optimus 🚒   
+🚒 optimus
 ==========
 
 .. image:: https://img.shields.io/static/v1.svg?label=optimus&message=fight&color=brightgreen
