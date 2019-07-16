@@ -140,12 +140,12 @@ hi goFloats                ctermfg=39
 hi goComplexes             ctermfg=39
 
 " Number Integers
-hi  goDecimalInt           ctermfg=109"12
-hi  goHexadecimalInt       ctermfg=109"12
-hi  goOctalInt             ctermfg=109"12
-hi  goOctalError           ctermfg=109"12
-hi  Integer                ctermfg=109"12
-hi  goFloat                ctermfg=109"12
+hi  goDecimalInt           ctermfg=147"12
+hi  goHexadecimalInt       ctermfg=147"12
+hi  goOctalInt             ctermfg=147"12
+hi  goOctalError           ctermfg=147"12
+hi  Integer                ctermfg=147"12
+hi  goFloat                ctermfg=147"12
 
 " Predefined functions and values
 " append cap close complex copy delete imag len
