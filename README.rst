@@ -11,8 +11,9 @@ like writing poetry in the garden.
 
 It's my optimus, which includes:
 
-* 🐉 A **vim/neovim** configuration file sufficient for **Pyhoneer** and **Gopher**,
+* 🐉 A **vim/neovim** configuration file sufficient for **Pythoneer** and **Gopher**,
   with unique custom syntax highlighting.
+  For floating window support, please check and upgrade neovim to the latest_ version.
 
   - ``vimrc``: General built-in settings and plugin management.
   - ``vplugs.conf.vim``: Plugin settings.
@@ -37,8 +38,8 @@ Get optimus:
    git clone https://github.com/acthse/optimus.git ~/.optimus
 
 
-For vim/neovim
-**************
+For neovim/(vim)
+****************
 
 * **Step 1**: Install `plug.vim <https://github.com/junegunn/vim-plug>`_.
 
@@ -56,7 +57,7 @@ For vim/neovim
 
      ln -s ~/.optimus/vimrc .vimrc
 
-  Extra, for neovim:
+  For neovim:
 
   .. code-block:: console
 
@@ -67,18 +68,13 @@ For vim/neovim
 
 * **Step 4**: Compile ycm(`YouCompleteMe <https://github.com/Valloric/YouCompleteMe>`_).
 
-  Insatll Python and Go, and add it to your path. Compile ycm to support Python, Go, JS, TS, etc:
+  For compilation options supported for more languages, see YouCompleteMe `Installation Guide <https://github.com/ycm-core/YouCompleteMe/#installation>`_.
 
-  .. code-block:: console
-
-     cd ~/.vim/plugged/YouCompleteMe
-     python install.py  --go-completer  --gocode-completer  --ts-completer
-
-  Navigate to ``YouCompleteMe/third_party/ycmd/third_party/go`` and in both ``src/github.com/mdempsky/gocode`` and ``src/github.com/rogpeppe/godef`` run:
+  Compiled, for Go support: install Go and add it to your path, Navigate to ``YouCompleteMe/third_party/ycmd/third_party/go/src/golang.org/x/tools/cmd/gopls`` and run:
 
   .. code-block:: console
      
-     GOPATH=$(realpath ../../../..) go build
+     go build
  
 * **Step 5**: Finished, enjoy it.
 
@@ -126,6 +122,7 @@ For oh-my-zsh
 .. _tmux: https://github.com/tmux/tmux
 .. _iTerm2: https://www.iterm2.com/
 .. _terminus: https://eugeny.github.io/terminus/
+.. _latest: https://github.com/neovim/neovim/releases
 .. _tpm: https://github.com/tmux-plugins/tpm
 .. _powerlevel10k: https://github.com/romkatv/powerlevel10k
 .. _zsh-syntax-highlighting: https://github.com/zsh-users/zsh-syntax-highlighting

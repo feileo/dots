@@ -23,7 +23,7 @@ call plug#begin('~/.vim/plugged')
     Plug 'kylef/apiblueprint.vim'
     " Plug 'luochen1990/rainbow'                        " Rainbow brackets
 
-    " Efficiency tool
+    " Efficiency
     Plug 'terryma/vim-multiple-cursors'
     Plug 'tpope/vim-surround'                           " Parentheses, brackets, quotes, XML tags, and more
     Plug 'tpope/vim-commentary'                         " Comment stuff out
@@ -31,6 +31,7 @@ call plug#begin('~/.vim/plugged')
     Plug 'lfv89/vim-interestingwords'
     Plug 'yggdroot/indentline'
     Plug 'jiangmiao/auto-pairs'
+    Plug 'voldikss/vim-translate-me'
 
     " Lint and Fixer
     Plug 'w0rp/ale'
@@ -147,7 +148,8 @@ autocmd! BufWritePost ~/.vimrc source ~/.vimrc          " When vimrc is edited, 
 "=================================================================================================
 "  Mappings
 "=================================================================================================
-let mapleader="\<Space>"                                " my leader
+let mapleader="\<Space>"
+let maplocalleader = ";"
 
 
 "=================================================================================================
@@ -230,7 +232,7 @@ nnoremap <C-J> <C-W><C-J>
 nnoremap <C-K> <C-W><C-K>
 
 nnoremap <leader>v :vsplit<cr>
-nnoremap <leader>hh :split<cr>
+nnoremap <leader>h :split<cr>
 
 " tabs and buffers
 " Use https://github.com/mg979/vim-xtabline 

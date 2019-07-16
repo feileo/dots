@@ -248,7 +248,15 @@ au FileType go nmap <C-c>ro <Plug>(go-import)
 set completeopt=menu,menuone                                " preview
 
 let g:ycm_add_preview_to_completeopt = 0
+
 let g:ycm_show_diagnostics_ui = 0
+let g:ycm_registrorer_as_syntastic_checker = 0
+" let g:ycm_error_symbol = '😡'
+" let g:ycm_warning_symbol = '😨'
+let g:ycm_enable_diagnostic_signs = 0
+let g:ycm_enable_diagnostic_highlighting = 0
+let g:ycm_echo_current_diagnostic = 0
+
 let g:ycm_collect_identifiers_from_comments_and_strings = 0
 let g:ycm_min_num_of_chars_for_completion=1                 " 输入第2个字符开始补
 let g:ycm_cache_omnifunc=1                                  " 禁止缓存匹配项,每次都重新生成匹配项
@@ -260,7 +268,6 @@ let g:ycm_autoclose_preview_window_after_completion = 1
 let g:ycm_goto_buffer_command = 'vertical-split'            " 'same-buffer' 'new-tab'
 let g:ycm_confirm_extra_conf=0
 let g:ycm_key_list_select_completion = ['<TAB>', '<Down>'] 
-let g:ycm_enable_diagnostic_highlighting = 0 
 let g:ycm_filepath_completion_use_working_dir = 1
 
 nmap <leader>d :YcmCompleter GoTo<CR>
@@ -406,9 +413,6 @@ let g:airline#extensions#tabline#close_symbol = 'X'
 
 let airline#extensions#tabline#ignore_bufadd_pat = '\c\vgundo|undotree|vimfiler|tagbar|nerd_tree'
 
-nmap <leader>- <Plug>AirlineSelectPrevTab
-nmap <leader>= <Plug>AirlineSelectNextTab
-
 
 " -----------------------------------------------------------------------------
 "  Plugin: 'mg979/vim-xtabline'
@@ -533,7 +537,33 @@ nmap <leader>xct :XtermColorTable<cr>
 " ---------------------------------------------------------------------------
 " Plugin: 'lfv89/vim-interestingwords'
 " -------------------------------------------------------------------------
+map <Plug>DisableInterestingWords <Plug>InterestingWords
+
 nnoremap <silent> <leader>l :call InterestingWords('n')<cr>
+vnoremap <silent> <leader>l :call InterestingWords('v')<cr>
 nnoremap <silent> <leader>L :call UncolorAllWords()<cr>
+nnoremap <silent> n :call WordNavigation(1)<cr>
+nnoremap <silent> N :call WordNavigation(0)<cr>
 
 let g:interestingWordsRandomiseColors = 1
+
+
+" ---------------------------------------------------------------------------
+" Plugin: 'voldikss/vim-translate-me'
+" -------------------------------------------------------------------------
+let g:vtm_default_mapping = 0
+let g:vtm_enable_history = 0
+
+" Leader>w 翻译光标下的文本，在窗口中显示
+nmap <silent> <Leader>tt <Plug>TranslateW
+vmap <silent> <Leader>tv <Plug>TranslateWV
+
+nmap <silent> <Leader>tr <Plug>TranslateR
+
+
+" ---------------------------------------------------------------------------
+" Plugin: 'airblade/vim-gitgutter'
+" -------------------------------------------------------------------------
+map <Plug>DisableGitGutterPreviewHunk <Plug>GitGutterPreviewHunk
+map <Plug>DisableGitGutterUndoHunk <Plug>GitGutterUndoHunk
+map <Plug>DisableGitGutterStageHunk <Plug>GitGutterStageHunk
