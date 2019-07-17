@@ -70,12 +70,6 @@ For neovim/(vim)
 * **Step 4**: Compile ycm(`YouCompleteMe <https://github.com/Valloric/YouCompleteMe>`_).
 
   For compilation options supported for more languages, see YouCompleteMe `Installation Guide <https://github.com/ycm-core/YouCompleteMe/#installation>`_.
-
-  Compiled, for Go support: install Go and add it to your path, Navigate to ``YouCompleteMe/third_party/ycmd/third_party/go/src/golang.org/x/tools/cmd/gopls`` and run:
-
-  .. code-block:: console
-     
-     go build
  
 * **Step 5**: Finished, enjoy it.
 

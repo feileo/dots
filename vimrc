@@ -12,7 +12,7 @@ call plug#begin('~/.vim/plugged')
     Plug 'fatih/vim-go', { 'do': ':GoUpdateBinaries' }  " Go mode
     Plug 'Valloric/YouCompleteMe'                       " Great autocomplete plug
 
-    " Navigation 
+    " Navigation
     Plug 'scrooloose/nerdtree'                          " Project and file navigation
     Plug 'majutsushi/tagbar'                            " Class/module browser
 
@@ -112,14 +112,14 @@ set softtabstop=4
 set smarttab                                            " set tabs for a shifttabs logic
 set expandtab                                           " expand tabs into spaces
 " set cindent
-" set autoindent                                         
+" set autoindent
 set smartindent
 
 set showmatch                                           " shows matching part of bracket pairs (), [], {}
 set matchtime=1
 
 " set list
-" set listchars=tab:>-  
+" set listchars=tab:>-
 
 set shiftround
 set autoread                                            " reload file if the file changes on the disk
@@ -144,6 +144,8 @@ set wildignore=*.o,*~,*.pyc,*.a                         " ignore compiled files
 set ttyfast                                             " terminal acceleration, Make the keyboard faaaaaaast
 set lazyredraw
 set timeout timeoutlen=1000 ttimeoutlen=50
+
+set shortmess=aoOtTWF
 
 autocmd! BufWritePost ~/.vimrc source ~/.vimrc          " When vimrc is edited, reload it
 
@@ -239,11 +241,11 @@ nnoremap <leader>v :vsplit<cr>
 nnoremap <leader>h :split<cr>
 
 " tabs and buffers
-" Use https://github.com/mg979/vim-xtabline 
+" Use https://github.com/mg979/vim-xtabline
 
 
 "=================================================================================================
-"  Insert 
+"  Insert
 "=================================================================================================
 inoremap <leader>rr <Esc>bdwi
 
@@ -278,7 +280,7 @@ augroup tab_set
     au FileType yaml setlocal tabstop=2 expandtab shiftwidth=2 softtabstop=2
 
     au FileType json set smartindent expandtab formatoptions=tcq2l
-    au FileType json set textwidth=80 shiftwidth=2 softtabstop=2 tabstop=8 
+    au FileType json set textwidth=80 shiftwidth=2 softtabstop=2 tabstop=4
 
     au FileType gitcommit setlocal textwidth=80
 
