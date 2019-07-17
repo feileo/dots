@@ -539,9 +539,9 @@ nmap <leader>xct :XtermColorTable<cr>
 " -----------------------------------------------------------------------------
 map <Plug>DisableInterestingWords <Plug>InterestingWords
 
-nnoremap <silent> <leader>l :call InterestingWords('n')<cr>
-vnoremap <silent> <leader>l :call InterestingWords('v')<cr>
-nnoremap <silent> <leader>L :call UncolorAllWords()<cr>
+nnoremap <silent> <leader>i :call InterestingWords('n')<cr>
+vnoremap <silent> <leader>i :call InterestingWords('v')<cr>
+nnoremap <silent> <leader>I :call UncolorAllWords()<cr>
 nnoremap <silent> n :call WordNavigation(1)<cr>
 nnoremap <silent> N :call WordNavigation(0)<cr>
 
