@@ -227,7 +227,7 @@ let g:go_decls_mode = ''
 let g:go_doc_max_height = 25
 let g:go_def_reuse_buffe = 1
 
-" let g:go_fmt_command = "goimports"
+let g:go_fmt_command = "goimports"
 let g:go_def_mode = 'godef' "'gopls'
 
 " au FileType go nmap <C-g> <Plug>(go-def)
