@@ -1,7 +1,7 @@
 "==============================================================================
 "  Plugins Settings
 "
-"  If you are not familiar with these plugins, it is recommended that you go to 
+"  If you are not familiar with these plugins, it is recommended that you go to
 "  each plugin repository to learn how to use them.
 "==============================================================================
 
@@ -122,7 +122,7 @@ hi goTypeDecl              ctermfg=45 "cterm=italic
 " if else switch select
 " for range
 " case default
-hi goStatement             ctermfg=111  
+hi goStatement             ctermfg=111
 hi goConditional           ctermfg=210
 hi goRepeat                ctermfg=210
 hi goLabel                 ctermfg=210
@@ -227,7 +227,7 @@ let g:go_decls_mode = ''
 let g:go_doc_max_height = 25
 let g:go_def_reuse_buffe = 1
 
-" let g:go_fmt_command = "goimports"
+let g:go_fmt_command = "goimports"
 let g:go_def_mode = 'godef' "'gopls'
 
 " au FileType go nmap <C-g> <Plug>(go-def)
@@ -245,7 +245,7 @@ au FileType go nmap <C-c>ro <Plug>(go-import)
 " Plugin: 'Valloric/YouCompleteMe'
 " Support: Python, Golang, JS, TS, etc...
 " -----------------------------------------------------------------------------
-set completeopt=menu,menuone                                " preview
+set completeopt=menu,menuone
 
 let g:ycm_add_preview_to_completeopt = 0
 
@@ -257,18 +257,34 @@ let g:ycm_enable_diagnostic_signs = 0
 let g:ycm_enable_diagnostic_highlighting = 0
 let g:ycm_echo_current_diagnostic = 0
 
-let g:ycm_collect_identifiers_from_comments_and_strings = 0
-let g:ycm_min_num_of_chars_for_completion=1                 " 输入第2个字符开始补
+let g:ycm_min_num_of_chars_for_completion=1                 " 输入第1个字符开始补
 let g:ycm_cache_omnifunc=1                                  " 禁止缓存匹配项,每次都重新生成匹配项
-let g:ycm_seed_identifiers_with_syntax=1                    " 开启语义补全
+let g:ycm_seed_identifiers_with_syntax=1                    " 开启语义补全，关键字等
 let g:ycm_complete_in_comments = 1                          " 在注释输入中也能补全
 let g:ycm_complete_in_strings = 1                           " 在字符串输入中也能补全
+let g:ycm_use_ultisnips_completer = 1                       " 提示 UltiSnips
+let g:ycm_collect_identifiers_from_comments_and_strings = 0   "注释和字符串中的文字也会被收入补全
 let g:ycm_collect_identifiers_from_tags_files=1             " 开启 YCM 基于标签引擎
 let g:ycm_autoclose_preview_window_after_completion = 1
+let g:ycm_autoclose_preview_window_after_insertion = 1
 let g:ycm_goto_buffer_command = 'vertical-split'            " 'same-buffer' 'new-tab'
 let g:ycm_confirm_extra_conf=0
-let g:ycm_key_list_select_completion = ['<TAB>', '<Down>'] 
+let g:ycm_key_list_select_completion = ['<TAB>', '<Down>']
+let g:ycm_key_list_previous_completion = ['<Up>']
 let g:ycm_filepath_completion_use_working_dir = 1
+let g:ycm_disable_for_files_larger_than_kb = 2000
+let g:ycm_max_diagnostics_to_display = 0
+let g:ycm_filetype_blacklist = {
+            \ 'notes': 1,
+            \ 'help': 1,
+            \ 'unite': 1,
+            \ 'pandoc': 1,
+            \ 'qf': 1,
+            \ 'infolog': 1,
+            \ 'mail': 1,
+            \ 'tagbar' : 1,
+            \ 'gitcommit' : 1,
+            \}
 
 nmap <leader>d :YcmCompleter GoTo<CR>
 nmap <leader>g :YcmCompleter GoToDefinitionElseDeclaration<CR>
@@ -287,10 +303,10 @@ let g:ctrlp_custom_ignore = {
             \ }
 
 let g:ctrlp_working_path_mode = 'ra'                        " 0 or '' or 'c' or 'r' or 'a'
-                                                            " ‘c’--当前文件的目录
-                                                            " ‘a’--当前文件的目录，除非它是cwd的子目录
-                                                            " ‘r’--最近的当前文件，包含了这些.git .hg .svn .bzr_darcs文件或目录
-                                                            " ‘w’--和r类似，以cwd开始搜索，而非以当前文件目录
+" ‘c’--当前文件的目录
+" ‘a’--当前文件的目录，除非它是cwd的子目录
+" ‘r’--最近的当前文件，包含了这些.git .hg .svn .bzr_darcs文件或目录
+" ‘w’--和r类似，以cwd开始搜索，而非以当前文件目录
 
 let g:ctrlp_match_window_bottom = 1
 let g:ctrlp_max_height = 15                                 " 修改 QuickFix 窗口显示的最大条目数
@@ -317,7 +333,7 @@ let g:ctrlp_extensions = ['funky']
 " Plugin: dyng/ctrlsf.vim
 " -----------------------------------------------------------------------------
 let g:ctrlsf_ackprg = 'ag'
-nmap <Leader><Leader>s <Plug>CtrlSFPrompt 
+nmap <Leader><Leader>s <Plug>CtrlSFPrompt
 vmap <Leader><Leader>s <Plug>CtrlSFVwordExec
 nmap <Leader><Leader>f <Plug>CtrlSFCwordPath
 
@@ -329,9 +345,9 @@ let g:ctrlsf_auto_focus = {
             \ "at": "start",
             \ }
 let g:ctrlsf_auto_close = {
-    \ "normal" : 0,
-    \ "compact": 0
-    \}
+            \ "normal" : 0,
+            \ "compact": 0
+            \}
 let g:ctrlsf_search_mode = 'async'
 "flet g:ctrlsf_position = 'bottom'
 let g:ctrlsf_default_view_mode ='compact'               " 'normal' and 'compact''
@@ -425,7 +441,7 @@ let g:xtabline_settings.tab_icon=['📍','']
 let g:xtabline_settings.named_tab_icon=['📍','']
 
 
-nmap <CR> <Plug>(XT-Select-Buffer) 
+nmap <CR> <Plug>(XT-Select-Buffer)
 nmap <Tab> <Plug>(XT-Next-Buffer)
 nmap <leader>0 <Plug>(XT-Close-Buffer)
 
@@ -493,9 +509,9 @@ let g:NERDTreeIndicatorMapCustom = {
 " -----------------------------------------------------------------------------
 " Plugin: airblade/vim-gitgutter
 " -----------------------------------------------------------------------------
-highlight GitGutterAdd    guifg=#009900 guibg=<X> ctermfg=2 
-highlight GitGutterChange guifg=#bbbb00 guibg=<X> ctermfg=3 
-highlight GitGutterDelete guifg=#ff2222 guibg=<X> ctermfg=1 
+highlight GitGutterAdd    guifg=#009900 guibg=<X> ctermfg=2
+highlight GitGutterChange guifg=#bbbb00 guibg=<X> ctermfg=3
+highlight GitGutterDelete guifg=#ff2222 guibg=<X> ctermfg=1
 
 " -----------------------------------------------------------------------------
 " Plugin: tell-k/vim-autopep8
@@ -573,7 +589,7 @@ map <Plug>DisableGitGutterStageHunk <Plug>GitGutterStageHunk
 " Plugin: 'mbbill/undotree'
 " -----------------------------------------------------------------------------
 if has("persistent_undo")
-    set undodir=$HOME"/.vimundodir"
+    set undodir=$HOME/.vimundodir
     set undofile
 endif
 
