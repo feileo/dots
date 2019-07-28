@@ -35,6 +35,7 @@ call plug#begin('~/.vim/plugged')
     Plug 'mbbill/undotree'
     Plug 'farmergreg/vim-lastplace'
     Plug 'MattesGroeger/vim-bookmarks'
+    Plug 'itchyny/vim-cursorword'
 
     " Lint and Fixer
     Plug 'w0rp/ale'
