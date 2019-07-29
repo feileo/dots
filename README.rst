@@ -110,8 +110,6 @@ For oh-my-zsh
   - zsh-autosuggestions_ to ``~/.oh-my-zsh/plugins/``.
 
 * **Step 2**: Get the configurations you are interested in from ``.optimus/zshrc``.
-  And set ``DEFAULT_USER`` to your username.
-
 
 .. _neovim: https://neovim.io/
 .. _tmux: https://github.com/tmux/tmux
