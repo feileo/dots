@@ -1,11 +1,34 @@
-"=================================================================================================
-"  Plugin management
+"*****************************************************************************
+" Required: Vim-plug
 "
 "  Download vim-plug from the URL below and follow the installation
 "  instructions:
 "  https://github.com/junegunn/vim-plug
+"*****************************************************************************
+let use=$OPTIMUS_VIMMODE
+
+let plugdir=expand("~/.vim/plugged")
+let vimplug_exists=expand('~/.vim/autoload/plug.vim')
+if use=="neovim"
+    let plugdir=expand("~/.config/nvim/plugged")
+    let vimplug_exists=expand('~/.config/nvim/autoload/plug.vim')
+endif
+
+if !filereadable(vimplug_exists)
+    if !executable("curl")
+        echoerr "You have to install curl or first install vim-plug yourself!"
+        execute "q!"
+    endif
+    echo "Installing Vim-Plug..."
+    echo ""
+    silent exec "!\curl -fLo " . vimplug_exists . " --create-dirs https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim"
+endif
+
+
 "=================================================================================================
-call plug#begin('~/.vim/plugged')
+"  Plug install packages
+"=================================================================================================
+call plug#begin(plugdir)
 
     " Language Core
     Plug 'klen/python-mode', { 'branch': 'develop' }    " Python mode (docs, refactor, lints...)
@@ -103,7 +126,8 @@ set t_Co=256                                            " set 256 colors
 " set mouse=a                                             " use mouse
 set number                                              " show line numbers
 set encoding=utf-8
-set fileencodings=utf-8,gbk,gb2312,big5,latin1
+set fileencoding=utf-8
+set fileencodings=utf-8,gbk,gb2312
 set fencs=utf-8,gb2312,gbk                              " Sets the default encoding
 set formatoptions=tcqronj                               " set vims text formatting options
 
@@ -129,6 +153,8 @@ set nobackup                                            " no backup files
 set nowritebackup                                       " only in case you don't want a backup file while editing
 set noswapfile                                          " no swap files
 set backspace=indent,eol,start                          " backspace removes all (indents, EOLs, start) What is start?
+set modeline
+set modelines=10
 set whichwrap+=<,>,h,l
 set scrolloff=8                                         " let 8 lines before/after cursor during scroll
 set clipboard=unnamed                                   " use system clipboard

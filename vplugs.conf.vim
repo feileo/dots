@@ -421,11 +421,42 @@ let g:airline#extensions#tabline#show_close_button = 1
 " let g:airline#extensions#tabline#left_sep =' '             " tabline 中当前 buffer 两端的分隔字符
 " let g:airline#extensions#tabline#left_alt_sep = '|'        " tabline 中未激活 buffer 两端的分隔字符
 
-let g:airline_left_sep = '▶'                                 " unicode symbols
-let g:airline_left_alt_sep = '❯'
-let g:airline_right_sep = '◀'
-let g:airline_right_alt_sep = '❮'
-let g:airline#extensions#tabline#close_symbol = 'X'
+if !exists('g:airline_symbols')
+    let g:airline_symbols = {}
+endif
+
+if !exists('g:airline_powerline_fonts')
+    let g:airline#extensions#tabline#left_sep = ' '
+    let g:airline#extensions#tabline#left_alt_sep = '|'
+    let g:airline_left_sep          = '▶'
+    let g:airline_left_alt_sep      = '»'
+    let g:airline_right_sep         = '◀'
+    let g:airline_right_alt_sep     = '«'
+    let g:airline#extensions#branch#prefix     = '⤴' "➔, ➥, ⎇
+    let g:airline#extensions#readonly#symbol   = '⊘'
+    let g:airline#extensions#linecolumn#prefix = '¶'
+    let g:airline#extensions#paste#symbol      = 'ρ'
+    let g:airline_symbols.linenr    = '␊'
+    let g:airline_symbols.branch    = '⎇'
+    let g:airline_symbols.paste     = 'ρ'
+    let g:airline_symbols.paste     = 'Þ'
+    let g:airline_symbols.paste     = '∥'
+    let g:airline_symbols.whitespace = 'Ξ'
+else
+    let g:airline#extensions#tabline#left_sep = ''
+    let g:airline#extensions#tabline#left_alt_sep = ''
+
+    " powerline symbols
+    let g:airline_left_sep = '▶'                                 " unicode symbols
+    let g:airline_left_alt_sep = '❯'
+    let g:airline_right_sep = '◀'
+    let g:airline_right_alt_sep = '❮'
+    let g:airline_symbols.branch = ''
+    let g:airline_symbols.readonly = ''
+    let g:airline_symbols.linenr = ''
+    let g:airline#extensions#tabline#close_symbol = 'X'
+endif
+
 
 let airline#extensions#tabline#ignore_bufadd_pat = '\c\vgundo|undotree|vimfiler|tagbar|nerd_tree'
 
@@ -475,16 +506,19 @@ let g:vim_markdown_conceal_code_blocks = 0
 " -----------------------------------------------------------------------------
 " Plugin: scrooloose/nerdtree
 " -----------------------------------------------------------------------------
+let g:NERDTreeChDirMode=2
 let NERDTreeWinSize=30
 let NERDTreeShowHidden=0                                    " 是否显示隐藏文件
 let NERDTreeMinimalUI=0                                     " NERDTree 子窗口中是否显示冗余帮助信息
 let NERDTreeAutoDeleteBuffer=1
-let NERDTreeIgnore=['\.pyc','\~$','\.swp','__pycache__','\.git$','\.DS_Store', '\.a']
+let NERDTreeIgnore=['\.pyc','\~$','\.swp','__pycache__','\.git$','\.DS_Store', '\.a', '\.rbc$', '\.db$']
+let g:NERDTreeSortOrder=['^__\.py$', '\/$', '*', '\.swp$', '\.bak$', '\~$']
 let g:NERDTreeShowLineNumbers=0
+let NERDTreeNodeDelimiter="😀"                              "smiley face
+set wildignore+=*/tmp/*,*.so,*.swp,*.zip,*.pyc,*.db,*.sqlite
 
 nmap ' :NERDTreeToggle<cr>
 nmap " :NERDTreeFind<cr>
-let NERDTreeNodeDelimiter="😀"                              "smiley face
 
 autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isTabTree()) | q | endif
 
