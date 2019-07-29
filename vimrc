@@ -22,7 +22,6 @@ if !filereadable(vimplug_exists)
     echo "Installing Vim-Plug..."
     echo ""
     silent exec "!\curl -fLo " . vimplug_exists . " --create-dirs https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim"
-    autocmd VimEnter * PlugInstall
 endif
 
 
