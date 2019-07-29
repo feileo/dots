@@ -36,7 +36,7 @@ Get optimus:
 
 .. code-block:: console
 
-   git clone https://github.com/acthse/optimus.git ~/.optimus
+   git clone https://github.com/acthy/optimus.git ~/.optimus
 
 
 For neovim/(vim)
