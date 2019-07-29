@@ -44,13 +44,13 @@ For neovim/(vim)
 
 * **Step 1**: Deploy settings for vim or neovim.
 
-  If you want to use neovim:
+  option 1, If you want to use neovim:
 
   .. code-block:: console
 
      ln -s ~/.optimus/vimrc ~/.config/nvim/init.vim
 
-  If you want to use vim:
+  option 2, If you want to use vim:
 
   .. code-block:: console
 

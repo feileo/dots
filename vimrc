@@ -30,81 +30,81 @@ endif
 "=================================================================================================
 call plug#begin(plugdir)
 
-" Language Core
-Plug 'klen/python-mode', { 'branch': 'develop' }    " Python mode (docs, refactor, lints...)
-Plug 'fatih/vim-go', { 'do': ':GoUpdateBinaries' }  " Go mode
-Plug 'Valloric/YouCompleteMe'                       " Great autocomplete plug
+    " Language Core
+    Plug 'klen/python-mode', { 'branch': 'develop' }    " Python mode (docs, refactor, lints...)
+    Plug 'fatih/vim-go', { 'do': ':GoUpdateBinaries' }  " Go mode
+    Plug 'Valloric/YouCompleteMe'                       " Great autocomplete plug
 
-" Navigation
-Plug 'scrooloose/nerdtree'                          " Project and file navigation
-Plug 'majutsushi/tagbar'                            " Class/module browser
+    " Navigation
+    Plug 'scrooloose/nerdtree'                          " Project and file navigation
+    Plug 'majutsushi/tagbar'                            " Class/module browser
 
-" Syntax Highlighting
-Plug 'vim-scripts/nginx.vim'
-Plug 'leafgarland/typescript-vim'
-Plug 'elzr/vim-json'
-Plug 'kylef/apiblueprint.vim'
-" Plug 'luochen1990/rainbow'                        " Rainbow brackets
+    " Syntax Highlighting
+    Plug 'vim-scripts/nginx.vim'
+    Plug 'leafgarland/typescript-vim'
+    Plug 'elzr/vim-json'
+    Plug 'kylef/apiblueprint.vim'
+    " Plug 'luochen1990/rainbow'                        " Rainbow brackets
 
-" Efficiency
-Plug 'terryma/vim-multiple-cursors'
-Plug 'tpope/vim-surround'                           " Parentheses, brackets, quotes, XML tags, and more
-Plug 'tpope/vim-commentary'                         " Comment stuff out
-Plug 'easymotion/vim-easymotion'
-Plug 'lfv89/vim-interestingwords'
-Plug 'yggdroot/indentline'
-Plug 'jiangmiao/auto-pairs'
-Plug 'voldikss/vim-translate-me'
-Plug 'mbbill/undotree'
-Plug 'farmergreg/vim-lastplace'
-Plug 'MattesGroeger/vim-bookmarks'
-Plug 'itchyny/vim-cursorword'
+    " Efficiency
+    Plug 'terryma/vim-multiple-cursors'
+    Plug 'tpope/vim-surround'                           " Parentheses, brackets, quotes, XML tags, and more
+    Plug 'tpope/vim-commentary'                         " Comment stuff out
+    Plug 'easymotion/vim-easymotion'
+    Plug 'lfv89/vim-interestingwords'
+    Plug 'yggdroot/indentline'
+    Plug 'jiangmiao/auto-pairs'
+    Plug 'voldikss/vim-translate-me'
+    Plug 'mbbill/undotree'
+    Plug 'farmergreg/vim-lastplace'
+    Plug 'MattesGroeger/vim-bookmarks'
+    Plug 'itchyny/vim-cursorword'
 
-" Lint and Fixer
-Plug 'w0rp/ale'
-Plug 'Chiel92/vim-autoformat'
-Plug 'tell-k/vim-autopep8'
+    " Lint and Fixer
+    Plug 'w0rp/ale'
+    Plug 'Chiel92/vim-autoformat'
+    Plug 'tell-k/vim-autopep8'
 
-" Search
-Plug 'kien/ctrlp.vim'                               " Fast transitions on project files
-Plug 'dyng/ctrlsf.vim'
-Plug 'tacahiroy/ctrlp-funky'
+    " Search
+    Plug 'kien/ctrlp.vim'                               " Fast transitions on project files
+    Plug 'dyng/ctrlsf.vim'
+    Plug 'tacahiroy/ctrlp-funky'
 
-" Git
-Plug 'tpope/vim-fugitive'
-Plug 'airblade/vim-gitgutter'
-Plug 'Xuyuanp/nerdtree-git-plugin'                  " Nerdtree git support
+    " Git
+    Plug 'tpope/vim-fugitive'
+    Plug 'airblade/vim-gitgutter'
+    Plug 'Xuyuanp/nerdtree-git-plugin'                  " Nerdtree git support
 
-" Schemes
-Plug 'flazz/vim-colorschemes'                       " Colorschemes
-Plug 'bling/vim-airline'                            " Lean & mean status/tabline for vim
-Plug 'vim-airline/vim-airline-themes'               " Themes for airline
-Plug 'Lokaltog/vim-powerline'                       " Powerline fonts plugin
-Plug 'mg979/vim-xtabline'
+    " Schemes
+    Plug 'flazz/vim-colorschemes'                       " Colorschemes
+    Plug 'bling/vim-airline'                            " Lean & mean status/tabline for vim
+    Plug 'vim-airline/vim-airline-themes'               " Themes for airline
+    Plug 'Lokaltog/vim-powerline'                       " Powerline fonts plugin
+    Plug 'mg979/vim-xtabline'
 
-" Front-end
-Plug 'mitsuhiko/vim-sparkup'                        " sparkup(XML/jinja/htlm-django/etc.) support
-Plug 'mattn/emmet-vim'
-Plug 'othree/html5.vim'
-Plug 'ap/vim-css-color'
-" Plug 'pangloss/vim-javascript'
-" Plug 'mxw/vim-jsx'
-" Plug 'maksimr/js-beautify'
+    " Front-end
+    Plug 'mitsuhiko/vim-sparkup'                        " sparkup(XML/jinja/htlm-django/etc.) support
+    Plug 'mattn/emmet-vim'
+    Plug 'othree/html5.vim'
+    Plug 'ap/vim-css-color'
+    " Plug 'pangloss/vim-javascript'
+    " Plug 'mxw/vim-jsx'
+    " Plug 'maksimr/js-beautify'
 
-" Input
-Plug 'ybian/smartim'
+    " Input
+    Plug 'ybian/smartim'
 
-" markdown
-Plug 'godlygeek/tabular'                            " This must come before plasticboy/vim-markdown
-Plug 'plasticboy/vim-markdown'                      " Markdown syntax highlighting
-Plug 'iamcco/markdown-preview.nvim', {'do': 'cd app & yarn install'}
+    " markdown
+    Plug 'godlygeek/tabular'                            " This must come before plasticboy/vim-markdown
+    Plug 'plasticboy/vim-markdown'                      " Markdown syntax highlighting
+    Plug 'iamcco/markdown-preview.nvim', {'do': 'cd app & yarn install'}
 
-" Other
-Plug 'mhinz/vim-startify'
-Plug 'guns/xterm-color-table.vim'
+    " Other
+    Plug 'mhinz/vim-startify'
+    Plug 'guns/xterm-color-table.vim'
 
-" Dash: Mac os only supported
-" Plug 'rizzatti/dash.vim'
+    " Dash: Mac os only supported
+    " Plug 'rizzatti/dash.vim'
 
 call plug#end()
 
