@@ -55,7 +55,7 @@ For neovim/(vim)
   .. code-block:: console
 
      ln -s ~/.optimus/vimrc .vimrc
-     export OPTIMUS_VIMMODE="vim"
+     export OPTIMUS_VIMMODE=vim
 
 * **Step 2**: Use ``PlugInstall`` to install plugins, See `plug.vim <https://github.com/junegunn/vim-plug>`_ for details.
 
