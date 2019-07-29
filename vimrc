@@ -1,87 +1,111 @@
-"=================================================================================================
-"  Plugin management
+"*****************************************************************************
+" Required: Vim-plug
 "
 "  Download vim-plug from the URL below and follow the installation
 "  instructions:
 "  https://github.com/junegunn/vim-plug
+"*****************************************************************************
+let use=$OPTIMUS_VIMMODE
+
+let plugdir=expand("~/.vim/plugged")
+let vimplug_exists=expand('~/.vim/autoload/plug.vim')
+if use=="neovim"
+    let plugdir=expand("~/.config/nvim/plugged")
+    let vimplug_exists=expand('~/.config/nvim/autoload/plug.vim')
+endif
+
+if !filereadable(vimplug_exists)
+    if !executable("curl")
+        echoerr "You have to install curl or first install vim-plug yourself!"
+        execute "q!"
+    endif
+    echo "Installing Vim-Plug..."
+    echo ""
+    silent exec "!\curl -fLo " . vimplug_exists . " --create-dirs https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim"
+    autocmd VimEnter * PlugInstall
+endif
+
+
 "=================================================================================================
-call plug#begin('~/.vim/plugged')
+"  Plug install packages
+"=================================================================================================
+call plug#begin(plugdir)
 
-    " Language Core
-    Plug 'klen/python-mode', { 'branch': 'develop' }    " Python mode (docs, refactor, lints...)
-    Plug 'fatih/vim-go', { 'do': ':GoUpdateBinaries' }  " Go mode
-    Plug 'Valloric/YouCompleteMe'                       " Great autocomplete plug
+" Language Core
+Plug 'klen/python-mode', { 'branch': 'develop' }    " Python mode (docs, refactor, lints...)
+Plug 'fatih/vim-go', { 'do': ':GoUpdateBinaries' }  " Go mode
+Plug 'Valloric/YouCompleteMe'                       " Great autocomplete plug
 
-    " Navigation
-    Plug 'scrooloose/nerdtree'                          " Project and file navigation
-    Plug 'majutsushi/tagbar'                            " Class/module browser
+" Navigation
+Plug 'scrooloose/nerdtree'                          " Project and file navigation
+Plug 'majutsushi/tagbar'                            " Class/module browser
 
-    " Syntax Highlighting
-    Plug 'vim-scripts/nginx.vim'
-    Plug 'leafgarland/typescript-vim'
-    Plug 'elzr/vim-json'
-    Plug 'kylef/apiblueprint.vim'
-    " Plug 'luochen1990/rainbow'                        " Rainbow brackets
+" Syntax Highlighting
+Plug 'vim-scripts/nginx.vim'
+Plug 'leafgarland/typescript-vim'
+Plug 'elzr/vim-json'
+Plug 'kylef/apiblueprint.vim'
+" Plug 'luochen1990/rainbow'                        " Rainbow brackets
 
-    " Efficiency
-    Plug 'terryma/vim-multiple-cursors'
-    Plug 'tpope/vim-surround'                           " Parentheses, brackets, quotes, XML tags, and more
-    Plug 'tpope/vim-commentary'                         " Comment stuff out
-    Plug 'easymotion/vim-easymotion'
-    Plug 'lfv89/vim-interestingwords'
-    Plug 'yggdroot/indentline'
-    Plug 'jiangmiao/auto-pairs'
-    Plug 'voldikss/vim-translate-me'
-    Plug 'mbbill/undotree'
-    Plug 'farmergreg/vim-lastplace'
-    Plug 'MattesGroeger/vim-bookmarks'
-    Plug 'itchyny/vim-cursorword'
+" Efficiency
+Plug 'terryma/vim-multiple-cursors'
+Plug 'tpope/vim-surround'                           " Parentheses, brackets, quotes, XML tags, and more
+Plug 'tpope/vim-commentary'                         " Comment stuff out
+Plug 'easymotion/vim-easymotion'
+Plug 'lfv89/vim-interestingwords'
+Plug 'yggdroot/indentline'
+Plug 'jiangmiao/auto-pairs'
+Plug 'voldikss/vim-translate-me'
+Plug 'mbbill/undotree'
+Plug 'farmergreg/vim-lastplace'
+Plug 'MattesGroeger/vim-bookmarks'
+Plug 'itchyny/vim-cursorword'
 
-    " Lint and Fixer
-    Plug 'w0rp/ale'
-    Plug 'Chiel92/vim-autoformat'
-    Plug 'tell-k/vim-autopep8'
+" Lint and Fixer
+Plug 'w0rp/ale'
+Plug 'Chiel92/vim-autoformat'
+Plug 'tell-k/vim-autopep8'
 
-    " Search
-    Plug 'kien/ctrlp.vim'                               " Fast transitions on project files
-    Plug 'dyng/ctrlsf.vim'
-    Plug 'tacahiroy/ctrlp-funky'
+" Search
+Plug 'kien/ctrlp.vim'                               " Fast transitions on project files
+Plug 'dyng/ctrlsf.vim'
+Plug 'tacahiroy/ctrlp-funky'
 
-    " Git
-    Plug 'tpope/vim-fugitive'
-    Plug 'airblade/vim-gitgutter'
-    Plug 'Xuyuanp/nerdtree-git-plugin'                  " Nerdtree git support
+" Git
+Plug 'tpope/vim-fugitive'
+Plug 'airblade/vim-gitgutter'
+Plug 'Xuyuanp/nerdtree-git-plugin'                  " Nerdtree git support
 
-    " Schemes
-    Plug 'flazz/vim-colorschemes'                       " Colorschemes
-    Plug 'bling/vim-airline'                            " Lean & mean status/tabline for vim
-    Plug 'vim-airline/vim-airline-themes'               " Themes for airline
-    Plug 'Lokaltog/vim-powerline'                       " Powerline fonts plugin
-    Plug 'mg979/vim-xtabline'
+" Schemes
+Plug 'flazz/vim-colorschemes'                       " Colorschemes
+Plug 'bling/vim-airline'                            " Lean & mean status/tabline for vim
+Plug 'vim-airline/vim-airline-themes'               " Themes for airline
+Plug 'Lokaltog/vim-powerline'                       " Powerline fonts plugin
+Plug 'mg979/vim-xtabline'
 
-    " Front-end
-    Plug 'mitsuhiko/vim-sparkup'                        " sparkup(XML/jinja/htlm-django/etc.) support
-    Plug 'mattn/emmet-vim'
-    Plug 'othree/html5.vim'
-    Plug 'ap/vim-css-color'
-    " Plug 'pangloss/vim-javascript'
-    " Plug 'mxw/vim-jsx'
-    " Plug 'maksimr/js-beautify'
+" Front-end
+Plug 'mitsuhiko/vim-sparkup'                        " sparkup(XML/jinja/htlm-django/etc.) support
+Plug 'mattn/emmet-vim'
+Plug 'othree/html5.vim'
+Plug 'ap/vim-css-color'
+" Plug 'pangloss/vim-javascript'
+" Plug 'mxw/vim-jsx'
+" Plug 'maksimr/js-beautify'
 
-    " Input
-    Plug 'ybian/smartim'
+" Input
+Plug 'ybian/smartim'
 
-    " markdown
-    Plug 'godlygeek/tabular'                            " This must come before plasticboy/vim-markdown
-    Plug 'plasticboy/vim-markdown'                      " Markdown syntax highlighting
-    Plug 'iamcco/markdown-preview.nvim', {'do': 'cd app & yarn install'}
+" markdown
+Plug 'godlygeek/tabular'                            " This must come before plasticboy/vim-markdown
+Plug 'plasticboy/vim-markdown'                      " Markdown syntax highlighting
+Plug 'iamcco/markdown-preview.nvim', {'do': 'cd app & yarn install'}
 
-    " Other
-    Plug 'mhinz/vim-startify'
-    Plug 'guns/xterm-color-table.vim'
+" Other
+Plug 'mhinz/vim-startify'
+Plug 'guns/xterm-color-table.vim'
 
-    " Dash: Mac os only supported
-    " Plug 'rizzatti/dash.vim'
+" Dash: Mac os only supported
+" Plug 'rizzatti/dash.vim'
 
 call plug#end()
 
@@ -103,7 +127,8 @@ set t_Co=256                                            " set 256 colors
 " set mouse=a                                             " use mouse
 set number                                              " show line numbers
 set encoding=utf-8
-set fileencodings=utf-8,gbk,gb2312,big5,latin1
+set fileencoding=utf-8
+set fileencodings=utf-8,gbk,gb2312
 set fencs=utf-8,gb2312,gbk                              " Sets the default encoding
 set formatoptions=tcqronj                               " set vims text formatting options
 
@@ -129,6 +154,8 @@ set nobackup                                            " no backup files
 set nowritebackup                                       " only in case you don't want a backup file while editing
 set noswapfile                                          " no swap files
 set backspace=indent,eol,start                          " backspace removes all (indents, EOLs, start) What is start?
+set modeline
+set modelines=10
 set whichwrap+=<,>,h,l
 set scrolloff=8                                         " let 8 lines before/after cursor during scroll
 set clipboard=unnamed                                   " use system clipboard
