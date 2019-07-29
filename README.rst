@@ -42,36 +42,28 @@ Get optimus:
 For neovim/(vim)
 ****************
 
-* **Step 1**: Install `plug.vim <https://github.com/junegunn/vim-plug>`_.
+* **Step 1**: Deploy settings for vim or neovim.
+
+  If you want to use neovim:
 
   .. code-block:: console
 
-     # If you are using vim:
-     curl -fLo ~/.vim/autoload/plug.vim --create-dirs https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
-     
-     # If you are using neovim:
-     curl -fLo ~/.config/nvim/autoload/plug.vim --create-dirs https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
+     ln -s ~/.optimus/vimrc ~/.config/nvim/init.vim
 
-* **Step 2**: Deploy settings:
+  If you want to use vim:
 
   .. code-block:: console
 
      ln -s ~/.optimus/vimrc .vimrc
+     export OPTIMUS_VIMMODE="vim"
 
-  For neovim:
+* **Step 2**: Use ``PlugInstall`` to install plugins, See `plug.vim <https://github.com/junegunn/vim-plug>`_ for details.
 
-  .. code-block:: console
-
-     cd ~/.config/nvim/
-     ln -s ~/.vimrc init.vim
-
-* **Step 3**: Use ``PlugInstall`` to install plugins in ``.vimrc``.
-
-* **Step 4**: Compile ycm(`YouCompleteMe <https://github.com/Valloric/YouCompleteMe>`_).
+* **Step 3**: Compile ycm(`YouCompleteMe <https://github.com/Valloric/YouCompleteMe>`_).
 
   For compilation options supported for more languages, see YouCompleteMe `Installation Guide <https://github.com/ycm-core/YouCompleteMe/#installation>`_.
  
-* **Step 5**: Finished, enjoy it.
+* **Step 4**: Finished, enjoy it.
 
   If you are not familiar with these plugins, it is recommended that you go to each plugin repository to learn how to use them.
 
@@ -110,7 +102,6 @@ For oh-my-zsh
   - zsh-autosuggestions_ to ``~/.oh-my-zsh/plugins/``.
 
 * **Step 2**: Get the configurations you are interested in from ``.optimus/zshrc``.
-  And set ``DEFAULT_USER`` to your username.
 
 
 .. _neovim: https://neovim.io/
