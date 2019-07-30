@@ -2,8 +2,6 @@
 🚒 optimus
 ==========
 
-.. image:: https://img.shields.io/static/v1.svg?label=optimus&message=fight&color=brightgreen
-
 My `oh-my-zsh <https://ohmyz.sh/>`_ + neovim_ + tmux_ configuration file. I will synchronize frequently.
 
 This is the favorite weapon for engineers who use terminals(recommend iTerm2_ or terminus_) for development,
@@ -113,3 +111,4 @@ For oh-my-zsh
 .. _powerlevel10k: https://github.com/romkatv/powerlevel10k
 .. _zsh-syntax-highlighting: https://github.com/zsh-users/zsh-syntax-highlighting
 .. _zsh-autosuggestions: https://github.com/zsh-users/zsh-autosuggestions 
+.. _image: https://img.shields.io/static/v1.svg?label=optimus&message=fight&color=brightgreen
