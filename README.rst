@@ -2,8 +2,6 @@
 🚒 optimus
 ==========
 
-.. image:: https://img.shields.io/static/v1.svg?label=optimus&message=fight&color=brightgreen
-
 My `oh-my-zsh <https://ohmyz.sh/>`_ + neovim_ + tmux_ configuration file. I will synchronize frequently.
 
 This is the favorite weapon for engineers who use terminals(recommend iTerm2_ or terminus_) for development,
@@ -14,7 +12,7 @@ It's my optimus, which includes:
 * 🐉 A **vim/neovim** configuration file sufficient for **Pythoneer** and **Gopher**,
   with unique custom syntax highlighting.
 
-  - ``vimrc``: General built-in settings and plugin management.
+  - ``vimrc``: Base settings and plugin packages management.
   - ``vplugs.conf.vim``: Plugin settings.
 
   For floating window support, please check and upgrade neovim to the latest_ version.
@@ -113,3 +111,4 @@ For oh-my-zsh
 .. _powerlevel10k: https://github.com/romkatv/powerlevel10k
 .. _zsh-syntax-highlighting: https://github.com/zsh-users/zsh-syntax-highlighting
 .. _zsh-autosuggestions: https://github.com/zsh-users/zsh-autosuggestions 
+.. _image: https://img.shields.io/static/v1.svg?label=optimus&message=fight&color=brightgreen
