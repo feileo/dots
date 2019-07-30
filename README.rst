@@ -14,7 +14,7 @@ It's my optimus, which includes:
 * 🐉 A **vim/neovim** configuration file sufficient for **Pythoneer** and **Gopher**,
   with unique custom syntax highlighting.
 
-  - ``vimrc``: General built-in settings and plugin management.
+  - ``vimrc``: Base settings and plugin packages management.
   - ``vplugs.conf.vim``: Plugin settings.
 
   For floating window support, please check and upgrade neovim to the latest_ version.
