@@ -172,8 +172,6 @@ set timeout timeoutlen=1000 ttimeoutlen=50
 
 set shortmess=aoOtTWF
 
-autocmd! BufWritePost ~/.vimrc source ~/.vimrc          " When vimrc is edited, reload it
-
 
 "=================================================================================================
 "  Mappings
