@@ -18,8 +18,8 @@ if !filereadable(vimplug_exists)
     if !executable("curl")
         echoerr "You have to install curl or first install vim-plug yourself!"
     endif
-    echo "Installing Vim-Plug..."
-    echo ""
+    echom "Installing Vim-Plug..."
+    echom ""
     silent exec "!\curl -fLo " . vimplug_exists . " --create-dirs https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim"
 endif
 
@@ -270,7 +270,7 @@ nnoremap <leader>h :split<cr>
 "=================================================================================================
 "  Insert
 "=================================================================================================
-inoremap <leader>rr <Esc>bdwi
+inoremap <leader>rr <Esc>bcw
 
 
 "=================================================================================================
