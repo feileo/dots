@@ -202,6 +202,8 @@ source /usr/local/bin/virtualenvwrapper.sh
 export GOROOT=$HOME/go
 export PATH=$PATH:$GOROOT/bin
 export GOPATH=$HOME/gos/ext:$HOME/gos/dev
+# vim-go bin
+export VIMGOBIN=$HOME/gos/mypkg/bin
 
 # mysql
 PATH="/usr/local/mysql/bin:${PATH}"

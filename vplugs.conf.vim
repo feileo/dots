@@ -214,6 +214,11 @@ let g:go_highlight_variable_assignments = 0
 let g:go_highlight_methods = 1
 let g:go_highlight_structs = 1
 
+let vimgo_bin = $VIMGOBIN
+if filereadable(expand(join([vimgo_bin, "/gopls"], "")))
+    let g:go_bin_path = vimgo_bin
+    let g:go_search_bin_path_first = 1
+endif
 let g:go_fmt_fail_silently = 1
 let g:go_auto_type_info = 0
 " let g:go_info_mode = 'gocode'
@@ -228,7 +233,7 @@ let g:go_doc_max_height = 25
 let g:go_def_reuse_buffe = 1
 
 let g:go_fmt_command = "goimports"
-let g:go_def_mode = 'godef' "'gopls'
+let g:go_def_mode = 'gopls' "'godef'
 
 " au FileType go nmap <C-g> <Plug>(go-def)
 au FileType go nmap <C-g> <Plug>(go-def-vertical)
