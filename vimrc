@@ -72,6 +72,7 @@ call plug#begin(plugdir)
     Plug 'tpope/vim-fugitive'
     Plug 'airblade/vim-gitgutter'
     Plug 'Xuyuanp/nerdtree-git-plugin'                  " Nerdtree git support
+    Plug 'rhysd/git-messenger.vim'
 
     " Schemes
     Plug 'flazz/vim-colorschemes'                       " Colorschemes
