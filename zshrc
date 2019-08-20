@@ -117,6 +117,10 @@ setopt HIST_IGNORE_DUPS
 # Compilation flags
 # export ARCHFLAGS="-arch x86_64"
 
+
+# prompt_context() {}
+DEFAULT_USER=$USER
+
 # Set personal aliases, overriding those provided by oh-my-zsh libs,
 # plugins, and themes. Aliases can be placed here, though oh-my-zsh
 # users are encouraged to define aliases within the ZSH_CUSTOM folder.
@@ -191,10 +195,6 @@ alias -s bz2='tar -xjvf'
 # =====================================================
 #  Personal settings
 # =====================================================
-# prompt_context() {}
-DEFAULT_USER=$USER
-
-# virtualenvwrapper
 export WORKON_HOME=~/.pyenvs
 source /usr/local/bin/virtualenvwrapper.sh
 
