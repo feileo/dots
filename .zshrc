@@ -23,7 +23,7 @@ POWERLEVEL9K_MODE="nerdfont-complete"
 
 # Prompt elements
 POWERLEVEL9K_LEFT_PROMPT_ELEMENTS=(root_indicator context dir dir_writable dir_writable_joined vcs)
-POWERLEVEL9K_RIGHT_PROMPT_ELEMENTS=(status command_execution_time background_jobs background_jobs_joined go_version virtualenv ip time newline)
+POWERLEVEL9K_RIGHT_PROMPT_ELEMENTS=(status command_execution_time background_jobs background_jobs_joined go_version virtualenv ip time)
 
 # Set name of the theme to load.
 ZSH_THEME="powerlevel10k/powerlevel10k"
