@@ -106,9 +106,10 @@ For oh-my-zsh
 
   - zsh-autosuggestions_ to ``~/.oh-my-zsh/plugins/``.
 
-* **Step 2**: _`Font Installation <https://github.com/ryanoasis/nerd-fonts#Font%20Installation>`_.
+* **Step 2**: `Font Installation <https://github.com/ryanoasis/nerd-fonts#Font%20Installation>`.
 
   .. code-block:: console
+  
      # Best option if on macOS and want to use Homebrew.
      # https://github.com/ryanoasis/nerd-fonts#option-4-homebrew-fonts
      brew tap homebrew/cask-fonts
