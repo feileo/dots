@@ -106,7 +106,7 @@ For oh-my-zsh
 
   - zsh-autosuggestions_ to ``~/.oh-my-zsh/plugins/``.
 
-* **Step 2**: _`Font Installation <https://github.com/ryanoasis/nerd-fonts#Font%20Installation>`_.
+* **Step 2**: `Font Installation <https://github.com/ryanoasis/nerd-fonts#Font%20Installation>`_.
 
   .. code-block:: console
   
