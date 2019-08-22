@@ -324,8 +324,8 @@ endif
 "  Plugins Settings
 "=================================================================================================
 
-if !filereadable(expand('~/.optimus/vplugs.conf.vim'))
-    echoerr "File ~/.optimus/vplug.conf.vim not found"
+if !filereadable(expand('~/.dotfiles/.vplugs.conf.vim'))
+    echoerr "File ~/.dotfiles/.vplug.conf.vim not found"
 endif
 
-source $HOME/.optimus/vplugs.conf.vim                   " load plug config
+source $HOME/.dotfiles/.vplugs.conf.vim                   " load plug config
