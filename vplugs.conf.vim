@@ -484,6 +484,7 @@ nmap <leader>0 <Plug>(XT-Close-Buffer)
 nmap <leader>tn <Plug>(XT-Tab-New)
 nmap <leader>td <Plug>(XTabDeleteTab)
 
+
 " -----------------------------------------------------------------------------
 "  Plugin: majutsushi/tagbar
 " -----------------------------------------------------------------------------
@@ -552,6 +553,7 @@ highlight GitGutterAdd    guifg=#009900 guibg=<X> ctermfg=2
 highlight GitGutterChange guifg=#bbbb00 guibg=<X> ctermfg=3
 highlight GitGutterDelete guifg=#ff2222 guibg=<X> ctermfg=1
 
+
 " -----------------------------------------------------------------------------
 " Plugin: tell-k/vim-autopep8
 " -----------------------------------------------------------------------------
@@ -584,10 +586,12 @@ let g:indentLine_color_term = 239
 " -----------------------------------------------------------------------------
 " let g:rainbow_active = 1
 
+
 " -----------------------------------------------------------------------------
 " Plugin: 'guns/xterm-color-table.vim'
 " -----------------------------------------------------------------------------
 nmap <leader>xct :XtermColorTable<cr>
+
 
 " -----------------------------------------------------------------------------
 " Plugin: 'lfv89/vim-interestingwords'
@@ -681,3 +685,13 @@ autocmd BufEnter NERD_tree_* :call BookmarkUnmapKeys()
 " Plugin: 'jiangmiao/auto-pairs'
 " -----------------------------------------------------------------------------
 let g:AutoPairsMapBS = 0
+
+
+" -----------------------------------------------------------------------------
+" Plugin: 'easymotion/vim-easymotion'
+" -----------------------------------------------------------------------------
+nmap s <Plug>(easymotion-overwin-f)
+nmap S <Plug>(easymotion-overwin-f2)
+
+map <leader><leader>j <Plug>(easymotion-j)
+map <leader><leader>k <Plug>(easymotion-k)
