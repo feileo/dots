@@ -25,7 +25,6 @@ My dotfiles, which includes:
 * 🚀 An efficient **oh-my-zsh** configuration file.
 
   - ``.zshrc``: You can get it from or modify it based on it.
-  - ``.zenv.sh``: Local environment configuration.
 
 
 Usage
@@ -54,7 +53,6 @@ For neovim/(vim)
   .. code-block:: console
 
      ln -sf ~/.dotfiles/.vimrc ~/
-     # echo "export OPTIMUS_VIMMODE=vim" >> ~/.dotfiles/.zenv.sh
      export OPTIMUS_VIMMODE=vim
 
 * **Step 2**: Use ``PlugInstall`` to install plugins, See `plug.vim <https://github.com/junegunn/vim-plug>`_ for details.
@@ -68,7 +66,6 @@ For neovim/(vim)
   .. code-block:: console
 
      mkdir ~/.vimundodir
-     # echo "VIMUNDO_DIR=$HOME/.vimundodir" >> ~/.dotfiles/.zenv.sh
      export VIMUNDO_DIR=$HOME/.vimundodir
 
 * **Step 5**: Finished, enjoy it.
@@ -91,8 +88,8 @@ For tmux
   .. code-block:: console
 
      ln -sf ~/.dotfiles/.tmux.conf ~/
+     ln -sf ~/.dotfiles/.tmux.conf.local ~/
 
-  Use `tmux prefix`+`e` to editing the local tmux configuration `~/.dotfiles/.tmux.conf.local`.
 
 For oh-my-zsh
 *************
