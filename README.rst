@@ -63,15 +63,7 @@ For neovim/(vim)
 
   For compilation options supported for more languages, see YouCompleteMe `Installation Guide <https://github.com/ycm-core/YouCompleteMe/#installation>`_.
  
-* **Step 4**: Create working directory for undotree_.
-
-  .. code-block:: console
-
-     mkdir ~/.vimundodir
-     # echo "export VIMUNDO_DIR=$HOME/.vimundodir" >> ~/.dotfiles/.zenv.sh
-     export VIMUNDO_DIR=$HOME/.vimundodir
-
-* **Step 5**: Finished, enjoy it.
+* **Step 4**: Finished, enjoy it.
 
   If you are not familiar with these plugins, it is recommended that you go to each plugin repository to learn how to use them.
 
@@ -118,7 +110,7 @@ For oh-my-zsh
      brew tap homebrew/cask-fonts
      brew cask install font-hack-nerd-font
   
-  Configure non-acsii fonts in Iterm2: Preferences -> Profiles -> Text -> Non-Ascii-Font -> hack-nerd-font.
+  Configure non-acsii fonts in Iterm2: ``Preferences -> Profiles -> Text -> Non-Ascii-Font -> hack-nerd-font.``
 
 * **Step 3**: Get the configurations you are interested in from ``.dotfiles/.zshrc``.
 
