@@ -92,7 +92,7 @@ For tmux
 
      ln -sf ~/.dotfiles/.tmux.conf ~/
 
-  Use `tmux prefix`+`e` to editing the local tmux configuration `~/.dotfiles/.tmux.conf.local`.
+  Use `tmux prefix` + `e` to editing the local tmux configuration `~/.dotfiles/.tmux.conf.local`.
 
 For oh-my-zsh
 *************
