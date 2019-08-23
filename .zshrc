@@ -204,9 +204,9 @@ DEFAULT_USER=$USER
 # neovim
 alias ope="nvim"
 alias vim='nvim'
-alias vi='nvim'
+alias vi='vim'
 alias vimrc='nvim ~/.vimrc'
-alias vimconf='nvim ~/.optimus/vplugs.conf.vim'
+alias vimconf='nvim ~/.dotfiles/.vplugs.conf.vim'
 
 # zshrc
 alias opezrc='nvim ~/.zshrc'
@@ -243,7 +243,7 @@ alias tnew='tmux new -s'
 alias tatt='tmux attach'
 alias tdtt='tmux detach'
  
-# common
+# base
 alias cls='clear'
 alias ll='ls -l'
 alias la='ls -a'

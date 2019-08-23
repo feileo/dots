@@ -632,7 +632,8 @@ map <Plug>DisableGitGutterStageHunk <Plug>GitGutterStageHunk
 " Plugin: 'mbbill/undotree'
 " -----------------------------------------------------------------------------
 if has("persistent_undo")
-    set undodir=$VIMUNDO_DIR
+    silent exec "!mkdir ~/.vimundodir"
+    set undodir=~/.vimundodir
     set undofile
 endif
 
