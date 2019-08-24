@@ -25,8 +25,7 @@ My dotfiles, which includes:
 
 * 🚀 An efficient **oh-my-zsh** configuration file.
 
-  - ``.zshrc``: You can get it from or modify it based on it.
-  - ``.zenv.sh``: Local environment configuration.
+  - ``.zshrc``: You can get it from or modify it based on it, and load the local environment configuration from ``~/.dotfiles/.zenv.sh``.
 
 
 Usage
@@ -111,7 +110,11 @@ For oh-my-zsh
      brew tap homebrew/cask-fonts
      brew cask install font-hack-nerd-font
   
-  Configure non-acsii fonts in Iterm2: ``Preferences -> Profiles -> Text -> Non-Ascii-Font -> hack-nerd-font.``
+  Configure non-acsii fonts in Iterm2: 
+
+  - ``Preferences -> Profiles -> Text -> Non-Ascii-Font -> hack-nerd-font.``
+
+  - ``Preferences -> Profiles -> Colors -> Colors Presets -> Monokai Soda``
 
 * **Step 3**: Get the configurations you are interested in from ``.dotfiles/.zshrc``.
 
