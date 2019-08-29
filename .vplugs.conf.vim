@@ -696,3 +696,12 @@ nmap S <Plug>(easymotion-overwin-f2)
 
 map <leader><leader>j <Plug>(easymotion-j)
 map <leader><leader>k <Plug>(easymotion-k)
+
+
+" -----------------------------------------------------------------------------
+" Plugin: 'voldikss/vim-floaterm' 
+" -----------------------------------------------------------------------------
+noremap  <silent> <F12> :FloatermToggle<CR>i
+noremap! <silent> <F12> <Esc>:FloatermToggle<CR>i
+tnoremap <silent> <F12> <C-\><C-n>:FloatermToggle<CR>
+

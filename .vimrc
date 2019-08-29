@@ -102,6 +102,9 @@ call plug#begin(plugdir)
     Plug 'mhinz/vim-startify'
     Plug 'guns/xterm-color-table.vim'
 
+    " Neovim only supported
+    Plug 'voldikss/vim-floaterm'
+
     " Dash: Mac os only supported
     " Plug 'rizzatti/dash.vim'
 
