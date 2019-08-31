@@ -170,7 +170,7 @@ tmux_conf_theme_left_separator_sub=''   #   you only need fonts patched with
 #     - #{username}
 #     - #{username_ssh}
 tmux_conf_theme_status_left=' 🏠 #S | 💻#{?uptime_d, #{uptime_d}d,}#{?uptime_h, #{uptime_h}h,}#{?uptime_m, #{uptime_m}m,} '
-tmux_conf_theme_status_right='#{prefix}#{pairing}#{synchronized} #{?battery_status, #{battery_status},}#{?battery_percentage, #{battery_percentage},} #{?battery_bar, #{battery_bar} ,} #(curl wttr.in?format=3) , 🕐 %m/%d %R | #{username}#{root} | #{hostname} #{cpu_bg_color} CPU: #{cpu_percentage} '
+tmux_conf_theme_status_right='#{prefix}#{pairing}#{synchronized} #{?battery_status,#{battery_status},}#{?battery_percentage, #{battery_percentage},}#{?battery_bar, #{battery_bar} ,}, #(curl wttr.in?format=3) , 🕐 %m/%d %R | #{username}#{root} | #{hostname} #{cpu_bg_color} CPU: #{cpu_percentage}'
 
 
 # status left style
@@ -240,13 +240,10 @@ tmux_conf_battery_vbar_palette='gradient'
 # tmux_conf_battery_vbar_palette='#d70000,#ff5f00,#5fff00'  # red, orange, green
 
 # symbols used to indicate whether battery is charging or discharging
-# tmux_conf_battery_status_charging='↑'       # U+2191
-# tmux_conf_battery_status_charging='⚡'    # U+26A1
-# tmux_conf_battery_status_charging='🔌 '    # U+1F50C
-# tmux_conf_battery_status_discharging='↓'    # U+2193
-tmux_conf_battery_status_charging='⚡️'       # U+2191
-# tmux_conf_battery_status_discharging='🔋' # U+1F50B
-tmux_conf_battery_status_discharging=''
+# tmux_conf_battery_status_charging='🔌'
+tmux_conf_battery_status_charging='⚡️'
+# tmux_conf_battery_status_discharging='↓'
+tmux_conf_battery_status_discharging='🔋'
 
 # clock style (when you hit <prefix> + t)
 # you may want to use %I:%M %p in place of %R in tmux_conf_theme_status_right
