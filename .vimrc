@@ -59,7 +59,7 @@ call plug#begin(plugdir)
     Plug 'itchyny/vim-cursorword'
 
     " Lint and Fixer
-    Plug 'w0rp/ale'
+    Plug 'dense-analysis/ale'
     Plug 'Chiel92/vim-autoformat'
     Plug 'tell-k/vim-autopep8'
 
