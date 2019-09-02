@@ -7,7 +7,7 @@
 
 
 " -----------------------------------------------------------------------------
-" Plugin: klen/python-mode
+" Plugin: python-mode/python-mode
 " Language: Python
 " -----------------------------------------------------------------------------
 let g:pymode = 1                                            " Common functionality
@@ -359,7 +359,7 @@ let g:ctrlsf_default_view_mode ='compact'               " 'normal' and 'compact'
 
 
 " -----------------------------------------------------------------------------
-" Plugin: w0rp/ale
+" Plugin: dense-analysis/ale
 " -----------------------------------------------------------------------------
 nmap <silent> <C-s>k <Plug>(ale_previous_wrap)
 nmap <silent> <C-s>j <Plug>(ale_next_wrap)
