@@ -7,7 +7,7 @@
 
 
 " -----------------------------------------------------------------------------
-" Plugin: klen/python-mode
+" Plugin: python-mode/python-mode
 " Language: Python
 " -----------------------------------------------------------------------------
 let g:pymode = 1                                            " Common functionality
@@ -59,6 +59,7 @@ hi pythonBuiltinObj      ctermfg=105
 hi pythonBuiltinType     ctermfg=45
 hi pythonBuiltinFunc     ctermfg=45
 hi pythonDocstring       ctermfg=8
+hi pythonComment         ctermfg=8
 " hi pythonString        ctermfg=78
 hi pythonRawString       ctermfg=214 " cterm=italic
 hi pythonUniString       ctermfg=214 " cterm=italic
@@ -78,7 +79,6 @@ hi pythonOperator        ctermfg=204
 hi pythonRepeat          ctermfg=177
 hi pythonConditional     ctermfg=177
 hi pythonExClass         ctermfg=210
-
 " hi pythonExtraOperator ctermfg=170
 hi pythonDecorator       ctermfg=208
 hi pythonDottedName      ctermfg=139
@@ -359,7 +359,7 @@ let g:ctrlsf_default_view_mode ='compact'               " 'normal' and 'compact'
 
 
 " -----------------------------------------------------------------------------
-" Plugin: w0rp/ale
+" Plugin: dense-analysis/ale
 " -----------------------------------------------------------------------------
 nmap <silent> <C-s>k <Plug>(ale_previous_wrap)
 nmap <silent> <C-s>j <Plug>(ale_next_wrap)

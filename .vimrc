@@ -7,11 +7,11 @@
 "*****************************************************************************
 let use=$OPTIMUS_VIMMODE
 
-let plugdir=expand("~/.vim/plugged")
-let vimplug_exists=expand('~/.vim/autoload/plug.vim')
-if use == "neovim"
-    let plugdir=expand("~/.config/nvim/plugged")
-    let vimplug_exists=expand('~/.config/nvim/autoload/plug.vim')
+let plugdir=expand("~/.config/nvim/plugged")
+let vimplug_exists=expand('~/.config/nvim/autoload/plug.vim')
+if use == "vim"
+    let plugdir=expand("~/.vim/plugged")
+    let vimplug_exists=expand('~/.vim/autoload/plug.vim')
 endif
 
 if !filereadable(vimplug_exists)
@@ -30,8 +30,8 @@ endif
 call plug#begin(plugdir)
 
     " Language Core
-    Plug 'klen/python-mode', { 'branch': 'develop' }    " Python mode (docs, refactor, lints...)
-    Plug 'fatih/vim-go', { 'do': ':GoUpdateBinaries' }  " Go mode
+    Plug 'python-mode/python-mode', { 'for': 'python', 'branch': 'develop' }
+    Plug 'fatih/vim-go', { 'do': ':GoUpdateBinaries' }  " Go
     Plug 'Valloric/YouCompleteMe'                       " Great autocomplete plug
 
     " Navigation
@@ -59,7 +59,7 @@ call plug#begin(plugdir)
     Plug 'itchyny/vim-cursorword'
 
     " Lint and Fixer
-    Plug 'w0rp/ale'
+    Plug 'dense-analysis/ale'
     Plug 'Chiel92/vim-autoformat'
     Plug 'tell-k/vim-autopep8'
 
