@@ -9,7 +9,7 @@ like writing poetry in the garden.
 
 My dotfiles, which includes:
 
-* 🐉 A **vim/neovim** configuration file sufficient for **Pythoneer** and **Gopher**,
+* 🐉 A **vim/neovim** configuration file sufficient for **Pythonista** and **Gopher**,
   with unique custom syntax highlighting.
 
   - ``.vimrc``: Base settings and plugin packages management.
@@ -27,6 +27,8 @@ My dotfiles, which includes:
 
   - ``.zshrc``: You can get it from or modify it based on it, and load the local environment configuration from ``~/.dotfiles/.zenv.sh``.
 
+
+*For Pythonista or Pythoneer, please see this* article_.
 
 Usage
 -----
@@ -62,7 +64,7 @@ For neovim/(vim)
 * **Step 3**: Compile ycm(`YouCompleteMe <https://github.com/Valloric/YouCompleteMe>`_).
 
   For compilation options supported for more languages, see YouCompleteMe `Installation Guide <https://github.com/ycm-core/YouCompleteMe/#installation>`_.
- 
+
 * **Step 4**: Finished, enjoy it.
 
   If you are not familiar with these plugins, it is recommended that you go to each plugin repository to learn how to use them.
@@ -104,13 +106,13 @@ For oh-my-zsh
 * **Step 2**: `Font Installation <https://github.com/ryanoasis/nerd-fonts#Font%20Installation>`_.
 
   .. code-block:: console
-  
+
      # Best option if on macOS and want to use Homebrew.
      # https://github.com/ryanoasis/nerd-fonts#option-4-homebrew-fonts
      brew tap homebrew/cask-fonts
      brew cask install font-hack-nerd-font
-  
-  Configure non-acsii fonts in Iterm2: 
+
+  Configure non-acsii fonts in Iterm2:
 
   - ``Preferences -> Profiles -> Text -> Non-Ascii-Font -> hack-nerd-font.``
 
@@ -127,6 +129,7 @@ For oh-my-zsh
 .. _tpm: https://github.com/tmux-plugins/tpm
 .. _powerlevel10k: https://github.com/romkatv/powerlevel10k
 .. _zsh-syntax-highlighting: https://github.com/zsh-users/zsh-syntax-highlighting
-.. _zsh-autosuggestions: https://github.com/zsh-users/zsh-autosuggestions 
+.. _zsh-autosuggestions: https://github.com/zsh-users/zsh-autosuggestions
 .. _image: https://img.shields.io/static/v1.svg?label=dotfiles&message=fight&color=brightgreen
 .. _undotree: https://github.com/mbbill/undotree
+.. _article: https://blog.fullstackpentest.com/Pythonista%E5%92%8CPythoneer%E7%9A%84%E5%8C%BA%E5%88%AB-What-s-the-difference-between-Pythonista-and-Pythoneer.html
