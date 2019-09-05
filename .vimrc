@@ -86,9 +86,6 @@ call plug#begin(plugdir)
     Plug 'mattn/emmet-vim'
     Plug 'othree/html5.vim'
     Plug 'ap/vim-css-color'
-    " Plug 'pangloss/vim-javascript'
-    " Plug 'mxw/vim-jsx'
-    " Plug 'maksimr/js-beautify'
 
     " Input
     Plug 'ybian/smartim'
@@ -164,9 +161,7 @@ set guioptions+=a
 set showcmd                                             " show input cmd
 set exrc                                                " enable usage of additional .vimrc files from working directory
 set secure                                              " prohibit .vimrc files to execute shell, create files, etc...
-" set textwidth=119
 set foldlevelstart=99
-" set foldmethod=syntax
 set switchbuf=useopen
 set laststatus=2
 set wildignore=*.o,*~,*.pyc,*.a                         " ignore compiled files
@@ -182,6 +177,19 @@ set shortmess=aoOtTWF
 "  Mappings
 "=================================================================================================
 let mapleader="\<Space>"
+
+inoremap <leader>rr <Esc>bcw
+nnoremap [e  :<c-u>execute 'move -1-'. v:count1<cr>
+nnoremap ]e  :<c-u>execute 'move +'. v:count1<cr>
+nnoremap [<space>  :<c-u>put! =repeat(nr2char(10), v:count1)<cr>'[
+nnoremap ]<space>  :<c-u>put =repeat(nr2char(10), v:count1)<cr>
+
+nnoremap <C-j> :m .+1<CR>==
+nnoremap <C-k> :m .-2<CR>==
+inoremap <C-j> <Esc>:m .+1<CR>==gi
+inoremap <C-k> <Esc>:m .-2<CR>==gi
+vnoremap <C-j> :m '>+1<CR>gv=gv
+vnoremap <C-k> :m '<-2<CR>gv=gv
 
 
 "=================================================================================================
@@ -245,7 +253,6 @@ noremap N :set hlsearch<cr>N
 "     set nohlsearch
 " endfunc
 
-nmap <leader>c :noh<cr>
 hi Search ctermfg=255 ctermbg=32 cterm=none guifg=#99CCFF guibg=#636066 gui=none
 
 " word
@@ -270,11 +277,13 @@ nnoremap <leader>h :split<cr>
 " tabs and buffers
 " Use https://github.com/mg979/vim-xtabline
 
-
 "=================================================================================================
-"  Insert
+"  Other
 "=================================================================================================
-inoremap <leader>rr <Esc>bcw
+xnoremap <  <gv
+xnoremap >  >gv
+autocmd WinEnter * set cursorline
+autocmd WinLeave * set nocursorline
 
 
 "=================================================================================================
@@ -286,8 +295,8 @@ augroup tab_set
     au FileType go set cindent
     au FileType python,go set expandtab smarttab shiftwidth=4 softtabstop=4 tabstop=4
     au FileType python,go set nocursorcolumn
-    au FileType python,go syntax sync minlines=200
-    au FileType python,go set synmaxcol=128
+    au FileType python,go syntax sync minlines=250
+    au FileType python,go set synmaxcol=250
     au FileType python,go set re=1
 
     au FileType php,c,cpp,java,perl,shell,bash,vim,ruby,go,apiblueprint set cindent
