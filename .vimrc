@@ -160,6 +160,7 @@ set modelines=10
 set whichwrap+=<,>,h,l
 set scrolloff=8                                         " let 8 lines before/after cursor during scroll
 set clipboard=unnamed                                   " use system clipboard
+set guioptions+=a
 set showcmd                                             " show input cmd
 set exrc                                                " enable usage of additional .vimrc files from working directory
 set secure                                              " prohibit .vimrc files to execute shell, create files, etc...
@@ -169,11 +170,11 @@ set foldlevelstart=99
 set switchbuf=useopen
 set laststatus=2
 set wildignore=*.o,*~,*.pyc,*.a                         " ignore compiled files
+set virtualedit=all
 
 set ttyfast                                             " terminal acceleration, Make the keyboard faaaaaaast
 set lazyredraw
 set timeout timeoutlen=1000 ttimeoutlen=50
-
 set shortmess=aoOtTWF
 
 
@@ -181,7 +182,6 @@ set shortmess=aoOtTWF
 "  Mappings
 "=================================================================================================
 let mapleader="\<Space>"
-let maplocalleader = ";"
 
 
 "=================================================================================================
