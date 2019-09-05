@@ -39,13 +39,13 @@ let g:pymode_rope = 1                                       " Rope support
 let g:pymode_rope_regenerate_on_write = 0
 let g:pymode_rope_completion = 0                            " Completion, use YCM
 let g:pymode_rope_lookup_project = 0
-let g:pymode_rope_complete_on_dot = 0
-let g:pymode_rope_autoimport = 0
+let g:pymode_rope_complete_on_dot = 1
+let g:pymode_rope_autoimport = 1
 
 let g:pymode_rope_rename_bind = '<C-c>rr'                   " Refactoring
 let g:pymode_rope_rename_module_bind = '<C-c>r1r'
 let g:pymode_rope_organize_imports_bind = '<C-c>ro'
-let g:pymode_rope_autoimport_bind = '<C-c>ra'
+let g:pymode_rope_autoimport_bind = '<C-c>ri'
 let g:pymode_rope_module_to_package_bind = '<C-c>r1p'
 let g:pymode_rope_use_function_bind = '<C-c>ru'
 let g:pymode_rope_goto_definition_bind = '<C-g>'
@@ -233,17 +233,17 @@ let g:go_doc_max_height = 25
 let g:go_def_reuse_buffe = 1
 
 let g:go_fmt_command = "goimports"
-let g:go_def_mode = 'gopls' "'godef'
+let g:go_def_mode = 'gopls'
 
-" au FileType go nmap <C-g> <Plug>(go-def)
+au FileType go nmap <leader><leader>u :GoDecls<cr>
 au FileType go nmap <C-g> <Plug>(go-def-vertical)
-au FileType go nmap <leader><leader>u :GoDeclsDir<cr>
-" au FileType go nmap <leader>rt <Plug>(go-run-tab)
-" au FileType go nmap <leader>rv <Plug>(go-run-vertical)
-" au FileType go nmap <leader>rs <Plug>(go-run-split)
-" au FileType go nmap <leader>rb <Plug>(go-build)
+au FileType go nmap <C-c>rf <Plug>(go-referrers)
 au FileType go nmap <C-c>rr <Plug>(go-rename)
-au FileType go nmap <C-c>ro <Plug>(go-import)
+au FileType go nmap <C-c>ri <Plug>(go-import)
+au FileType go nmap <C-c>rl <Plug>(go-lint)
+au FileType go nmap <C-c>ra :GoAddTags<cr>
+au FileType go nmap <C-c>rs :GoFillStruct<cr>
+au FileType go nmap <C-c>re :GoIfErr<cr>
 
 
 " -----------------------------------------------------------------------------
@@ -256,8 +256,6 @@ let g:ycm_add_preview_to_completeopt = 0
 
 let g:ycm_show_diagnostics_ui = 0
 let g:ycm_registrorer_as_syntastic_checker = 0
-" let g:ycm_error_symbol = '😡'
-" let g:ycm_warning_symbol = '😨'
 let g:ycm_enable_diagnostic_signs = 0
 let g:ycm_enable_diagnostic_highlighting = 0
 let g:ycm_echo_current_diagnostic = 0
@@ -699,9 +697,23 @@ map <leader><leader>k <Plug>(easymotion-k)
 
 
 " -----------------------------------------------------------------------------
-" Plugin: 'voldikss/vim-floaterm' 
+" Plugin: 'voldikss/vim-floaterm'
 " -----------------------------------------------------------------------------
 noremap  <silent> <F12> :FloatermToggle<CR>i
 noremap! <silent> <F12> <Esc>:FloatermToggle<CR>i
 tnoremap <silent> <F12> <C-\><C-n>:FloatermToggle<CR>
 
+
+" -----------------------------------------------------------------------------
+" Plugin: 'terryma/vim-multiple-cursors'
+" -----------------------------------------------------------------------------
+let g:multi_cursor_use_default_mapping=0
+
+let g:multi_cursor_start_word_key      = '<C-n>'
+let g:multi_cursor_select_all_word_key = '<A-n>'
+let g:multi_cursor_start_key           = 'g<C-n>'
+let g:multi_cursor_select_all_key      = 'g<A-n>'
+let g:multi_cursor_next_key            = '<C-n>'
+let g:multi_cursor_prev_key            = '<C-p>'
+let g:multi_cursor_skip_key            = '<C-x>'
+let g:multi_cursor_quit_key            = '<Esc>'
