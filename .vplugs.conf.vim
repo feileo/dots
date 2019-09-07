@@ -40,7 +40,7 @@ let g:pymode_rope_regenerate_on_write = 0
 let g:pymode_rope_completion = 0                            " Completion, use YCM
 let g:pymode_rope_lookup_project = 0
 let g:pymode_rope_complete_on_dot = 1
-let g:pymode_rope_autoimport = 1
+let g:pymode_rope_autoimport = 0
 
 let g:pymode_rope_rename_bind = '<C-c>rr'                   " Refactoring
 let g:pymode_rope_rename_module_bind = '<C-c>r1r'
