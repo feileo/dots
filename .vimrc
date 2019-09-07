@@ -165,7 +165,6 @@ set foldlevelstart=99
 set switchbuf=useopen
 set laststatus=2
 set wildignore=*.o,*~,*.pyc,*.a                         " ignore compiled files
-set virtualedit=all
 
 set ttyfast                                             " terminal acceleration, Make the keyboard faaaaaaast
 set lazyredraw
@@ -207,7 +206,11 @@ vnoremap <C-k> :m '<-2<CR>gv=gv
 "   set termguicolors
 " endif
 
-colorscheme wombat256mod                                " set color scheme
+if $MYCSC=="my"
+    colorscheme my
+else
+    colorscheme wombat256mod
+endif
 
 
 "=================================================================================================
@@ -253,7 +256,7 @@ noremap N :set hlsearch<cr>N
 "     set nohlsearch
 " endfunc
 
-hi Search ctermfg=255 ctermbg=32 cterm=none guifg=#99CCFF guibg=#636066 gui=none
+nnoremap <leader>c :noh<cr>
 
 " word
 nnoremap <leader>s yiw:vimgrep /\C\<<C-R>0\>/ % <CR>:copen<CR>
@@ -295,16 +298,16 @@ augroup tab_set
     au FileType go set cindent
     au FileType python,go set expandtab smarttab shiftwidth=4 softtabstop=4 tabstop=4
     au FileType python,go set nocursorcolumn
-    au FileType python,go syntax sync minlines=250
-    au FileType python,go set synmaxcol=250
+    au FileType python,go syntax sync minlines=500
+    au FileType python,go set synmaxcol=800
     au FileType python,go set re=1
 
-    au FileType php,c,cpp,java,perl,shell,bash,vim,ruby,go,apiblueprint set cindent
-    au FileType php,c,cpp,java,perl,shell,bash,vim,ruby,go,apiblueprint set expandtab
-    au FileType php,c,cpp,java,perl,shell,bash,vim,ruby,go,apiblueprint set smarttab
-    au FileType php,c,cpp,java,perl,shell,bash,vim,ruby,go,apiblueprint set shiftwidth=4
-    au FileType php,c,cpp,java,perl,shell,bash,vim,ruby,go,apiblueprint set softtabstop=4
-    au FileType php,c,cpp,java,perl,shell,bash,vim,ruby,go,apiblueprint set tabstop=4
+    au FileType php,c,cpp,java,perl,shell,bash,vim,ruby,apiblueprint set cindent
+    au FileType php,c,cpp,java,perl,shell,bash,vim,ruby,apiblueprint set expandtab
+    au FileType php,c,cpp,java,perl,shell,bash,vim,ruby,apiblueprint set smarttab
+    au FileType php,c,cpp,java,perl,shell,bash,vim,ruby,apiblueprint set shiftwidth=4
+    au FileType php,c,cpp,java,perl,shell,bash,vim,ruby,apiblueprint set softtabstop=4
+    au FileType php,c,cpp,java,perl,shell,bash,vim,ruby,apiblueprint set tabstop=4
 
     au FileType coffee,html,css,xml,jsx,javascript,fish,gitconfig,less,proto,sql,thrift set smartindent "autoindent
     au FileType coffee,html,css,xml,jsx,javascript,fish,gitconfig,less,proto,sql,thrift set expandtab
