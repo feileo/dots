@@ -32,7 +32,7 @@ call plug#begin(plugdir)
     " Language Core
     Plug 'python-mode/python-mode', { 'for': 'python', 'branch': 'develop' }
     Plug 'fatih/vim-go', { 'do': ':GoUpdateBinaries' }  " Go
-    Plug 'Valloric/YouCompleteMe'                       " Great autocomplete plug
+    Plug 'ycm-core/YouCompleteMe'                       " Great autocomplete plug
 
     " Navigation
     Plug 'scrooloose/nerdtree'                          " Project and file navigation
@@ -64,9 +64,9 @@ call plug#begin(plugdir)
     Plug 'tell-k/vim-autopep8'
 
     " Search
-    Plug 'kien/ctrlp.vim'                               " Fast transitions on project files
-    Plug 'dyng/ctrlsf.vim'
+    Plug 'ctrlpvim/ctrlp.vim'                               " Fast transitions on project files
     Plug 'tacahiroy/ctrlp-funky'
+    Plug 'dyng/ctrlsf.vim'
 
     " Git
     Plug 'tpope/vim-fugitive'
@@ -87,9 +87,6 @@ call plug#begin(plugdir)
     Plug 'othree/html5.vim'
     Plug 'ap/vim-css-color'
 
-    " Input
-    Plug 'ybian/smartim'
-
     " markdown
     Plug 'godlygeek/tabular'                            " This must come before plasticboy/vim-markdown
     Plug 'plasticboy/vim-markdown'                      " Markdown syntax highlighting
@@ -102,8 +99,9 @@ call plug#begin(plugdir)
     " Neovim only supported
     Plug 'voldikss/vim-floaterm'
 
-    " Dash: Mac os only supported
-    " Plug 'rizzatti/dash.vim'
+    " icons
+    Plug 'ryanoasis/vim-devicons'
+    Plug 'tiagofumo/vim-nerdtree-syntax-highlight'
 
 call plug#end()
 
@@ -178,17 +176,19 @@ set shortmess=aoOtTWF
 let mapleader="\<Space>"
 
 inoremap <leader>rr <Esc>bcw
-nnoremap [e  :<c-u>execute 'move -1-'. v:count1<cr>
-nnoremap ]e  :<c-u>execute 'move +'. v:count1<cr>
-nnoremap [<space>  :<c-u>put! =repeat(nr2char(10), v:count1)<cr>'[
-nnoremap ]<space>  :<c-u>put =repeat(nr2char(10), v:count1)<cr>
 
-nnoremap <C-j> :m .+1<CR>==
-nnoremap <C-k> :m .-2<CR>==
-inoremap <C-j> <Esc>:m .+1<CR>==gi
-inoremap <C-k> <Esc>:m .-2<CR>==gi
-vnoremap <C-j> :m '>+1<CR>gv=gv
-vnoremap <C-k> :m '<-2<CR>gv=gv
+" nnoremap [e  :<c-u>execute 'move -1-'. v:count1<cr>
+" nnoremap ]e  :<c-u>execute 'move +'. v:count1<cr>
+" nnoremap [<space>  :<c-u>put! =repeat(nr2char(10), v:count1)<cr>'[
+" nnoremap ]<space>  :<c-u>put =repeat(nr2char(10), v:count1)<cr>
+
+" nnoremap <C-[> :m .+1<CR>==
+" inoremap <C-[> <Esc>:m .+1<CR>==gi
+" vnoremap <C-[> :m '>+1<CR>gv=gv
+
+" nnoremap <C-]> :m .-2<CR>==
+" vnoremap <C-]> :m '<-2<CR>gv=gv
+" inoremap <C-]> <Esc>:m .-2<CR>==gi
 
 
 "=================================================================================================
@@ -242,12 +242,12 @@ endif
 
 " These mappings will make it so that going to the next one in a search will
 " center on the line it's found in.
-nnoremap n nzzzv
-nnoremap N Nzzzv
+" nnoremap n nzzzv
+" nnoremap N Nzzzv
 
 " Enable highlighting when you enter a lookup command
-noremap n :set hlsearch<cr>n
-noremap N :set hlsearch<cr>N
+" noremap n :set hlsearch<cr>n
+" noremap N :set hlsearch<cr>N
 " noremap / :set hlsearch<cr>/
 " noremap ? :set hlsearch<cr>?
 " noremap * *:set hlsearch<cr>
@@ -257,9 +257,6 @@ noremap N :set hlsearch<cr>N
 " endfunc
 
 nnoremap <leader>c :noh<cr>
-
-" word
-nnoremap <leader>s yiw:vimgrep /\C\<<C-R>0\>/ % <CR>:copen<CR>
 
 
 "=================================================================================================

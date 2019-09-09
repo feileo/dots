@@ -235,7 +235,8 @@ let g:go_def_reuse_buffe = 1
 let g:go_fmt_command = "goimports"
 let g:go_def_mode = 'gopls'
 
-au FileType go nmap <leader><leader>u :GoDecls<cr>
+au FileType go nmap <leader>f :GoDecls<cr>
+au FileType go nmap <leader>u :GoCallers<cr>
 au FileType go nmap <C-g> <Plug>(go-def-vertical)
 au FileType go nmap <C-c>rf <Plug>(go-referrers)
 au FileType go nmap <C-c>rr <Plug>(go-rename)
@@ -290,13 +291,15 @@ let g:ycm_filetype_blacklist = {
             \}
 
 nmap <leader>d :YcmCompleter GoTo<CR>
+nmap <leader>u :YcmCompleter GoToReferences<CR>
 nmap <leader>g :YcmCompleter GoToDefinitionElseDeclaration<CR>
 
 
 " -----------------------------------------------------------------------------
 " Plugin: kien/ctrlp.vim
 " -----------------------------------------------------------------------------
-nmap <Leader><Tab> :CtrlPBuffer<cr>                         " 显示缓冲区文件，并可通过序号进行跳转
+map <C-f> :CtrlPMixed<CR>
+map <Leader><Tab> :CtrlPBuffer<CR>
 
 set wildignore+=*/tmp/*,*.so,*.swp,*.zip " */node_modulues/*,*/eggs/*    " MacOSX/Linux
 let g:ctrlp_custom_ignore = {
@@ -305,11 +308,12 @@ let g:ctrlp_custom_ignore = {
             \ 'link': 'some_bad_symbolic_links',
             \ }
 
-let g:ctrlp_working_path_mode = 'ra'                        " 0 or '' or 'c' or 'r' or 'a'
+" 0 or '' or 'c' or 'r' or 'a'
 " ‘c’--当前文件的目录
 " ‘a’--当前文件的目录，除非它是cwd的子目录
 " ‘r’--最近的当前文件，包含了这些.git .hg .svn .bzr_darcs文件或目录
 " ‘w’--和r类似，以cwd开始搜索，而非以当前文件目录
+let g:ctrlp_working_path_mode = 'ra'
 
 let g:ctrlp_match_window_bottom = 1
 let g:ctrlp_max_height = 15                                 " 修改 QuickFix 窗口显示的最大条目数
@@ -318,15 +322,17 @@ let g:ctrlp_mruf_max = 500                                  " 设置MRU最大条
 let g:ctrlp_follow_symlinks = 1
 let g:ctrlp_by_filename = 1                                 " 默认使用全路径搜索，置 1 后按文件名搜索，准确率会有所提高，可以用 <C-d> 进行切换
 let g:ctrlp_regexp = 0                                      " 默认不使用正则表达式，置 1 改为默认使用正则表达式，可以用 <C-r> 进行切换
-let g:ctrlp_line_prefix = '♪ '                              " 自定义搜索列表的提示符
+let g:ctrlp_line_prefix = '👉 '                             " 自定义搜索列表的提示符
+" Ignore files in .gitignore
+let g:ctrlp_user_command = ['.git', 'cd %s && git ls-files -co --exclude-standard']
 
 
 " -----------------------------------------------------------------------------
 " Plugin: tacahiroy/ctrlp-funky
 " -----------------------------------------------------------------------------
-nnoremap <Leader><Leader>u :CtrlPFunky<Cr>
+nmap <Leader>f :CtrlPFunky<Cr>
 " narrow the list down with a word under cursor
-nnoremap <Leader><Leader>U :execute 'CtrlPFunky ' . expand('<cword>')<Cr>
+nmap <Leader>F :execute 'CtrlPFunky ' . expand('<cword>')<Cr>
 let g:ctrlp_funky_matchtype = 'path'
 let g:ctrlp_funky_syntax_highlight = 1
 let g:ctrlp_extensions = ['funky']
@@ -336,24 +342,29 @@ let g:ctrlp_extensions = ['funky']
 " Plugin: dyng/ctrlsf.vim
 " -----------------------------------------------------------------------------
 let g:ctrlsf_ackprg = 'ag'
-nmap <Leader><Leader>s <Plug>CtrlSFPrompt
-vmap <Leader><Leader>s <Plug>CtrlSFVwordExec
-nmap <Leader><Leader>f <Plug>CtrlSFCwordPath
 
-" nnoremap <Leader><Leader>of :CtrlSFOpen
+nmap <Leader>s <Plug>CtrlSFPrompt
+vmap <Leader>s <Plug>CtrlSFVwordExec
+nmap <Leader>S <Plug>CtrlSFCwordPath
 
 let g:ctrlsf_ignore_dir = ["node_modules", "eggs", ".idea", ".ropeproject"]
 
+" let g:ctrlsf_auto_focus = {
+"             \"at": \"start",
+"             \ }
 let g:ctrlsf_auto_focus = {
-            \ "at": "start",
-            \ }
+    \ "at": "done",
+    \ "duration_less_than": 1000
+    \ }
 let g:ctrlsf_auto_close = {
             \ "normal" : 0,
             \ "compact": 0
             \}
 let g:ctrlsf_search_mode = 'async'
-"flet g:ctrlsf_position = 'bottom'
 let g:ctrlsf_default_view_mode ='compact'               " 'normal' and 'compact''
+let g:ctrlsf_populate_qflist = 1
+let g:ctrlsf_winsize = '45%'
+let g:ctrlsf_selected_line_hl = 'op'
 
 
 " -----------------------------------------------------------------------------
@@ -473,7 +484,6 @@ let g:xtabline_settings.close_buffer_can_quit_vim  = 1
 let g:xtabline_settings.theme='dracula'
 let g:xtabline_settings.tab_icon=['📍','']
 let g:xtabline_settings.named_tab_icon=['📍','']
-
 
 nmap <CR> <Plug>(XT-Select-Buffer)
 nmap <Tab> <Plug>(XT-Next-Buffer)
@@ -689,8 +699,10 @@ let g:AutoPairsMapBS = 0
 " -----------------------------------------------------------------------------
 " Plugin: 'easymotion/vim-easymotion'
 " -----------------------------------------------------------------------------
-nmap s <Plug>(easymotion-overwin-f)
-nmap S <Plug>(easymotion-overwin-f2)
+let g:EasyMotion_do_mapping = 0
+
+nmap <silent> f <Plug>(easymotion-overwin-f2)
+nmap <silent> F <Plug>(easymotion-overwin-f)
 
 map <leader><leader>j <Plug>(easymotion-j)
 map <leader><leader>k <Plug>(easymotion-k)
