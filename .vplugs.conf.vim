@@ -219,6 +219,7 @@ if filereadable(expand(join([vimgo_bin, "/gopls"], "")))
     let g:go_bin_path = vimgo_bin
     let g:go_search_bin_path_first = 1
 endif
+ 
 let g:go_fmt_fail_silently = 1
 let g:go_auto_type_info = 0
 " let g:go_info_mode = 'gocode'
@@ -396,8 +397,6 @@ let g:ale_echo_msg_format = '[%linter%] [%severity%] %s '
 let g:airline#extensions#ale#enabled = 1
 let g:ale_list_window_size = 5                              " Show 5 lines of errors (default: 10)
 
-" map <F6> :ALEToggle \| echo 'g:ale_enabled =' g:ale_enabled<CR>
-
 function! LinterStatus() abort
     let l:counts = ale#statusline#Count(bufnr(''))
     let l:all_errors = l:counts.error + l:counts.style_error
@@ -409,6 +408,8 @@ function! LinterStatus() abort
                 \)
 endfunction
 set statusline=%{LinterStatus()}
+
+map <F6> :ALEToggle \| echo 'g:ale_enabled =' g:ale_enabled<CR>
 
 highlight clear ALEErrorSign
 highlight clear ALEWarningSign
@@ -432,8 +433,6 @@ let g:airline#extensions#tabline#fnamemod = ':p:.'
 let g:airline#extensions#tabline#fnamecollapse = 1
 let g:airline#extensions#tabline#fnametruncate = 1
 let g:airline#extensions#tabline#show_close_button = 1
-" let g:airline#extensions#tabline#left_sep =' '             " tabline 中当前 buffer 两端的分隔字符
-" let g:airline#extensions#tabline#left_alt_sep = '|'        " tabline 中未激活 buffer 两端的分隔字符
 
 if !exists('g:airline_symbols')
     let g:airline_symbols = {}
@@ -470,7 +469,6 @@ else
     let g:airline_symbols.linenr = ''
     let g:airline#extensions#tabline#close_symbol = 'X'
 endif
-
 
 let airline#extensions#tabline#ignore_bufadd_pat = '\c\vgundo|undotree|vimfiler|tagbar|nerd_tree'
 
@@ -521,14 +519,14 @@ let g:vim_markdown_conceal_code_blocks = 0
 " Plugin: scrooloose/nerdtree
 " -----------------------------------------------------------------------------
 let g:NERDTreeChDirMode=2
-let NERDTreeWinSize=30
+let NERDTreeWinSize=33
 let NERDTreeShowHidden=0                                    " 是否显示隐藏文件
 let NERDTreeMinimalUI=0                                     " NERDTree 子窗口中是否显示冗余帮助信息
 let NERDTreeAutoDeleteBuffer=1
 let NERDTreeIgnore=['\.pyc','\~$','\.swp','__pycache__','\.git$','\.DS_Store', '\.a', '\.rbc$', '\.db$']
 let g:NERDTreeSortOrder=['^__\.py$', '\/$', '*', '\.swp$', '\.bak$', '\~$']
 let g:NERDTreeShowLineNumbers=0
-let NERDTreeNodeDelimiter="😀"                              "smiley face
+let NERDTreeNodeDelimiter="📁"                              "smiley face
 set wildignore+=*/tmp/*,*.so,*.swp,*.zip,*.pyc,*.db,*.sqlite
 
 nmap ' :NERDTreeToggle<cr>
@@ -661,7 +659,7 @@ let g:lastplace_ignore_buftype = "quickfix,nofile,help"
 let g:bookmark_no_default_key_mappings = 1
 highlight BookmarkSign ctermbg=NONE ctermfg=160
 highlight BookmarkLine ctermbg=194 ctermfg=NONE
-let g:bookmark_sign = '🔖'
+let g:bookmark_sign = '👉'
 let g:bookmark_highlight_lines = 0
 let g:bookmark_no_default_key_mappings = 1
 function! BookmarkMapKeys()

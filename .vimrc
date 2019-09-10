@@ -38,7 +38,7 @@ call plug#begin(plugdir)
     Plug 'scrooloose/nerdtree'                          " Project and file navigation
     Plug 'majutsushi/tagbar'                            " Class/module browser
 
-    " Syntax Highlighting
+    " Highlighting
     Plug 'vim-scripts/nginx.vim'
     Plug 'leafgarland/typescript-vim'
     Plug 'elzr/vim-json'
@@ -58,13 +58,13 @@ call plug#begin(plugdir)
     Plug 'MattesGroeger/vim-bookmarks'
     Plug 'itchyny/vim-cursorword'
 
-    " Lint and Fixer
+    " Liner
     Plug 'dense-analysis/ale'
     Plug 'Chiel92/vim-autoformat'
     Plug 'tell-k/vim-autopep8'
 
     " Search
-    Plug 'ctrlpvim/ctrlp.vim'                               " Fast transitions on project files
+    Plug 'ctrlpvim/ctrlp.vim'                            " Fast transitions on project files
     Plug 'tacahiroy/ctrlp-funky'
     Plug 'dyng/ctrlsf.vim'
 
@@ -87,7 +87,7 @@ call plug#begin(plugdir)
     Plug 'othree/html5.vim'
     Plug 'ap/vim-css-color'
 
-    " markdown
+    " Text
     Plug 'godlygeek/tabular'                            " This must come before plasticboy/vim-markdown
     Plug 'plasticboy/vim-markdown'                      " Markdown syntax highlighting
     Plug 'iamcco/markdown-preview.nvim', {'do': 'cd app & yarn install'}
@@ -99,7 +99,7 @@ call plug#begin(plugdir)
     " Neovim only supported
     Plug 'voldikss/vim-floaterm'
 
-    " icons
+    " Icons
     Plug 'ryanoasis/vim-devicons'
     Plug 'tiagofumo/vim-nerdtree-syntax-highlight'
 
@@ -133,15 +133,11 @@ set shiftwidth=4                                        " shift lines by 4 space
 set softtabstop=4
 set smarttab                                            " set tabs for a shifttabs logic
 set expandtab                                           " expand tabs into spaces
-" set cindent
-" set autoindent
+set autoindent
 set smartindent
 
 set showmatch                                           " shows matching part of bracket pairs (), [], {}
 set matchtime=1
-
-" set list
-" set listchars=tab:>-
 
 set shiftround
 set autoread                                            " reload file if the file changes on the disk
