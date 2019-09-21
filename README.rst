@@ -28,7 +28,7 @@ My dotfiles, which includes:
   - ``.zshrc``: You can get it from or modify it based on it, and load the local environment configuration from ``~/.dotfiles/.zenv.sh``.
 
 
-*❓ For Pythonista or Pythoneer, please see this* article_.
+*❓For Pythonista or Pythoneer, please see this* article_.
 
 Usage
 -----
