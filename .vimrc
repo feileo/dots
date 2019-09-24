@@ -86,6 +86,8 @@ call plug#begin(plugdir)
     Plug 'mattn/emmet-vim'
     Plug 'othree/html5.vim'
     Plug 'ap/vim-css-color'
+    Plug 'groenewege/vim-less'
+    Plug 'leafgarland/typescript-vim'
 
     " Text
     Plug 'godlygeek/tabular'                            " This must come before plasticboy/vim-markdown
@@ -278,13 +280,15 @@ nnoremap <leader>h :split<cr>
 "=================================================================================================
 xnoremap <  <gv
 xnoremap >  >gv
-autocmd WinEnter * set cursorline
-autocmd WinLeave * set nocursorline
+" au WinEnter * set cursorline
+" au WinLeave * set nocursorline
 
 
 "=================================================================================================
 "  FileType
 "=================================================================================================
+au BufNewFile,BufRead *.ts setlocal filetype=typescript
+au BufNewFile,BufRead *.tsx setlocal filetype=typescript.tsx
 augroup tab_set
     au!
     au FileType python set smartindent
@@ -302,12 +306,12 @@ augroup tab_set
     au FileType php,c,cpp,java,perl,shell,bash,vim,ruby,apiblueprint set softtabstop=4
     au FileType php,c,cpp,java,perl,shell,bash,vim,ruby,apiblueprint set tabstop=4
 
-    au FileType coffee,html,css,xml,jsx,javascript,fish,gitconfig,less,proto,sql,thrift set smartindent "autoindent
-    au FileType coffee,html,css,xml,jsx,javascript,fish,gitconfig,less,proto,sql,thrift set expandtab
-    au FileType coffee,html,css,xml,jsx,javascript,fish,gitconfig,less,proto,sql,thrift set smarttab
-    au FileType coffee,html,css,xml,jsx,javascript,fish,gitconfig,less,proto,sql,thrift set shiftwidth=2
-    au FileType coffee,html,css,xml,jsx,javascript,fish,gitconfig,less,proto,sql,thrift set softtabstop=2
-    au FileType coffee,html,css,xml,jsx,javascript,fish,gitconfig,less,proto,sql,thrift set tabstop=2
+    au FileType coffee,html,css,xml,jsx,javascript,fish,gitconfig,less,proto,sql,thrift,typescript,typescript.tsx set smartindent "autoindent
+    au FileType coffee,html,css,xml,jsx,javascript,fish,gitconfig,less,proto,sql,thrift,typescript,tsxescript.tsx set expandtab
+    au FileType coffee,html,css,xml,jsx,javascript,fish,gitconfig,less,proto,sql,thrift,typescript,tsxescript.tsx set smarttab
+    au FileType coffee,html,css,xml,jsx,javascript,fish,gitconfig,less,proto,sql,thrift,typescript,tsxescript.tsx set shiftwidth=2
+    au FileType coffee,html,css,xml,jsx,javascript,fish,gitconfig,less,proto,sql,thrift,typescript,tsxescript.tsx set softtabstop=2
+    au FileType coffee,html,css,xml,jsx,javascript,fish,gitconfig,less,proto,sql,thrift,typescript,tsxescript.tsx set tabstop=2
 
     au FileType yaml setlocal tabstop=2 expandtab shiftwidth=2 softtabstop=2
 
@@ -326,7 +330,6 @@ if has("win32")
 else
     set fileformats=unix,mac,dos
 endif
-
 
 "=================================================================================================
 "  Plugins Settings
