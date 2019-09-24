@@ -377,10 +377,16 @@ nmap <silent> <C-s>j <Plug>(ale_next_wrap)
 let g:ale_completion_enabled = 0
 let g:ale_sign_column_always = 0
 let g:ale_linters = {
-            \    'javascript': ['eslint','babel-eslint'],
+            \   'javascript': ['eslint','babel-eslint'],
+            \   'typescript': ['tsserver', 'tslint'],
+            \   'vue': ['eslint']
             \}
 let g:ale_fixers = {
             \    'javascript': ['eslint', 'babel-eslint'],
+            \    'typescript': ['prettier'],
+            \    'vue': ['eslint'],
+            \    'scss': ['prettier'],
+            \    'html': ['prettier']
             \}
 let g:ale_python_flake8_executable = 'python3'
 let g:ale_set_highlights = 0

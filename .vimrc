@@ -287,10 +287,12 @@ xnoremap >  >gv
 "=================================================================================================
 "  FileType
 "=================================================================================================
-au BufNewFile,BufRead *.ts setlocal filetype=typescript
-au BufNewFile,BufRead *.tsx setlocal filetype=typescript.tsx
 augroup tab_set
     au!
+
+    au BufNewFile,BufRead *.ts setlocal filetype=typescript
+    au BufNewFile,BufRead *.tsx setlocal filetype=typescript.tsx
+
     au FileType python set smartindent
     au FileType go set cindent
     au FileType python,go set expandtab smarttab shiftwidth=4 softtabstop=4 tabstop=4
