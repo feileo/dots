@@ -378,7 +378,7 @@ let g:ale_completion_enabled = 0
 let g:ale_sign_column_always = 0
 let g:ale_linters = {
             \   'javascript': ['eslint','babel-eslint'],
-            \   'typescript': ['tsserver', 'tslint'],
+            \   'typescript': ['tslint'],
             \   'vue': ['eslint']
             \}
 let g:ale_fixers = {
