@@ -290,9 +290,6 @@ xnoremap >  >gv
 augroup tab_set
     au!
 
-    au BufNewFile,BufRead *.ts setlocal filetype=typescript
-    au BufNewFile,BufRead *.tsx setlocal filetype=typescript.tsx
-
     au FileType python set smartindent
     au FileType go set cindent
     au FileType python,go set expandtab smarttab shiftwidth=4 softtabstop=4 tabstop=4
@@ -308,12 +305,12 @@ augroup tab_set
     au FileType php,c,cpp,java,perl,shell,bash,vim,ruby,apiblueprint set softtabstop=4
     au FileType php,c,cpp,java,perl,shell,bash,vim,ruby,apiblueprint set tabstop=4
 
-    au FileType coffee,html,css,xml,jsx,javascript,fish,gitconfig,less,proto,sql,thrift,typescript,typescript.tsx set smartindent "autoindent
-    au FileType coffee,html,css,xml,jsx,javascript,fish,gitconfig,less,proto,sql,thrift,typescript,tsxescript.tsx set expandtab
-    au FileType coffee,html,css,xml,jsx,javascript,fish,gitconfig,less,proto,sql,thrift,typescript,tsxescript.tsx set smarttab
-    au FileType coffee,html,css,xml,jsx,javascript,fish,gitconfig,less,proto,sql,thrift,typescript,tsxescript.tsx set shiftwidth=2
-    au FileType coffee,html,css,xml,jsx,javascript,fish,gitconfig,less,proto,sql,thrift,typescript,tsxescript.tsx set softtabstop=2
-    au FileType coffee,html,css,xml,jsx,javascript,fish,gitconfig,less,proto,sql,thrift,typescript,tsxescript.tsx set tabstop=2
+    au FileType coffee,html,css,xml,jsx,javascript,fish,gitconfig,less,proto,sql,thrift,typescript,typescript.tsx set smartindent
+    au FileType coffee,html,css,xml,jsx,javascript,fish,gitconfig,less,proto,sql,thrift,typescript,typescript.tsx set expandtab
+    au FileType coffee,html,css,xml,jsx,javascript,fish,gitconfig,less,proto,sql,thrift,typescript,typescript.tsx set smarttab
+    au FileType coffee,html,css,xml,jsx,javascript,fish,gitconfig,less,proto,sql,thrift,typescript,typescript.tsx set shiftwidth=2
+    au FileType coffee,html,css,xml,jsx,javascript,fish,gitconfig,less,proto,sql,thrift,typescript,typescript.tsx set softtabstop=2
+    au FileType coffee,html,css,xml,jsx,javascript,fish,gitconfig,less,proto,sql,thrift,typescript,typescript.tsx set tabstop=2
 
     au FileType yaml setlocal tabstop=2 expandtab shiftwidth=2 softtabstop=2
 
@@ -325,6 +322,9 @@ augroup tab_set
     au FileType makefile set noexpandtab
 
     au FileType markdown set expandtab shiftwidth=4 softtabstop=4 tabstop=4 syntax=markdown
+
+    au BufNewFile,BufRead *.ts set filetype=typescript
+    au BufNewFile,BufRead *.tsx set filetype=typescript.tsx
 augroup END
 
 if has("win32")
