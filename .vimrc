@@ -124,6 +124,7 @@ set autoread                                            " auto read when file is
 set t_Co=256                                            " set 256 colors
 " set mouse=a                                             " use mouse
 set number                                              " show line numbers
+set nowrap
 set encoding=utf-8
 set fileencoding=utf-8
 set fileencodings=utf-8,gbk,gb2312
