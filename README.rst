@@ -1,5 +1,5 @@
 ===========
-🚒 dotfiles
+😈 dotfiles
 ===========
 
 My `oh-my-zsh <https://ohmyz.sh/>`_ + neovim_ + tmux_ configuration file. I will synchronize frequently.
