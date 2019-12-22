@@ -1,8 +1,8 @@
-===========
-😈 dotfiles
-===========
+========
+dotfiles
+========
 
-My `oh-my-zsh <https://ohmyz.sh/>`_ + neovim_ + tmux_ configuration file. I will synchronize frequently.
+😈 My `oh-my-zsh <https://ohmyz.sh/>`_ + neovim_ + tmux_ configuration file. I will synchronize frequently.
 
 This is the favorite weapon for engineers who use terminals(recommend iTerm2_ or terminus_) for development,
 like writing poetry in the garden.
