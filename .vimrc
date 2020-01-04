@@ -205,8 +205,8 @@ inoremap <leader>rr <Esc>bcw
 "   set termguicolors
 " endif
 
-if $MYCSC=="my"
-    colorscheme my
+if $MYCSC=="sunrise"
+    colorscheme sunrise
 else
     colorscheme wombat256mod
 endif
@@ -338,8 +338,8 @@ endif
 "  Plugins Settings
 "=================================================================================================
 
-if !filereadable(expand('~/.dotfiles/.vplugs.conf.vim'))
-    echoerr "File ~/.dotfiles/.vplug.conf.vim not found"
+if !filereadable(expand('~/.dots/.vplugs.conf.vim'))
+    echoerr "File ~/.dots/.vplug.conf.vim not found"
 endif
 
-source $HOME/.dotfiles/.vplugs.conf.vim                   " load plug config
+source $HOME/.dots/.vplugs.conf.vim                   " load plug config

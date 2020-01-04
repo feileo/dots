@@ -207,7 +207,7 @@ alias ope="nvim"
 alias vim='nvim'
 alias vi='vim'
 alias vimrc='nvim ~/.vimrc'
-alias vimconf='nvim ~/.dotfiles/.vplugs.conf.vim'
+alias vimconf='nvim ~/.dots/.vplugs.conf.vim'
 
 # zshrc
 alias opezrc='nvim ~/.zshrc'
@@ -273,4 +273,4 @@ alias -s bz2='tar -xjvf'
 #  Load local env files
 # =====================================================
 
-[ -f ~/.dotfiles/.zenv.sh ] && source ~/.dotfiles/.zenv.sh
+[ -f ~/.dots/.zenv.sh ] && source ~/.dots/.zenv.sh
