@@ -2,12 +2,12 @@
 dotfiles
 ========
 
-😈 My `oh-my-zsh <https://ohmyz.sh/>`_ + neovim_ + tmux_ configuration file. I will synchronize frequently.
+😈 My `oh-my-zsh <https://ohmyz.sh/>`_ + neovim_ + tmux_ configuration files. I will synchronize frequently.
 
 This is the favorite weapon for engineers who use terminals(recommend iTerm2_ or terminus_) for development,
 like writing poetry in the garden.
 
-My dotfiles, which includes:
+Which includes:
 
 * 🐉 A **vim/neovim** configuration file sufficient for **Pythonista** and **Gopher**,
   with unique custom syntax highlighting.

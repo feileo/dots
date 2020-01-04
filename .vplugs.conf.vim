@@ -54,35 +54,6 @@ let g:pymode_rope_goto_definition_bind = '<C-g>'
 " Values are (`e`, `new`, `vnew`)
 let g:pymode_rope_goto_definition_cmd = 'vnew'
 
-" Custom syntax
-hi pythonBuiltinObj      ctermfg=105
-hi pythonBuiltinType     ctermfg=45
-hi pythonBuiltinFunc     ctermfg=45
-hi pythonDocstring       ctermfg=8
-hi pythonComment         ctermfg=8
-" hi pythonString        ctermfg=78
-hi pythonRawString       ctermfg=214 " cterm=italic
-hi pythonUniString       ctermfg=214 " cterm=italic
-hi pythonStrFormat       ctermfg=99
-hi pythonStrFormatting   ctermfg=99
-hi pythonDocTest         ctermfg=99
-hi pythonDocTest2        ctermfg=99
-hi pythonStrTemplate     ctermfg=99
-hi pythonClass           ctermfg=45
-hi pythonClassParameters ctermfg=45
-hi pythonSelf            ctermfg=215 cterm=italic
-hi pythonParam           ctermfg=215
-hi pythonParameters      ctermfg=215
-hi pythonLambdaExpr      ctermfg=247 cterm=italic
-hi pythonNumber          ctermfg=147
-hi pythonOperator        ctermfg=204
-hi pythonRepeat          ctermfg=177
-hi pythonConditional     ctermfg=177
-hi pythonExClass         ctermfg=210
-" hi pythonExtraOperator ctermfg=170
-hi pythonDecorator       ctermfg=208
-hi pythonDottedName      ctermfg=139
-
 let g:pymode_syntax=1
 let g:pymode_syntax_slow_sync=1
 let g:pymode_syntax_all=1
@@ -108,92 +79,6 @@ let g:pymode_syntax_docstrings=g:pymode_syntax_all
 " Plugin: fatih/vim-go
 " Language: Golang
 " -----------------------------------------------------------------------------
-hi goPackage               ctermfg=109
-hi goImport                ctermfg=209
-
-hi goVar                   ctermfg=45
-hi goConst                 ctermfg=45
-" hi goConst                 ctermfg=216
-hi goDeclaration           ctermfg=45 "cterm=italic
-hi goTypeDecl              ctermfg=45 "cterm=italic
-
-" Keywords within functions
-" defer go goto return break continue fallthrough
-" if else switch select
-" for range
-" case default
-hi goStatement             ctermfg=111
-hi goConditional           ctermfg=210
-hi goRepeat                ctermfg=210
-hi goLabel                 ctermfg=210
-
-" Predefined types
-" chan map bool string error
-" int int8 int16 int32 int64 rune
-" byte uint uint8 uint16 uint32 uint64 uintptr
-" float32 float64
-" complex64 complex128
-hi goType                  ctermfg=39
-hi goSignedInts            ctermfg=39
-hi goUnsignedInts          ctermfg=39
-hi goFloats                ctermfg=39
-hi goComplexes             ctermfg=39
-
-" Number Integers
-hi  goDecimalInt           ctermfg=147"12
-hi  goHexadecimalInt       ctermfg=147"12
-hi  goOctalInt             ctermfg=147"12
-hi  goOctalError           ctermfg=147"12
-hi  Integer                ctermfg=147"12
-hi  goFloat                ctermfg=147"12
-
-" Predefined functions and values
-" append cap close complex copy delete imag len
-" make new panic print println real recover
-" true false
-" nil iota
-hi goBuiltins              ctermfg=45
-hi goBoolean               ctermfg=12
-hi goPredefinedIdentifiers ctermfg=12
-
-" Extra types commonly seen
-hi goExtraType             ctermfg=45"137
-
-" Operators
-" hi goOperator            ctermfg=151"138
-" hi goPointerOperator     ctermfg=151
-hi goVarArgs               ctermfg=247
-
-" Functions
-" hi goFunction            ctermfg=228
-" hi goSimpleParams        ctermfg=215
-hi goParamName             ctermfg=215
-hi goReceiverVar           ctermfg=215 cterm=italic
-hi goParamType             ctermfg=247
-hi goFunctionReturn        ctermfg=247
-hi goFunctionCall          ctermfg=153"158
-
-" Fields;
-" hi goField               ctermfg=158
-
-" Structs & Interfaces
-hi goTypeName              ctermfg=174
-hi goReceiverType          ctermfg=247
-hi goTypeConstructor       ctermfg=174
-hi goDeclType              ctermfg=219 "struct interface
-
-" Variable Assignments
-hi goVarDefs               ctermfg=253
-hi goVarAsgsign            ctermfg=253
-
-" Comment
-hi goComment               ctermfg=243
-
-" Strings and their contents
-hi goRawString             ctermfg=76
-hi goFormatSpecifier       ctermfg=99
-hi goCharacter             ctermfg=208
-
 let g:go_highlight_array_whitespace_error = 0
 let g:go_highlight_chan_whitespace_error = 0
 let g:go_highlight_trailing_whitespace_error = 0
@@ -219,7 +104,7 @@ if filereadable(expand(join([vimgo_bin, "/gopls"], "")))
     let g:go_bin_path = vimgo_bin
     let g:go_search_bin_path_first = 1
 endif
- 
+
 let g:go_fmt_fail_silently = 1
 let g:go_auto_type_info = 0
 " let g:go_info_mode = 'gocode'
@@ -705,8 +590,8 @@ let g:AutoPairsMapBS = 0
 " -----------------------------------------------------------------------------
 let g:EasyMotion_do_mapping = 0
 
-nmap <silent> f <Plug>(easymotion-overwin-f2)
-nmap <silent> F <Plug>(easymotion-overwin-f)
+" nmap <silent> f <Plug>(easymotion-overwin-f)
+nmap <silent> F <Plug>(easymotion-overwin-f2)
 
 map <leader><leader>j <Plug>(easymotion-j)
 map <leader><leader>k <Plug>(easymotion-k)
