@@ -2,6 +2,8 @@
 dots
 ====
 
+🌎 [`English </README.rst>`_] ∙ [`简体中文 </README.CN.rst>`_]
+
 😈 My dotfiles(`oh-my-zsh <https://ohmyz.sh/>`_ + neovim_ + tmux_ configuration files).
 
 This is a favorite weapon for engineers who use the terminal (iTerm2_, terminus_, etc.) as a development tool.
@@ -14,7 +16,7 @@ Which includes:
 
   - ``.vimrc``: Base settings and plugin packages management.
   - ``.vplugs.conf.vim``: Plugin settings.
-  - ``sunrise.vim``: My colorscheme.
+  - ``sunrise.vim``: My colorscheme. It is supplemented and optimized for some plugins (such as enhanced support for Py and Go syntax highlighting).
 
   For floating window support, please check and upgrade neovim to the latest_ version.
 
@@ -32,6 +34,7 @@ Which includes:
 
 *❓For Pythonista or Pythoneer, please see this* article_.
 
+
 Usage
 -----
 
@@ -47,13 +50,13 @@ For neovim/(vim)
 
 * **Step 1**: Deploy settings for vim or neovim.
 
-  **option 1**: Using for neovim.
+  **option 1**: Using for neovim:
 
   .. code-block:: console
 
      ln -s ~/.dots/.vimrc ~/.config/nvim/init.vim
 
-  **option 2**: Using for vim.
+  **option 2**: Using for vim:
 
   .. code-block:: console
 
@@ -61,7 +64,7 @@ For neovim/(vim)
 
 * **Step 2**: Use ``PlugInstall`` to install plugins, See `plug.vim <https://github.com/junegunn/vim-plug>`_ for details.
 
-* **Step 3**: Copy ``sunrise.vim`` to ``plugged/vim-colorschemes/colors``.
+* **Step 3**: Copy ``sunrise.vim`` to ``plugged/vim-colorschemes/colors``:
 
   .. code-block:: console
 
@@ -70,11 +73,11 @@ For neovim/(vim)
      # For vim
      cp ~/.dots/sunrise.vim ~/.vim/plugged/vim-colorschemes/colors/
 
-* **Step 3**: Compile ycm(`YouCompleteMe <https://github.com/Valloric/YouCompleteMe>`_).
+* **Step 4**: Compile YCM(`YouCompleteMe <https://github.com/Valloric/YouCompleteMe>`_).
 
   For compilation options supported for more languages, see YouCompleteMe `Installation Guide <https://github.com/ycm-core/YouCompleteMe/#installation>`_.
 
-Finished, enjoy it.
+Finished, enjoy it 😎.
 
 If you are not familiar with these plugins, it is recommended that you go to each plugin repository to learn how to use them.
 
@@ -100,7 +103,7 @@ For tmux
 For oh-my-zsh
 *************
 
-* **Step 1**: Insatll prerequisites.
+* **Step 1**: Insatll prerequisites:
 
   - zsh
 
@@ -129,6 +132,11 @@ For oh-my-zsh
 
 * **Step 3**: Get the configurations you are interested in from ``.dots/.zshrc``.
 
+
+Thanks 🤝
+---------
+
+Please feel free to ⭐️ this repository if this project helped you 😉!
 
 .. _neovim: https://neovim.io/
 .. _tmux: https://github.com/tmux/tmux
