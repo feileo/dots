@@ -5,11 +5,11 @@
 "  instructions:
 "  https://github.com/junegunn/vim-plug
 "*****************************************************************************
-let use=$OPTIMUS_VIMMODE
 
-let plugdir=expand("~/.config/nvim/plugged")
-let vimplug_exists=expand('~/.config/nvim/autoload/plug.vim')
-if use == "vim"
+if has('nvim')
+    let plugdir=expand("~/.config/nvim/plugged")
+    let vimplug_exists=expand('~/.config/nvim/autoload/plug.vim')
+else
     let plugdir=expand("~/.vim/plugged")
     let vimplug_exists=expand('~/.vim/autoload/plug.vim')
 endif
@@ -205,11 +205,8 @@ inoremap <leader>rr <Esc>bcw
 "   set termguicolors
 " endif
 
-if $MYCSC=="sunrise"
-    colorscheme sunrise
-else
-    colorscheme wombat256mod
-endif
+" colorscheme wombat256mod
+colorscheme sunrise
 
 
 "=================================================================================================

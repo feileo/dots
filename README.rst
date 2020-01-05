@@ -1,11 +1,11 @@
-========
-dotfiles
-========
+====
+dots
+====
 
-😈 My `oh-my-zsh <https://ohmyz.sh/>`_ + neovim_ + tmux_ configuration files. I will synchronize frequently.
+😈 My dotfiles(`oh-my-zsh <https://ohmyz.sh/>`_ + neovim_ + tmux_ configuration files).
 
-This is the favorite weapon for engineers who use terminals(recommend iTerm2_ or terminus_) for development,
-like writing poetry in the garden.
+This is a favorite weapon for engineers who use the terminal (iTerm2_, terminus_, etc.) as a development tool.
+It's like writing poetry in the garden 🌷.
 
 Which includes:
 
@@ -14,6 +14,7 @@ Which includes:
 
   - ``.vimrc``: Base settings and plugin packages management.
   - ``.vplugs.conf.vim``: Plugin settings.
+  - ``sunrise.vim``: My colorscheme.
 
   For floating window support, please check and upgrade neovim to the latest_ version.
 
@@ -25,7 +26,8 @@ Which includes:
 
 * 🚀 An efficient **oh-my-zsh** configuration file.
 
-  - ``.zshrc``: You can get it from or modify it based on it, and load the local environment configuration from ``~/.dotfiles/.zenv.sh``.
+  - ``.zshrc``: You can get the configuration from it or use it directly.
+    It loads the local environment configuration from ``~/.dots/.zenv.sh``.
 
 
 *❓For Pythonista or Pythoneer, please see this* article_.
@@ -37,7 +39,7 @@ Get dotfiles:
 
 .. code-block:: console
 
-   git clone https://github.com/acthy/dotfiles.git ~/.dotfiles
+    git clone https://github.com/at7h/dots.git ~/.dots
 
 
 For neovim/(vim)
@@ -45,29 +47,36 @@ For neovim/(vim)
 
 * **Step 1**: Deploy settings for vim or neovim.
 
-  **option 1**: If you want to use neovim.
+  **option 1**: Using for neovim.
 
   .. code-block:: console
 
-     ln -s ~/.dotfiles/.vimrc ~/.config/nvim/init.vim
+     ln -s ~/.dots/.vimrc ~/.config/nvim/init.vim
 
-  **option 2**: If you want to use vim.
+  **option 2**: Using for vim.
 
   .. code-block:: console
 
-     ln -sf ~/.dotfiles/.vimrc ~/
-     # echo "export OPTIMUS_VIMMODE=vim" >> ~/.dotfiles/.zenv.sh
-     export OPTIMUS_VIMMODE=vim
+     ln -s ~/.dots/.vimrc ~/
 
 * **Step 2**: Use ``PlugInstall`` to install plugins, See `plug.vim <https://github.com/junegunn/vim-plug>`_ for details.
+
+* **Step 3**: Copy ``sunrise.vim`` to ``plugged/vim-colorschemes/colors``.
+
+  .. code-block:: console
+
+     # For neovim
+     cp ~/.dots/sunrise.vim ~/.config/nvim/plugged/vim-colorschemes/colors/
+     # For vim
+     cp ~/.dots/sunrise.vim ~/.vim/plugged/vim-colorschemes/colors/
 
 * **Step 3**: Compile ycm(`YouCompleteMe <https://github.com/Valloric/YouCompleteMe>`_).
 
   For compilation options supported for more languages, see YouCompleteMe `Installation Guide <https://github.com/ycm-core/YouCompleteMe/#installation>`_.
 
-* **Step 4**: Finished, enjoy it.
+Finished, enjoy it.
 
-  If you are not familiar with these plugins, it is recommended that you go to each plugin repository to learn how to use them.
+If you are not familiar with these plugins, it is recommended that you go to each plugin repository to learn how to use them.
 
 
 For tmux
@@ -84,9 +93,9 @@ For tmux
 
   .. code-block:: console
 
-     ln -sf ~/.dotfiles/.tmux.conf ~/
+     ln -s ~/.dots/.tmux.conf ~/
 
-  Use ``tmux prefix`` + ``e`` to editing the local tmux configuration ``~/.dotfiles/.tmux.conf.local``.
+  Use ``tmux prefix`` + ``e`` to editing the local tmux configuration ``~/.dots/.tmux.conf.local``.
 
 For oh-my-zsh
 *************
@@ -118,7 +127,7 @@ For oh-my-zsh
 
   - ``Preferences -> Profiles -> Colors -> Colors Presets -> Monokai Soda``
 
-* **Step 3**: Get the configurations you are interested in from ``.dotfiles/.zshrc``.
+* **Step 3**: Get the configurations you are interested in from ``.dots/.zshrc``.
 
 
 .. _neovim: https://neovim.io/
@@ -130,6 +139,5 @@ For oh-my-zsh
 .. _powerlevel10k: https://github.com/romkatv/powerlevel10k
 .. _zsh-syntax-highlighting: https://github.com/zsh-users/zsh-syntax-highlighting
 .. _zsh-autosuggestions: https://github.com/zsh-users/zsh-autosuggestions
-.. _image: https://img.shields.io/static/v1.svg?label=dotfiles&message=fight&color=brightgreen
 .. _undotree: https://github.com/mbbill/undotree
 .. _article: https://blog.fullstackpentest.com/Pythonista%E5%92%8CPythoneer%E7%9A%84%E5%8C%BA%E5%88%AB-What-s-the-difference-between-Pythonista-and-Pythoneer.html
