@@ -39,8 +39,8 @@ dots
     git clone https://github.com/at7h/dots.git ~/.dots
 
 
-For neovim/(vim)
-****************
+For neovim/vim
+**************
 
 * **步骤 1**: 配置 ``.vimrc`` 或 ``init.vim`` 。
 

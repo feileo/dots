@@ -45,8 +45,8 @@ Get dotfiles:
     git clone https://github.com/at7h/dots.git ~/.dots
 
 
-For neovim/(vim)
-****************
+For neovim/vim
+**************
 
 * **Step 1**: Deploy settings for vim or neovim.
 
