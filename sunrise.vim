@@ -10,7 +10,7 @@ if version > 580
     endif
 endif
 
-let colors_name = "sunrise"
+let colors_name="sunrise"
 
 
 " ------------------------------------------------------------------------------------------------------
@@ -91,8 +91,15 @@ hi Todo       ctermfg=101 cterm=none guifg=#857b6f gui=italic
 " ------------------------------------------------------------------------------------------------------
 " CtrlP
 " ------------------------------------------------------------------------------------------------------
-hi CtrlPMatch     ctermfg=235 ctermbg=208 cterm=none guifg=#cae982 gui=none
-hi CtrlPNoEntries ctermfg=235 ctermbg=208 cterm=none guifg=#cae982 gui=none
+" hi CtrlPMatch     ctermfg=235 ctermbg=208  	cterm=none		guifg=#cae982	gui=none
+" hi CtrlPNoEntries ctermfg=235 ctermbg=208  	cterm=none		guifg=#cae982	gui=none
+
+
+" ------------------------------------------------------------------------------------------------------
+" LeaderF 
+" ------------------------------------------------------------------------------------------------------
+hi Lf_hl_cursorline  ctermfg=209 ctermbg=none  	cterm=none		guifg=Yellow	gui=none  guibg=none
+hi Lf_hl_rgHighlight ctermfg=236 ctermbg=209  	cterm=none		guifg=#000000	gui=none  guibg=#cccc66
 
 
 " ------------------------------------------------------------------------------------------------------
@@ -102,11 +109,13 @@ hi CtrlPNoEntries ctermfg=235 ctermbg=208 cterm=none guifg=#cae982 gui=none
 hi goPackage               ctermfg=109
 hi goImport                ctermfg=209
 
+" Fields 178 143 140
+hi goField                 ctermfg=144 "cterm=italic
+
 hi goVar                   ctermfg=45
 hi goConst                 ctermfg=45
-" hi goConst                 ctermfg=216
-hi goDeclaration           ctermfg=45 "cterm=italic
-hi goTypeDecl              ctermfg=45 "cterm=italic
+hi goDeclaration           ctermfg=45
+hi goTypeDecl              ctermfg=45
 
 " Keywords within functions
 " defer go goto return break continue fallthrough
@@ -131,12 +140,12 @@ hi goFloats                ctermfg=39
 hi goComplexes             ctermfg=39
 
 " Number Integers
-hi  goDecimalInt           ctermfg=147"12
-hi  goHexadecimalInt       ctermfg=147"12
-hi  goOctalInt             ctermfg=147"12
-hi  goOctalError           ctermfg=147"12
-hi  Integer                ctermfg=147"12
-hi  goFloat                ctermfg=147"12
+hi goDecimalInt           ctermfg=147"12
+hi goHexadecimalInt       ctermfg=147"12
+hi goOctalInt             ctermfg=147"12
+hi goOctalError           ctermfg=147"12
+hi Integer                ctermfg=147"12
+hi goFloat                ctermfg=147"12
 
 " Predefined functions and values
 " append cap close complex copy delete imag len
@@ -148,7 +157,7 @@ hi goBoolean               ctermfg=12
 hi goPredefinedIdentifiers ctermfg=12
 
 " Extra types commonly seen
-hi goExtraType             ctermfg=45"137
+hi goExtraType             ctermfg=45
 
 " Operators
 " hi goOperator            ctermfg=151"138
@@ -162,28 +171,25 @@ hi goParamName             ctermfg=215
 hi goReceiverVar           ctermfg=215 cterm=italic
 hi goParamType             ctermfg=247
 hi goFunctionReturn        ctermfg=247
-hi goFunctionCall          ctermfg=153"158
-
-" Fields;
-" hi goField               ctermfg=158
+hi goFunctionCall          ctermfg=153
 
 " Structs & Interfaces
-hi goTypeName              ctermfg=174
 hi goReceiverType          ctermfg=247
-hi goTypeConstructor       ctermfg=174
-hi goDeclType              ctermfg=219 "struct interface
+hi goTypeName              ctermfg=174
+hi goTypeConstructor       ctermfg=174 "cterm=italic
+hi goDeclType              ctermfg=218 "struct interface
 
 " Variable Assignments
 hi goVarDefs               ctermfg=253
 hi goVarAsgsign            ctermfg=253
 
 " Comment
-hi goComment               ctermfg=243
+hi goComment               ctermfg=243 "cterm=italic
 
 " Strings and their contents
 hi goRawString             ctermfg=76
 hi goFormatSpecifier       ctermfg=99
-hi goCharacter             ctermfg=208
+hi goCharacter             ctermfg=222
 
 
 " ------------------------------------------------------------------------------------------------------
