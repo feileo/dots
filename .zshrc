@@ -104,7 +104,9 @@ POWERLEVEL9K_BATTERY_VERBOSE=true
 POWERLEVEL9K_RBENV_PROMPT_ALWAYS_SHOW=true
 POWERLEVEL9K_GO_VERSION_PROMPT_ALWAYS_SHOW=true
 
-[[ $TMUX = "" ]] && export TERM="xterm-256color"
+export TERM="xterm-256color"
+[[ $TMUX = "" ]] && export TERM="tmux-256color"
+
 
 # Set list of themes to pick from when loading at random
 # Setting this variable when ZSH_THEME=random will cause zsh to load
@@ -160,10 +162,10 @@ HIST_STAMPS="yyyy-mm-dd"
 # Add wisely, as too many plugins slow down shell startup.
 
 plugins=(
-    git 
+    git
     git-open
-    z 
-    extract 
+    z
+    extract
     zsh-syntax-highlighting
     zsh-autosuggestions
     virtualenv
@@ -226,6 +228,8 @@ alias gbr='git branch'
 alias gul="git pull"
 alias gus="git push"
 alias gl="git log"
+alias glg="git log --graph --decorate --all"
+alias glgo="git log --oneline --graph --decorate --all"
 alias gc="git commit -m"
 alias gm="git merge"
 alias gcl='git clone'
@@ -243,7 +247,7 @@ alias rmenv="rmvirtualenv"
 alias tnew='tmux new -s'
 alias tatt='tmux attach'
 alias tdtt='tmux detach'
- 
+
 # base
 alias cls='clear'
 alias ll='ls -l'

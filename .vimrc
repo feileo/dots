@@ -31,68 +31,66 @@ call plug#begin(plugdir)
 
     " Language Core
     Plug 'python-mode/python-mode', { 'for': 'python', 'branch': 'develop' }
-    Plug 'fatih/vim-go', { 'do': ':GoUpdateBinaries' }  " Go
-    Plug 'ycm-core/YouCompleteMe'                       " Great autocomplete plug
+    Plug 'fatih/vim-go', { 'do': ':GoUpdateBinaries', 'for': 'go' }
+    Plug 'ycm-core/YouCompleteMe', { 'commit': '94cfacd'}
 
     " Navigation
-    Plug 'scrooloose/nerdtree'                          " Project and file navigation
-    Plug 'majutsushi/tagbar'                            " Class/module browser
+    Plug 'scrooloose/nerdtree' ", { 'on':  'NERDTreeToggle' }
+    Plug 'majutsushi/tagbar'
 
     " Highlighting
-    Plug 'vim-scripts/nginx.vim'
-    Plug 'leafgarland/typescript-vim'
-    Plug 'elzr/vim-json'
+    Plug 'vim-scripts/nginx.vim', { 'for': 'nginx' }
+    Plug 'leafgarland/typescript-vim', { 'for': ['typescript', 'typescript.tsx'] }
+    Plug 'elzr/vim-json', { 'for': 'json' }
     Plug 'kylef/apiblueprint.vim'
 
     " Efficiency
     Plug 'terryma/vim-multiple-cursors'
     Plug 'tpope/vim-surround'                           " Parentheses, brackets, quotes, XML tags, and more
     Plug 'tpope/vim-commentary'                         " Comment stuff out
-    Plug 'easymotion/vim-easymotion'
+    " Plug 'easymotion/vim-easymotion'
+    Plug 'justinmk/vim-sneak'
     Plug 'lfv89/vim-interestingwords'
     Plug 'yggdroot/indentline'
-    Plug 'jiangmiao/auto-pairs'
+    Plug 'terryma/vim-smooth-scroll'
+    Plug 'Raimondi/delimitMate'
     Plug 'voldikss/vim-translate-me'
     Plug 'mbbill/undotree'
     Plug 'farmergreg/vim-lastplace'
     Plug 'MattesGroeger/vim-bookmarks'
     Plug 'itchyny/vim-cursorword'
 
-    " Liner
+    " Liner, Formatter
     Plug 'dense-analysis/ale'
-    Plug 'Chiel92/vim-autoformat'
     Plug 'tell-k/vim-autopep8'
 
     " Search
-    Plug 'ctrlpvim/ctrlp.vim'                            " Fast transitions on project files
-    Plug 'tacahiroy/ctrlp-funky'
-    Plug 'dyng/ctrlsf.vim'
+    Plug 'Yggdroot/LeaderF', { 'do': './install.sh' }
+    " Plug 'ctrlpvim/ctrlp.vim'
+    " Plug 'tacahiroy/ctrlp-funky'
+    " Plug 'dyng/ctrlsf.vim'
 
     " Git
     Plug 'tpope/vim-fugitive'
-    Plug 'airblade/vim-gitgutter'
     Plug 'Xuyuanp/nerdtree-git-plugin'                  " Nerdtree git support
-    Plug 'rhysd/git-messenger.vim'
+    Plug 'airblade/vim-gitgutter'
 
     " Schemes
     Plug 'flazz/vim-colorschemes'                       " Colorschemes
     Plug 'bling/vim-airline'                            " Lean & mean status/tabline for vim
     Plug 'vim-airline/vim-airline-themes'               " Themes for airline
     Plug 'Lokaltog/vim-powerline'                       " Powerline fonts plugin
-    Plug 'mg979/vim-xtabline'
+    Plug 'mg979/vim-xtabline', {'commit': 'cb48b84'}
 
     " Front-end
-    Plug 'mitsuhiko/vim-sparkup'                        " sparkup(XML/jinja/htlm-django/etc.) support
-    Plug 'mattn/emmet-vim'
-    Plug 'othree/html5.vim'
-    Plug 'ap/vim-css-color'
-    Plug 'groenewege/vim-less'
-    Plug 'leafgarland/typescript-vim'
+    " Plug 'mitsuhiko/vim-sparkup'                        " sparkup(XML/jinja/htlm-django/etc.) support
+    " Plug 'othree/html5.vim', { 'for': 'html' }
+    " Plug 'ap/vim-css-color', { 'for': 'css' }
+    " Plug 'groenewege/vim-less', { 'for': 'less' }
+    " Plug 'leafgarland/typescript-vim', { 'for': ['jsx', 'javascript'] }
 
     " Text
-    Plug 'godlygeek/tabular'                            " This must come before plasticboy/vim-markdown
-    Plug 'plasticboy/vim-markdown'                      " Markdown syntax highlighting
-    Plug 'iamcco/markdown-preview.nvim', {'do': 'cd app & yarn install'}
+    Plug 'plasticboy/vim-markdown', { 'for': 'markdown'} " Markdown syntax highlighting
 
     " Other
     Plug 'mhinz/vim-startify'
@@ -162,12 +160,14 @@ set foldlevelstart=99
 set switchbuf=useopen
 set laststatus=2
 set wildignore=*.o,*~,*.pyc,*.a                         " ignore compiled files
+"set ambiwidth=double
 
 set ttyfast                                             " terminal acceleration, Make the keyboard faaaaaaast
 set lazyredraw
-set timeout timeoutlen=1000 ttimeoutlen=50
+set timeout ttimeout timeoutlen=1000 ttimeoutlen=50
 set shortmess=aoOtTWF
-
+" default updatetime 4000ms is not good for async update
+set updatetime=100
 
 "=================================================================================================
 "  Mappings
@@ -227,8 +227,9 @@ noremap <leader>e <C-Z><cr>
 "=================================================================================================
 " Searching (/, ?)
 "=================================================================================================
-set incsearch                                           " incremental search
+set smartcase
 set hlsearch                                            " highlight search results
+set incsearch                                           " incremental search
 
 if has('nvim')
     set inccommand=split                                " enables interactive search and replace
@@ -289,7 +290,8 @@ augroup tab_set
     au!
 
     au FileType python set smartindent
-    au FileType go set cindent
+    " au FileType go set cindent
+    " au FileType go set list lcs=tab:\┆\ 
     au FileType python,go set expandtab smarttab shiftwidth=4 softtabstop=4 tabstop=4
     au FileType python,go set nocursorcolumn
     au FileType python,go syntax sync minlines=500
