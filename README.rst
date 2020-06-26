@@ -7,7 +7,7 @@ dots
 😈 My dotfiles(`oh-my-zsh <https://ohmyz.sh/>`_ + neovim_ + tmux_ configuration files).
 
 This is a favorite weapon for engineers who use the terminal (iTerm2_, terminus_, etc.) as a development tool.
-It's like writing poetry in the garden 🌷.
+It's like writing poetry in the garden 🌷 .
 
 Which includes:
 
@@ -30,9 +30,6 @@ Which includes:
 
   - ``.zshrc``: You can get the configuration from it or use it directly.
     It loads the local environment configuration from ``~/.dots/.zenv.sh``.
-
-
-*❓For Pythonista or Pythoneer, please see this* article_.
 
 
 Usage
@@ -136,7 +133,7 @@ For oh-my-zsh
 Thanks 🤝
 ---------
 
-Please feel free to ⭐️ this repository if this project helped you 😉!
+Please feel free to ⭐️ this repository if this project helped you 😉 !
 
 .. _neovim: https://neovim.io/
 .. _tmux: https://github.com/tmux/tmux

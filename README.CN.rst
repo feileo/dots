@@ -4,7 +4,7 @@ dots
 
 😈 我的 dotfiles(`oh-my-zsh <https://ohmyz.sh/>`_ + neovim_ + tmux_ 等配置)。
 
-对于使用终端（iTerm2_, terminus_ 等）作为开发工具的工程师来说，这是他们最喜欢的武器。就像在花园里写诗一样 🌷。
+对于使用终端（iTerm2_, terminus_ 等）作为开发工具的工程师来说，这是他们最喜欢的武器，就像在花园里写诗一样 🌷。
 
 此项目包括：
 
@@ -12,9 +12,9 @@ dots
 
   - ``.vimrc``: 内置的设置和插件管理。
   - ``.vplugs.conf.vim``: 所有插件配置。
-  - ``sunrise.vim``: 我自己的 colorscheme，针对一些插件做了补充和优化(如对 Py 和 Go 语法高亮的增强支持)。
+  - ``sunrise.vim``: 我自己的 colorscheme，针对一些插件做了补充和优化(比如对 Py 和 Go 语法高亮的增强支持)。
 
-  其中有插件使用了 neovim 最新的悬浮窗口的特性，需要升级至最新版才能使用。
+  其中有些插件使用了 neovim 最新的悬浮窗口的特性，需要升级至最新版才能使用。
 
 * 🏝  一个基于 `gpakosz/.tmux <https://github.com/gpakosz/.tmux/tree/master>`_ 的非常美观的 **tmux** 配置：
 
@@ -26,8 +26,6 @@ dots
 
   - ``.zshrc``: 你可以从中获取配置或直接使用它，它从 ``~/.dots/.zenv.sh`` 加载本地环境配置。
 
-*❓有关 Pythonista 和 Pythoneer 的叫法, 可以参见这篇* `文章 <https://blog.fullstackpentest.com/Pythonista%E5%92%8CPythoneer%E7%9A%84%E5%8C%BA%E5%88%AB-What-s-the-difference-between-Pythonista-and-Pythoneer.html>`_ 。
-
 
 使用
 ----
@@ -36,7 +34,7 @@ dots
 
 .. code-block:: console
 
-    git clone https://github.com/at7h/dots.git ~/.dots
+    $ git clone https://github.com/at7h/dots.git ~/.dots
 
 
 For neovim/vim
@@ -48,24 +46,24 @@ For neovim/vim
 
   .. code-block:: console
 
-     ln -s ~/.dots/.vimrc ~/.config/nvim/init.vim
+    $ ln -s ~/.dots/.vimrc ~/.config/nvim/init.vim
 
   **选项 2**: 对于 vim：
 
   .. code-block:: console
 
-     ln -s ~/.dots/.vimrc ~/
+    $ ln -s ~/.dots/.vimrc ~/
 
 * **步骤 2**: 使用 ``PlugInstall`` 命令安装插件，更多详情请参见 `plug.vim <https://github.com/junegunn/vim-plug>`_ 。
 
-* **步骤 3**: 复制 ``sunrise.vim`` 到 ``plugged/vim-colorschemes/colors``:
+* **步骤 3**: 应用 ``sunrise.vim`` 到 ``plugged/vim-colorschemes/colors``:
 
   .. code-block:: console
 
-     # For neovim
-     cp ~/.dots/sunrise.vim ~/.config/nvim/plugged/vim-colorschemes/colors/
-     # For vim
-     cp ~/.dots/sunrise.vim ~/.vim/plugged/vim-colorschemes/colors/
+    # For neovim
+    $ ln -s ~/.dots/sunrise.vim ~/.config/nvim/plugged/vim-colorschemes/colors/sunrise.vim
+    # For vim
+    $ ln -s ~/.dots/sunrise.vim ~/.vim/plugged/vim-colorschemes/colors/sunrise.vim
 
 * **步骤 4**: 编译 YCM(`YouCompleteMe <https://github.com/Valloric/YouCompleteMe>`_)。
 
@@ -73,8 +71,17 @@ For neovim/vim
 
 完事儿，开始享受吧 😎。
 
-如果你不熟悉这些插件，建议你去每个插件库学习下如何使用它们。
+下面附上插件列表以及选用理由:
 
+==================================  ======================
+插件                                理由
+----------------------------------  ----------------------
+语言支持类
+==================================  ======================
+fatih/vim-go_                       最好 go 语言插件
+==================================  ======================
+
+.. 插件学习
 
 For tmux
 ********
@@ -144,3 +151,5 @@ For oh-my-zsh
 .. _zsh-autosuggestions: https://github.com/zsh-users/zsh-autosuggestions
 .. _undotree: https://github.com/mbbill/undotree
 .. _article: https://blog.fullstackpentest.com/Pythonista%E5%92%8CPythoneer%E7%9A%84%E5%8C%BA%E5%88%AB-What-s-the-difference-between-Pythonista-and-Pythoneer.html
+
+.. _fatih/vim-go: https://github.com/fatih/vim-go

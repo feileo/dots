@@ -37,12 +37,6 @@ hi Error        ctermfg=1    ctermbg=none cterm=none,bold guifg=#dc322f guibg=no
 " ------------------------------------------------------------------------------------------------------
 " Mode colors
 " ------------------------------------------------------------------------------------------------------
-" hi! NormalMode  ctermfg=12 ctermbg=15 guifg=#839496 cterm=none,reverse guibg=#fdf6e3 gui=none,reverse
-" hi! InsertMode  ctermfg=6  ctermbg=15 guifg=#2aa198 cterm=none,reverse guibg=#fdf6e3 gui=none,reverse
-" hi! ReplaceMode ctermfg=9  ctermbg=15 guifg=#cb4b16 cterm=none,reverse guibg=#fdf6e3 gui=none,reverse
-" hi! VisualMode  ctermfg=5  ctermbg=15 guifg=#d33682 cterm=none,reverse guibg=#fdf6e3 gui=none,reverse
-" hi! CommandMode ctermfg=5  ctermbg=15 guifg=#d33682 cterm=none,reverse guibg=#fdf6e3 gui=none,reverse
-
 hi CursorLine             ctermbg=236                cterm=none          guibg=#32322f
 hi Search     ctermfg=235 ctermbg=38   guifg=#99CCFF cterm=none          guibg=#636066 gui=none
 hi MatchParen ctermfg=3   ctermbg=none guifg=#b58900 cterm=none,reverse  guibg=none    gui=none,reverse
@@ -89,17 +83,10 @@ hi Todo       ctermfg=101 cterm=none guifg=#857b6f gui=italic
 
 
 " ------------------------------------------------------------------------------------------------------
-" CtrlP
-" ------------------------------------------------------------------------------------------------------
-" hi CtrlPMatch     ctermfg=235 ctermbg=208  	cterm=none		guifg=#cae982	gui=none
-" hi CtrlPNoEntries ctermfg=235 ctermbg=208  	cterm=none		guifg=#cae982	gui=none
-
-
-" ------------------------------------------------------------------------------------------------------
 " LeaderF 
 " ------------------------------------------------------------------------------------------------------
-hi Lf_hl_cursorline  ctermfg=209 ctermbg=none  	cterm=none		guifg=Yellow	gui=none  guibg=none
-hi Lf_hl_rgHighlight ctermfg=236 ctermbg=209  	cterm=none		guifg=#000000	gui=none  guibg=#cccc66
+hi Lf_hl_cursorline  ctermfg=209 ctermbg=none cterm=none guifg=Yellow  gui=none guibg=none
+hi Lf_hl_rgHighlight ctermfg=236 ctermbg=209  cterm=none guifg=#000000 gui=none guibg=#cccc66
 
 
 " ------------------------------------------------------------------------------------------------------
