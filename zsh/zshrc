@@ -276,5 +276,4 @@ alias -s bz2='tar -xjvf'
 # =====================================================
 #  Load local env files
 # =====================================================
-
-[ -f ~/.dots/.zenv.sh ] && source ~/.dots/.zenv.sh
+[ -f ~/.dots/zsh/zshrc.local ] && source ~/.dots/zsh/zshrc.local

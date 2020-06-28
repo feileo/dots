@@ -1,2 +1,6 @@
 install.sh
-.zenv.sh
+zsh/zshrc.local
+vim/config/plug
+vim/.plugin
+vim/.cache
+vim/config/plugins.yaml
