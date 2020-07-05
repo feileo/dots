@@ -1,0 +1,17 @@
+{
+  "languageserver": {
+    "golang": {
+      "command": "gopls",
+      "rootPatterns": ["go.mod", ".vim/", ".git/", ".hg/"],
+      "trace.server": "verbose",
+      "disableWorkspaceFolders": true,
+      "initializationOptions": {
+        "usePlaceholders": true,
+        "completeUnimported": true,
+        "diagnosticsEnabled": false
+      },
+      "filetypes": ["go"]
+    }
+  },
+  "suggest.snippetIndicator": ""
+}

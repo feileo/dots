@@ -1,32 +1,36 @@
-====
-dots
-====
+===========
+my dotfiles
+===========
 
-😈 我的 dotfiles(`oh-my-zsh <https://ohmyz.sh/>`_ + neovim_ + tmux_ 等配置)。
+我的 `oh-my-zsh <https://ohmyz.sh>`_, `neo/vim`_ , tmux_ 等配置 😊
 
-对于使用终端（iTerm2_, terminus_ 等）作为开发工具的工程师来说，这是他们最喜欢的武器。就像在花园里写诗一样 🌷。
 
-此项目包括：
+* `vim/`_: 适用于 **Pythonista** 和 **Gopher** 的模块化 **Neo/vim** 配置，强大而轻快
 
-* 🐉 一个适合于 **Pythonista** 和 **Gopher** 的 **vim/neovim** 配置：
+  - `colors/sunrise.vim </vim/colors>`_: 我的 colorscheme, 此方案还针对一些插件做了增强补充和优化
+  - `config/ </vim/config>`_: 配置
 
-  - ``.vimrc``: 内置的设置和插件管理。
-  - ``.vplugs.conf.vim``: 所有插件配置。
-  - ``sunrise.vim``: 我自己的 colorscheme，针对一些插件做了补充和优化(如对 Py 和 Go 语法高亮的增强支持)。
+    + `filetype.vim </vim/config>`_: 语言行为配置
+    + `general.vim </vim/config>`_: 内置配置
+    + `mappings.vim </vim/config>`_: 键位配置
+    + `plugins.vim </vim/config>`_: 插件管理与配置
+    + `local.vim </vim/config>`_: 用户自定义配置
+    + `... </vim/config>`_
 
-  其中有插件使用了 neovim 最新的悬浮窗口的特性，需要升级至最新版才能使用。
+  - `filetype.vim </vim/filetype.vim>`_: 自定义文件类型检测
+  - `init.vim </vim/init.vim>`_: 初始化、入口
+  - `... </vim>`_
 
-* 🏝  一个基于 `gpakosz/.tmux <https://github.com/gpakosz/.tmux/tree/master>`_ 的非常美观的 **tmux** 配置：
+* `tmux/`_:  基于 `gpakosz/.tmux`_ 强大且美观的 **tmux** 配置
 
-  - ``.tmux.conf``: 基础配置文件，最好不要编辑此文件。
-  - ``.tmux.conf.local``: 通过编辑此文件进行配置，它将覆盖上面文件里的配置。
-  - ``.tmux.conf.plugs``: 在此文件中添加插件和编辑插件配置。
+  - `tmux.conf </tmux>`_: 基础配置，最好不要编辑
+  - `tmux.conf.local </tmux>`_: 自定义设置，可通过编辑此文件覆盖上面文件里的配置
+  - `tmux.conf.plugs </tmux>`_: 插件管理及其配置
 
-* 🚀 一个高效的 **oh-my-zsh** 配置：
+* `zsh/`_: **oh-my-zsh** 配置
 
-  - ``.zshrc``: 你可以从中获取配置或直接使用它，它从 ``~/.dots/.zenv.sh`` 加载本地环境配置。
-
-*❓有关 Pythonista 和 Pythoneer 的叫法, 可以参见这篇* `文章 <https://blog.fullstackpentest.com/Pythonista%E5%92%8CPythoneer%E7%9A%84%E5%8C%BA%E5%88%AB-What-s-the-difference-between-Pythonista-and-Pythoneer.html>`_ 。
+  - `zshrc </zsh>`_: zsh 配置
+  - `zshrc.local </zsh>`_: 自定义本地配置
 
 
 使用
@@ -34,97 +38,88 @@ dots
 
 获取项目:
 
-.. code-block:: console
+.. code-block:: bash
 
-    git clone https://github.com/at7h/dots.git ~/.dots
-
-
-For neovim/vim
-**************
-
-* **步骤 1**: 配置 ``.vimrc`` 或 ``init.vim`` 。
-
-  **选项 1**: 对于 neovim：
-
-  .. code-block:: console
-
-     ln -s ~/.dots/.vimrc ~/.config/nvim/init.vim
-
-  **选项 2**: 对于 vim：
-
-  .. code-block:: console
-
-     ln -s ~/.dots/.vimrc ~/
-
-* **步骤 2**: 使用 ``PlugInstall`` 命令安装插件，更多详情请参见 `plug.vim <https://github.com/junegunn/vim-plug>`_ 。
-
-* **步骤 3**: 复制 ``sunrise.vim`` 到 ``plugged/vim-colorschemes/colors``:
-
-  .. code-block:: console
-
-     # For neovim
-     cp ~/.dots/sunrise.vim ~/.config/nvim/plugged/vim-colorschemes/colors/
-     # For vim
-     cp ~/.dots/sunrise.vim ~/.vim/plugged/vim-colorschemes/colors/
-
-* **步骤 4**: 编译 YCM(`YouCompleteMe <https://github.com/Valloric/YouCompleteMe>`_)。
-
-  关于详细的编译选项和其支持的语言，请参见 YouCompleteMe `Installation Guide <https://github.com/ycm-core/YouCompleteMe/#installation>`_ 。
-
-完事儿，开始享受吧 😎。
-
-如果你不熟悉这些插件，建议你去每个插件库学习下如何使用它们。
+    $ git clone https://github.com/at7h/dots.git ~/.dots
 
 
-For tmux
-********
+Neo/vim
+*******
 
-* **步骤 1**: 安装 tpm_：
+* **1.** 应用配置
 
-  .. code-block:: console
+  对于 Neovim:
 
-     git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm
-     bash ~/.tmux/plugins/tpm/bin/install_plugins
+  .. code-block:: bash
 
-* **步骤 2**: 应用我的设置：
+    $ ln -s ~/.dots/vim/ ~/.config/nvim
 
-  .. code-block:: console
+  或者，对于 Vim:
 
-     ln -s ~/.dots/.tmux.conf ~/
+  .. code-block:: bash
 
-  你可以使用 ``tmux prefix`` + ``e`` 快捷键来编辑 tmux 配置 ``~/.dots/.tmux.conf.local`` 。
+    $ ln -s ~/.dots/vim/.vimrc ~/
 
-For oh-my-zsh
-*************
+* **2.** 使用 ``PlugInstall`` 命令安装插件，更多详情请参见 `plug.vim`_
 
-* **步骤 1**: 安装依赖：
+* **3.** 安装相关依赖
+
+  - ``rg``
+  - ``pynvim``
+  - ``pylint``, ``flake8``, ``mypy`` 等静态代码检测工具
+  - ``gopls``, ``golint``, ``goimports`` 等 go 语言工具
+
+* **4.** 如果遇到问题，执行 ``nvim -c checkhealth`` 看看
+
+完事儿，请享受它吧 😄
+
+Tmux
+****
+
+* **1.** 安装 tpm_
+
+  .. code-block:: bash
+
+    $ git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm
+    $ bash ~/.tmux/plugins/tpm/bin/install_plugins
+
+* **2.** 应用设置
+
+  .. code-block:: bash
+
+    $ ln -s ~/.dots/tmux/tmux.conf ~/.tmux.conf
+
+  可使用 ``tmux prefix`` + ``e`` 快捷键来编辑 tmux 配置 ``~/.dots/tmux/tmux.conf.local`` 。
+
+Oh-my-zsh
+*********
+
+* **1.** 安装依赖
 
   - zsh
-
   - `oh-my-zsh <https://github.com/robbyrussell/oh-my-zsh/>`_
+  - powerlevel10k_
+  - zsh-syntax-highlighting_ to ``~/.oh-my-zsh/plugins/``
+  - zsh-autosuggestions_ to ``~/.oh-my-zsh/plugins/``
 
-  - powerlevel10k_ theme.
+* **2.** `Font Installation <https://github.com/ryanoasis/nerd-fonts#Font%20Installation>`_.
 
-  - zsh-syntax-highlighting_ to ``~/.oh-my-zsh/plugins/``.
+  .. code-block:: bash
 
-  - zsh-autosuggestions_ to ``~/.oh-my-zsh/plugins/``.
-
-* **步骤 2**: `Font Installation <https://github.com/ryanoasis/nerd-fonts#Font%20Installation>`_.
-
-  .. code-block:: console
-
-     # Best option if on macOS and want to use Homebrew.
-     # https://github.com/ryanoasis/nerd-fonts#option-4-homebrew-fonts
-     brew tap homebrew/cask-fonts
-     brew cask install font-hack-nerd-font
+    # https://github.com/ryanoasis/nerd-fonts#option-4-homebrew-fonts
+    $ brew tap homebrew/cask-fonts
+    $ brew cask install font-hack-nerd-font
 
   配置 Iterm2 的 non-acsii 字体：
 
   - ``Preferences -> Profiles -> Text -> Non-Ascii-Font -> hack-nerd-font.``
-
   - ``Preferences -> Profiles -> Colors -> Colors Presets -> Monokai Soda``
 
-* **步骤 3**: 从 ``.dots/.zshrc`` 中获取配置或直接使用它。
+* **3.** 从 ``.dots/zsh/zshrc`` 中获取你感兴趣的配置或直接使用它
+
+  .. code-block:: bash
+
+    $ ln -s ~/.dots/zsh/zshrc ~/.zshrc
 
 
 感谢 🤝
@@ -133,8 +128,14 @@ For oh-my-zsh
 如果项目对你有帮助请朝 ⭐️ 猛戳 😉 !
 
 
-.. _neovim: https://neovim.io/
+.. _oh-my-zsh: https://ohmyz.sh/
+.. _neo/vim: https://neovim.io/
+.. _gpakosz/.tmux: https://github.com/gpakosz/.tmux/tree/master
+.. _vim/: /vim
+.. _tmux/: /tmux
+.. _zsh/: /zsh
 .. _tmux: https://github.com/tmux/tmux
+.. _plug.vim: https://github.com/junegunn/vim-plug
 .. _iTerm2: https://www.iterm2.com/
 .. _terminus: https://eugeny.github.io/terminus/
 .. _latest: https://github.com/neovim/neovim/releases
@@ -144,3 +145,6 @@ For oh-my-zsh
 .. _zsh-autosuggestions: https://github.com/zsh-users/zsh-autosuggestions
 .. _undotree: https://github.com/mbbill/undotree
 .. _article: https://blog.fullstackpentest.com/Pythonista%E5%92%8CPythoneer%E7%9A%84%E5%8C%BA%E5%88%AB-What-s-the-difference-between-Pythonista-and-Pythoneer.html
+.. _fatih/vim-go: https://github.com/fatih/vim-go
+.. _python-mode/python-mode: https://github.com/python-mode/python-mode
+.. _ycm-core/YouCompleteMe: https://github.com/ycm-core/YouCompleteMe
