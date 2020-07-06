@@ -29,9 +29,9 @@ hi LineNr       ctermfg=241  ctermbg=232  cterm=none      guifg=#857b6f guibg=#0
 hi SpecialKey   ctermfg=241  ctermbg=235  cterm=none      guifg=#626262 guibg=#2b2b2b gui=none
 hi WarningMsg   ctermfg=203                               guifg=#ff5f55
 hi ErrorMsg     ctermfg=196  ctermbg=236  cterm=bold      guifg=#ff2026 guibg=#3a3a3a gui=bold
-hi Underlined   ctermfg=13   ctermbg=none cterm=none      guifg=#6c71c4 guibg=none    gui=none
-hi Ignore       ctermfg=none ctermbg=none cterm=none      guifg=none    guibg=none    gui=none
-hi Error        ctermfg=1    ctermbg=none cterm=none,bold guifg=#dc322f guibg=none    gui=none,bold
+hi Underlined   ctermfg=13   ctermbg=none                 guifg=#6c71c4
+hi Ignore       ctermfg=none ctermbg=none cterm=none
+hi Error        ctermfg=1    ctermbg=none cterm=none,bold guifg=#dc322f               gui=bold
 
 
 " ------------------------------------------------------------------------------------------------------
@@ -39,8 +39,8 @@ hi Error        ctermfg=1    ctermbg=none cterm=none,bold guifg=#dc322f guibg=no
 " ------------------------------------------------------------------------------------------------------
 hi CursorLine             ctermbg=236                cterm=none          guibg=#32322f
 hi Search     ctermfg=235 ctermbg=38   guifg=#99CCFF cterm=none          guibg=#636066 gui=none
-hi MatchParen ctermfg=3   ctermbg=none guifg=#b58900 cterm=none,reverse  guibg=none    gui=none,reverse
-hi IncSearch  ctermfg=3   ctermbg=none guifg=#cb4b16 cterm=none,standout guibg=none    gui=none,standout
+hi MatchParen ctermfg=3   ctermbg=none guifg=#b58900 cterm=reverse                     gui=reverse
+hi IncSearch  ctermfg=3   ctermbg=none guifg=#cb4b16 cterm=standout                    gui=standout
 hi Pmenu      ctermfg=230 ctermbg=238  guifg=#ffffd7                     guibg=#444444
 hi PmenuSel   ctermfg=234 ctermbg=192  guifg=#080808                     guibg=#cae982
 hi PmenuSbar  ctermfg=144 ctermbg=12   guifg=#eee8d5 cterm=none,reverse  guibg=#839496 gui=none,reverse
@@ -85,7 +85,7 @@ hi Todo       ctermfg=101 cterm=none guifg=#857b6f gui=italic
 " ------------------------------------------------------------------------------------------------------
 " LeaderF
 " ------------------------------------------------------------------------------------------------------
-hi Lf_hl_cursorline  ctermfg=209 ctermbg=none cterm=none guifg=Yellow  gui=none guibg=none
+hi Lf_hl_cursorline  ctermfg=209 ctermbg=none            guifg=Yellow
 hi Lf_hl_rgHighlight ctermfg=236 ctermbg=209  cterm=none guifg=#000000 gui=none guibg=#cccc66
 
 
@@ -231,7 +231,7 @@ hi BookmarkLine          ctermbg=158  ctermfg=238
 " Vim-gitgutter
 " ------------------------------------------------------------------------------------------------------
 hi! link SignColumn     LineNr
-hi SignColumn           ctermbg=none  guibg=none
+hi SignColumn           ctermbg=0
 hi GitGutterAdd         ctermfg=2     guifg=#009900
 hi GitGutterChange      ctermfg=3     guifg=#bbbb00
 hi GitGutterDelete      ctermfg=1     guifg=#ff2222

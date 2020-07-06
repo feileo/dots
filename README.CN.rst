@@ -89,7 +89,7 @@ Tmux
 
     $ ln -s ~/.dots/tmux/tmux.conf ~/.tmux.conf
 
-  可使用 ``tmux prefix`` + ``e`` 快捷键来编辑 tmux 配置 ``~/.dots/tmux/tmux.conf.local`` 。
+  可使用 ``tmux prefix`` + ``e`` 快捷键来编辑 tmux 配置 ``~/.dots/tmux/tmux.conf.local``
 
 Oh-my-zsh
 *********

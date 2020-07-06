@@ -6,9 +6,9 @@ my dotfiles
 
 My `oh-my-zsh <https://ohmyz.sh/>`_, `neo/vim`_, tmux_ etc. configurations 😊
 
-* `vim/`_: A modular **Neo/vim** configuration for **Pythonista** and **Gopher**, robust, yet light-weight
+* `vim/`_: A modular **Neo/vim** configuration for **Pythonista** and **Gopher**. Robust, yet light-weight
 
-  - `colors/sunrise.vim </vim/colors>`_: My colorscheme, it is supplemented and optimized for some plugins
+  - `colors/sunrise.vim </vim/colors>`_: My colorscheme, supplemented and optimized for some plugins
   - `config/ </vim/config>`_: Configuration
 
     + `filetype.vim </vim/config>`_: Language behavior settings
