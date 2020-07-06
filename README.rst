@@ -4,7 +4,7 @@ my dotfiles
 
 🌎 [`English </README.rst>`_] ∙ [`简体中文 </README.CN.rst>`_]
 
-My `oh-my-zsh <https://ohmyz.sh/>`_, `neo/vim`_, tmux_ etc. configurations 😊
+My `neo/vim`_, tmux_, `oh-my-zsh <https://ohmyz.sh/>`_ etc. configurations 😊
 
 * `vim/`_: A modular **Neo/vim** configuration for **Pythonista** and **Gopher**. Robust, yet light-weight
 
