@@ -2,7 +2,7 @@
 my dotfiles
 ===========
 
-我的 `oh-my-zsh <https://ohmyz.sh>`_, `neo/vim`_ , tmux_ 等配置 😊
+我的 `neo/vim`_ , tmux_, `oh-my-zsh <https://ohmyz.sh>`_ 等配置 😊
 
 
 * `vim/`_: 适用于 **Pythonista** 和 **Gopher** 的模块化 **Neo/vim** 配置，强大而轻快
