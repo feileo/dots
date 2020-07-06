@@ -49,10 +49,13 @@ call plug#begin($PLUGIN_PATH)
 
   " Completion & Code-Analysis
   " ---------------------------------------------------------------------------------------------
-  " Plug 'ycm-core/YouCompleteMe', { 'commit': 'a47940d', 'do': function('BuildYCM') }
-  " Plug 'SirVer/ultisnips'
-  " Plug 'honza/vim-snippets'
-  Plug 'neoclide/coc.nvim', {'branch': 'release'}
+  if has('nvim') || has('patch-8.1.1719')
+    Plug 'neoclide/coc.nvim', {'branch': 'release'}
+  elseif
+    Plug 'ycm-core/YouCompleteMe', { 'commit': 'a47940d' }
+    Plug 'SirVer/ultisnips'
+    Plug 'honza/vim-snippets'
+  endif
   Plug 'tell-k/vim-autopep8', { 'for': 'python' }
   Plug 'dense-analysis/ale'
 
@@ -348,7 +351,9 @@ endif
 " ------------------------------------------------------------------------------------------------
 if plug#is_loaded('vim-xtabline')
   let g:xtabline_settings = {}
-	let g:xtabline_settings.enable_mappings = 0
+  let g:xtabline_settings.bookmarks_file = $BOOKMARK_PATH . '/.XTablineBookmarks'
+  let g:xtabline_settings.sessions_data = $SESSION_PATH . '/.XTablineSessions'
+  let g:xtabline_settings.enable_mappings = 0
   let g:xtabline_settings.close_buffer_can_close_tab = 1
   let g:xtabline_settings.close_buffer_can_quit_vim  = 1
   let g:xtabline_settings.theme='tomorrow'
@@ -428,7 +433,7 @@ endif
 " Plugin: 'MattesGroeger/vim-bookmarks'
 " ------------------------------------------------------------------------------------------------
 if plug#is_loaded('vim-bookmarks')
-  let g:bookmark_auto_save_file = $BOOKMARK_PATH
+  let g:bookmark_auto_save_file = $BOOKMARK_PATH . '/bms'
   let g:bookmark_no_default_key_mappings = 1
   let g:bookmark_highlight_lines = 1
   let g:bookmark_no_default_key_mappings = 1
