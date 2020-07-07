@@ -35,16 +35,16 @@ call plug#begin($PLUGIN_PATH)
   Plug 'cespare/vim-toml', { 'for': 'toml' }
   Plug 'chr4/nginx.vim', { 'for': 'nginx' }
   Plug 'pearofducks/ansible-vim', { 'for': 'yaml' }
-  Plug 'elzr/vim-json', { 'for': 'json' }
+  " Plug 'elzr/vim-json', { 'for': 'json' }
   " Plug 'kylef/apiblueprint.vim', { 'for': 'apiblueprint' }
   " Plug 'jparise/vim-graphql', { 'for': 'javascript' }
   " Plug 'mitsuhiko/vim-sparkup', { 'for': ['xml', 'html'] }
   " Plug 'othree/html5.vim', { 'for': 'html' }
   " Plug 'ap/vim-css-color', { 'for': 'css' }
   " Plug 'groenewege/vim-less', { 'for': 'less' }
-  Plug 'leafgarland/typescript-vim', { 'for': ['typescript', 'typescript.tsx'] }
-  Plug 'HerringtonDarkholme/yats.vim', { 'for': ['typescript', 'typescript.tsx']}
-  Plug 'MaxMEllon/vim-jsx-pretty', { 'for': ['typescript', 'typescript.tsx']}
+  " Plug 'leafgarland/typescript-vim', { 'for': ['typescript', 'typescript.tsx'] }
+  " Plug 'HerringtonDarkholme/yats.vim', { 'for': ['typescript', 'typescript.tsx']}
+  " Plug 'MaxMEllon/vim-jsx-pretty', { 'for': ['typescript', 'typescript.tsx']}
   Plug 'tpope/vim-endwise', { 'for': ['c', 'cpp', 'lua', 'vim', 'sh'] }
 
   " Completion & Code-Analysis
@@ -61,7 +61,7 @@ call plug#begin($PLUGIN_PATH)
 
   " Commands
   " ---------------------------------------------------------------------------------------------
-  " Plug 'reedes/vim-wordy'
+  Plug 'reedes/vim-wordy', { 'for': ['markdown', 'rst'] }
   Plug 'Yggdroot/LeaderF', { 'do': './install.sh' }  " better than ctrlp+ctrlp-funky+ctrlsf
   Plug 'MattesGroeger/vim-bookmarks'
   Plug 'voldikss/vim-translate-me'
@@ -74,9 +74,8 @@ call plug#begin($PLUGIN_PATH)
 
   " Operators & Text Objects
   " ---------------------------------------------------------------------------------------------
-  Plug 'mg979/vim-visual-multi', {'branch': 'master'}
+  " Plug 'mg979/vim-visual-multi', {'branch': 'master'}
   Plug 'tpope/vim-surround'
-  " Plug 't9md/vim-quickhl'
   Plug 'itchyny/vim-cursorword'
   Plug 'lfv89/vim-interestingwords'
 
@@ -87,7 +86,7 @@ call plug#begin($PLUGIN_PATH)
   Plug 'hotwatermorning/auto-git-diff'
   Plug 'Xuyuanp/nerdtree-git-plugin'
 
-  " Interface
+  " Navigation
   " ---------------------------------------------------------------------------------------------
   Plug 'scrooloose/nerdtree', { 'on':  ['NERDTreeToggle', 'NERDTreeFind'] }
   Plug 'majutsushi/tagbar'
@@ -187,19 +186,15 @@ endif
 if plug#is_loaded('coc.nvim')
   let g:coc_global_extensions = ['coc-snippets']
 
-  augroup user_plugin_coc
-    au!
-    au CompleteDone * if pumvisible() == 0 | pclose | endif
-  augroup END
+  au! CompleteDone * if pumvisible() == 0 | pclose | endif
 
-  nnoremap <silent> K :call <SID>show_documentation()<CR>
-  function! s:show_documentation()
-    if (index(['vim', 'help'], &filetype) >= 0)
-      execute 'h '.expand('<cword>')
-    else
-      let l:found = CocAction('doHover')
-    endif
-  endfunction
+  augroup coc_action
+    au!
+    " Setup formatexpr specified filetype(s).
+    au FileType typescript,json setl formatexpr=CocAction('formatSelected')
+    " Update signature help on jump placeholder.
+    au User CocJumpPlaceholder call CocActionAsync('showSignatureHelp')
+  augroup end
 endif
 
 " ------------------------------------------------------------------------------------------------
@@ -231,6 +226,7 @@ if plug#is_loaded('LeaderF')
         \ 'rust': '--rust-kinds=f',
         \ }
   command! Todo :Leaderf! rg -e TODO -e FIXME -e XXX<CR>
+  command! Head :Leaderf! rg -e HEAD -e >>><CR>
 endif
 
 " ------------------------------------------------------------------------------------------------
@@ -263,6 +259,7 @@ if plug#is_loaded('ale')
   let g:ale_echo_msg_format = '[%linter%] [%severity%] %code: %%s '
   let g:ale_list_window_size = 7
   " let g:ale_hover_to_preview = 1
+  let g:ale_go_golint_executable = ''
   function! LinterStatus() abort
       let l:counts = ale#statusline#Count(bufnr(''))
       let l:all_errors = l:counts.error + l:counts.style_error
@@ -356,7 +353,7 @@ if plug#is_loaded('vim-xtabline')
   let g:xtabline_settings.enable_mappings = 0
   let g:xtabline_settings.close_buffer_can_close_tab = 1
   let g:xtabline_settings.close_buffer_can_quit_vim  = 1
-  let g:xtabline_settings.theme='tomorrow'
+  let g:xtabline_settings.theme='dracula'
   let g:xtabline_settings.tab_icon=['📍','']
   let g:xtabline_settings.named_tab_icon=['📍','']
 endif
@@ -383,6 +380,7 @@ if plug#is_loaded('vim-markdown')
   let g:tex_conceal = ""
   let g:vim_markdown_math = 1
   let g:vim_markdown_conceal_code_blocks = 0
+  let g:markdown_fenced_languages = ['css', 'js=javascript']
 endif
 
 " ------------------------------------------------------------------------------------------------
@@ -453,6 +451,7 @@ endif
 " Plugin: yggdroot/indentline
 " ------------------------------------------------------------------------------------------------
 if plug#is_loaded('indentline')
+  let g:indentLine_fileTypeExclude = ['text', 'sh', 'json']
   let g:indentLine_color_term = 239
 endif
 

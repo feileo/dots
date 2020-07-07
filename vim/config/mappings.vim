@@ -105,7 +105,6 @@ if plug#is_loaded('vim-go')
 endif
 
 if plug#is_loaded('coc.nvim')
-
   imap <silent><expr> <TAB>
         \ pumvisible() ? coc#_select_confirm() :
         \ coc#expandableOrJumpable() ? "\<C-r>=coc#rpc#request('doKeymap', ['snippets-expand-jump',''])\<CR>" :
@@ -113,9 +112,6 @@ if plug#is_loaded('coc.nvim')
         \ coc#refresh()
   imap <expr> <Tab> pumvisible() ? "\<C-n>" : "\<Tab>"
   imap <expr> <S-Tab> pumvisible() ? "\<C-p>" : "\<S-Tab>"
-
-  " use <c-space>for trigger completion
-  imap <silent><expr> <C-space> coc#refresh()
   " Movement within 'ins-completion-menu'
   imap <expr><C-j> pumvisible() ? "\<Down>" : "\<C-j>"
   imap <expr><C-k> pumvisible() ? "\<Up>" : "\<C-k>"
@@ -131,21 +127,17 @@ if plug#is_loaded('coc.nvim')
   nmap <silent> gf <Plug>(coc-refactor)
   nmap <silent> gn <Plug>(coc-rename)
 
-  augroup coc_action
-    au!
-    " Setup formatexpr specified filetype(s).
-    au FileType typescript,json setl formatexpr=CocAction('formatSelected')
-    " Update signature help on jump placeholder.
-    au User CocJumpPlaceholder call CocActionAsync('showSignatureHelp')
-  augroup end
-
-  set statusline^=%{coc#status()}%{get(b:,'coc_current_function','')}
+  function! s:show_documentation()
+    if (index(['vim', 'help'], &filetype) >= 0)
+      execute 'h '.expand('<cword>')
+    else
+      let l:found = CocAction('doHover')
+    endif
+  endfunction
+  nmap <silent> K :call <SID>show_documentation()<CR>
 
   command! -nargs=0 Format :call CocAction('format')
   command! -nargs=0 ORI    :call CocAction('runCommand', 'editor.action.organizeImport')
-
-  au CursorHold * silent call CocActionAsync('highlight')
-  au BufWritePre *.go :call CocAction('runCommand', 'editor.action.organizeImport')
 endif
 
 if plug#is_loaded('LeaderF')
@@ -153,8 +145,8 @@ if plug#is_loaded('LeaderF')
   let g:Lf_ShortcutB = ''
   nmap <C-P> :<C-U><C-R>=printf("Leaderf file --popup %s", "")<CR><CR>
   nmap <C-F> :<C-U><C-R>=printf("Leaderf mru --popup %s", "")<CR><CR>
-  " nmap <C-L> :<C-U><C-R>=printf("Leaderf line --popup %s", "")<CR><CR>
   nmap <C-T> :<C-U><C-R>=printf("Leaderf bufTag --popup %s", "")<CR><CR>
+  nmap <C-\> :<C-U><C-R>=printf("Leaderf line --popup %s", "")<CR><CR>
 
   nmap <Leader><Tab> :<C-U><C-R>=printf("Leaderf buffer --popup %s", "")<CR><CR>
   nmap <Leader>f :<C-U><C-R>=printf("Leaderf function --popup %s", "")<CR><CR>
@@ -166,8 +158,12 @@ endif
 
 if plug#is_loaded('ale')
   map <F6> :ALEToggle \| echo 'g:ale_enabled =' g:ale_enabled<CR>
-  nmap <silent> <C-c>k <Plug>(ale_previous_wrap)
-  nmap <silent> <C-c>j <Plug>(ale_next_wrap)
+  nmap <silent> <C-s>k <Plug>(ale_previous_wrap)
+  nmap <silent> <C-s>j <Plug>(ale_next_wrap)
+endif
+
+if plug#is_loaded('delimitMate')
+  imap <buffer><expr> <C-Tab> delimitMate#JumpAny()
 endif
 
 if plug#is_loaded('vim-xtabline')
@@ -209,13 +205,8 @@ if plug#is_loaded('undotree')
 endif
 
 if plug#is_loaded('vim-floaterm')
-  nmap  <silent> <Leader>+ :FloatermToggle<CR>
-  map! <silent> <Leader>+ <Esc>:FloatermToggle<CR>
+  nmap <silent> <Leader>+ :FloatermToggle<CR>
   tmap <silent> <Leader>+ <C-\><C-n>:FloatermToggle<CR>
-endif
-
-if plug#is_loaded('delimitMate')
-  imap <buffer><expr> <C-Tab> delimitMate#JumpAny()
 endif
 
 if plug#is_loaded('vim-bookmarks')

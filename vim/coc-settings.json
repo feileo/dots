@@ -4,14 +4,20 @@
       "command": "gopls",
       "rootPatterns": ["go.mod", ".vim/", ".git/", ".hg/"],
       "trace.server": "verbose",
-      "disableWorkspaceFolders": true,
       "initializationOptions": {
-        "usePlaceholders": true,
-        "completeUnimported": true,
-        "diagnosticsEnabled": false
+        "completeUnimported": true
       },
       "filetypes": ["go"]
     }
   },
-  "suggest.snippetIndicator": ""
+
+  "python.jediEnabled": false,
+  "python.analysis.diagnosticEnabled": true,
+  "python.setInterpreter": "~/.pyenvs/py3/bin/python",
+  "python.linting.ignorePatterns": [".vscode/*.py","**/site-packages/**/*.py","**/eggs/**/*.py"],
+  "python.autoComplete.extraPaths": [],
+
+  "diagnostic.displayByAle" : true,
+  "codeLens.enable" : true,
+  "suggest.snippetIndicator ": ""
 }
