@@ -5,6 +5,8 @@ my dotfiles
 我的 `neo/vim`_ , tmux_, `oh-my-zsh <https://ohmyz.sh>`_ 等配置 😊
 
 
+结构:
+
 * `vim/`_: 适用于 **Pythonista** 和 **Gopher** 的模块化 **Neo/vim** 配置，强大而轻快
 
   - `colors/sunrise.vim </vim/colors>`_: 我的 colorscheme, 此方案还针对一些插件做了增强补充和优化

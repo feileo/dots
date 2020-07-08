@@ -15,7 +15,7 @@ call plug#begin($PLUGIN_PATH)
   " Start
   " ----------------------------------------------------------------------------------------------
   Plug 'mhinz/vim-startify'
-  Plug 'tpope/vim-sleuth'
+  " Plug 'tpope/vim-sleuth'
   Plug 'romainl/vim-cool'
   Plug 'Raimondi/delimitMate'
   Plug 'farmergreg/vim-lastplace'
@@ -61,7 +61,7 @@ call plug#begin($PLUGIN_PATH)
 
   " Commands
   " ---------------------------------------------------------------------------------------------
-  Plug 'reedes/vim-wordy', { 'for': ['markdown', 'rst'] }
+  " Plug 'reedes/vim-wordy', { 'for': ['markdown', 'rst'] }
   Plug 'Yggdroot/LeaderF', { 'do': './install.sh' }  " better than ctrlp+ctrlp-funky+ctrlsf
   Plug 'MattesGroeger/vim-bookmarks'
   Plug 'voldikss/vim-translate-me'
