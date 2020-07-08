@@ -167,9 +167,9 @@ if plug#is_loaded('delimitMate')
 endif
 
 if plug#is_loaded('vim-xtabline')
-  nmap <Leader>b[ <Plug>(XT-Prev-Buffer)
-  nmap <Leader>b] <Plug>(XT-Next-Buffer)
-  nmap <Leader>bc <Plug>(XT-Close-Buffer)
+  nmap <Tab> <Plug>(XT-Next-Buffer)
+  nmap <S-Tab> <Plug>(XT-Prev-Buffer)
+  nmap <Leader>C <Plug>(XT-Close-Buffer)
   nmap <Leader>tn <Plug>(XT-Tab-New)
   nmap <Leader>td <Plug>(XTabDeleteTab)
 endif

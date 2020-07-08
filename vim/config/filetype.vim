@@ -28,16 +28,13 @@ augroup user_ft_setter
   au FileType json set textwidth=80 shiftwidth=2 tabstop=4
   au FileType gitcommit set textwidth=80
   au FileType makefile set noexpandtab
-  au FileType markdown
-    \ set expandtab shiftwidth=4 tabstop=4 syntax=markdown
-    \ set spell spelllang=en_us,cjk conceallevel=0
-    \ | set autoindent formatoptions=tcroqn2 comments=n:>
   au FileType crontab set nobackup nowritebackup
   au FileType yaml.docker-compose set expandtab
   au FileType gitcommit set spell
   au FileType gitcommit,qfreplace set nofoldenable
   au FileType html set path+=./;/
   au FileType apache set path+=./;/
+
 augroup END
 
 
@@ -59,5 +56,6 @@ augroup user_plugin_filetype
     \ | endif
 
 augroup END
+
 
 " vim: set foldmethod=marker ts=2 sw=2 list noet :

@@ -1,4 +1,8 @@
 {
+  "suggest.snippetIndicator": "",
+  "diagnostic.displayByAle" : true,
+  "codeLens.enable" : true,
+
   "languageserver": {
     "golang": {
       "command": "gopls",
@@ -13,11 +17,6 @@
 
   "python.jediEnabled": false,
   "python.analysis.diagnosticEnabled": true,
-  "python.setInterpreter": "~/.pyenvs/py3/bin/python",
   "python.linting.ignorePatterns": [".vscode/*.py","**/site-packages/**/*.py","**/eggs/**/*.py"],
-  "python.autoComplete.extraPaths": [],
-
-  "diagnostic.displayByAle" : true,
-  "codeLens.enable" : true,
-  "suggest.snippetIndicator ": ""
+  "python.autoComplete.extraPaths": []
 }
