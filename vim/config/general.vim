@@ -133,13 +133,13 @@ if has('folding') && has('vim_starting')
   set foldlevelstart=99
 endif
 
-if has('nvim-0.4')
-  set signcolumn=yes:1
-elseif has("patch-8.1.1564")
-  set signcolumn=number
-else
-  set signcolumn=yes
-endif
+" if has('nvim-0.4')
+"   set signcolumn=yes:1
+" elseif has("patch-8.1.1564")
+"   set signcolumn=number
+" else
+"   set signcolumn=no
+" endif
 
 
 if has("persistent_undo")
