@@ -67,7 +67,7 @@ call plug#begin($PLUGIN_PATH)
   Plug 'voldikss/vim-translate-me'
   Plug 'tpope/vim-commentary'
   Plug 'mbbill/undotree'
-  Plug 'guns/xterm-color-table.vim', { 'on': 'XtermColorTabl' }
+  Plug 'guns/xterm-color-table.vim', { 'on': 'XtermColorTable' }
   if has('nvim')
     Plug 'voldikss/vim-floaterm', { 'on': 'FloatermToggle' }
   endif

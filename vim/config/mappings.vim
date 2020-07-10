@@ -62,7 +62,7 @@ vmap <silent> <C-L> >gv
 " xmap >  >gv
 
 " Toggle
-" nmap <CR> za
+nmap <CR> za
 set pastetoggle=<F3>
 
 " Split
@@ -71,7 +71,8 @@ nmap <Leader>h :split<cr>
 
 " Scroll
 nmap <C-]> z4l
-nmap <C-[> z4h
+" <C-[> equivalent <Esc>
+" nmap <C-[> z4h
 
 " Clear search highlights
 nmap <Leader>ch :noh<cr>
@@ -145,11 +146,11 @@ if plug#is_loaded('LeaderF')
   let g:Lf_ShortcutB = ''
   nmap <C-P> :<C-U><C-R>=printf("Leaderf file --popup %s", "")<CR><CR>
   nmap <C-F> :<C-U><C-R>=printf("Leaderf mru --popup %s", "")<CR><CR>
-  nmap <C-T> :<C-U><C-R>=printf("Leaderf bufTag --popup %s", "")<CR><CR>
+  nmap <C-B> :<C-U><C-R>=printf("Leaderf buffer --popup %s", "")<CR><CR>
   nmap <C-\> :<C-U><C-R>=printf("Leaderf line --popup %s", "")<CR><CR>
 
-  nmap <Leader><Tab> :<C-U><C-R>=printf("Leaderf buffer --popup %s", "")<CR><CR>
   nmap <Leader>f :<C-U><C-R>=printf("Leaderf function --popup %s", "")<CR><CR>
+  nmap <Leader>9 :<C-U><C-R>=printf("Leaderf bufTag --popup %s", "")<CR><CR>
   nmap <Leader>s :<C-U><C-R>=printf("Leaderf! rg -e %s", expand("<cword>"))<CR>
   xmap <Leader>s :<C-U><C-R>=printf("Leaderf! rg -F -e %s", Leaderf#Rg#visual())<CR>
   nmap <Leader>S :<C-U><C-R>=printf("Leaderf! rg ")<CR>
@@ -158,6 +159,7 @@ endif
 
 if plug#is_loaded('ale')
   map <F6> :ALEToggle \| echo 'g:ale_enabled =' g:ale_enabled<CR>
+
   nmap <silent> <C-s>k <Plug>(ale_previous_wrap)
   nmap <silent> <C-s>j <Plug>(ale_next_wrap)
 endif
@@ -167,9 +169,10 @@ if plug#is_loaded('delimitMate')
 endif
 
 if plug#is_loaded('vim-xtabline')
-  nmap <Tab> <Plug>(XT-Next-Buffer)
-  nmap <S-Tab> <Plug>(XT-Prev-Buffer)
-  nmap <Leader>C <Plug>(XT-Close-Buffer)
+  nmap } <Plug>(XT-Next-Buffer)
+  nmap { <Plug>(XT-Prev-Buffer)
+
+  nmap <Leader>cb <Plug>(XT-Close-Buffer)
   nmap <Leader>tn <Plug>(XT-Tab-New)
   nmap <Leader>td <Plug>(XTabDeleteTab)
 endif
@@ -180,7 +183,7 @@ if plug#is_loaded('nerdtree')
 endif
 
 if plug#is_loaded('xterm-color-table.vim')
-  nmap <Leader>xct :XtermColorTable<cr>
+  nmap <Leader>5 :XtermColorTable<cr>
 endif
 
 if plug#is_loaded('vim-interestingwords')
@@ -197,16 +200,16 @@ if plug#is_loaded('vim-translate-me')
 endif
 
 if plug#is_loaded('tagbar')
-  map <Leader>* :TagbarToggle <CR>
+  map <Leader>8 :TagbarToggle <CR>
 endif
 
 if plug#is_loaded('undotree')
-  nmap <Leader>& :UndotreeToggle<cr>
+  nmap <Leader>7 :UndotreeToggle<cr>
 endif
 
 if plug#is_loaded('vim-floaterm')
-  nmap <silent> <Leader>+ :FloatermToggle<CR>
-  tmap <silent> <Leader>+ <C-\><C-n>:FloatermToggle<CR>
+  nmap <silent> <Leader>= :FloatermToggle<CR>
+  tmap <silent> <Leader>= <C-\><C-n>:FloatermToggle<CR>
 endif
 
 if plug#is_loaded('vim-bookmarks')
