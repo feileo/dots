@@ -225,8 +225,8 @@ if plug#is_loaded('LeaderF')
         \ 'c': '--c-kinds=fp',
         \ 'rust': '--rust-kinds=f',
         \ }
-  command! Todo :Leaderf! rg -e TODO -e FIXME -e XXX<CR>
-  command! Head :Leaderf! rg -e HEAD -e >>><CR>
+  command! Todo :Leaderf! rg -w -e TODO -e FIXME -e XXX<CR>
+  command! Head :Leaderf! rg -w -e HEAD -e \<\<\<<CR>
 endif
 
 " ------------------------------------------------------------------------------------------------

@@ -147,13 +147,13 @@ if plug#is_loaded('LeaderF')
   nmap <C-P> :<C-U><C-R>=printf("Leaderf file --popup %s", "")<CR><CR>
   nmap <C-F> :<C-U><C-R>=printf("Leaderf mru --popup %s", "")<CR><CR>
   nmap <C-B> :<C-U><C-R>=printf("Leaderf buffer --popup %s", "")<CR><CR>
-  nmap <C-\> :<C-U><C-R>=printf("Leaderf line --popup %s", "")<CR><CR>
 
+  nmap <Leader>l :<C-U><C-R>=printf("Leaderf line --popup %s", "")<CR><CR>
   nmap <Leader>f :<C-U><C-R>=printf("Leaderf function --popup %s", "")<CR><CR>
   nmap <Leader>9 :<C-U><C-R>=printf("Leaderf bufTag --popup %s", "")<CR><CR>
-  nmap <Leader>s :<C-U><C-R>=printf("Leaderf! rg -e %s", expand("<cword>"))<CR>
+  nmap <Leader>s :<C-U><C-R>=printf("Leaderf! rg -w -e %s", expand("<cword>"))<CR>
   xmap <Leader>s :<C-U><C-R>=printf("Leaderf! rg -F -e %s", Leaderf#Rg#visual())<CR>
-  nmap <Leader>S :<C-U><C-R>=printf("Leaderf! rg ")<CR>
+  nmap <Leader>S :<C-U><C-R>=printf("Leaderf! rg -w -e ")<CR>
   nmap go :<C-U>Leaderf! rg --recall<CR>
 endif
 
@@ -183,7 +183,7 @@ if plug#is_loaded('nerdtree')
 endif
 
 if plug#is_loaded('xterm-color-table.vim')
-  nmap <Leader>5 :XtermColorTable<cr>
+  nmap <Leader>7 :XtermColorTable<cr>
 endif
 
 if plug#is_loaded('vim-interestingwords')
@@ -200,11 +200,11 @@ if plug#is_loaded('vim-translate-me')
 endif
 
 if plug#is_loaded('tagbar')
-  map <Leader>8 :TagbarToggle <CR>
+  map <Leader>0 :TagbarToggle <CR>
 endif
 
 if plug#is_loaded('undotree')
-  nmap <Leader>7 :UndotreeToggle<cr>
+  nmap <Leader>8 :UndotreeToggle<cr>
 endif
 
 if plug#is_loaded('vim-floaterm')
