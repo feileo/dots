@@ -151,8 +151,8 @@ if plug#is_loaded('LeaderF')
   nmap <Leader>l :<C-U><C-R>=printf("Leaderf line --popup %s", "")<CR><CR>
   nmap <Leader>f :<C-U><C-R>=printf("Leaderf function --popup %s", "")<CR><CR>
   nmap <Leader>9 :<C-U><C-R>=printf("Leaderf bufTag --popup %s", "")<CR><CR>
-  nmap <Leader>s :<C-U><C-R>=printf("Leaderf! rg -w -e %s ", expand("<cword>"))<CR>
-  xmap <Leader>s :<C-U><C-R>=printf("Leaderf! rg -F -e %s ", leaderf#Rg#visual())<CR>
+  nmap <Leader>s :<C-U><C-R>=printf("Leaderf! rg -w -e %s", expand("<cword>"))<CR><CR>
+  xmap <Leader>s :<C-U><C-R>=printf("Leaderf! rg -F -e %s", leaderf#Rg#visual())<CR><CR>
   nmap <Leader>S :<C-U><C-R>=printf("Leaderf! rg -w -e ")<CR>
   nmap go :<C-U>Leaderf! rg --recall<CR>
 endif
