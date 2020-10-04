@@ -38,9 +38,9 @@ my dotfiles
 截图
 ----
 
-.. image:: http://cdn.at7h.com/img/mydots_examples.png
+.. image:: http://cdn.at7h.com/img/mydots_examples_1.png
 
-查看 `更多</EXAMPLES.rst>`_
+查看 `更多 </EXAMPLES.rst>`_
 
 使用
 ----
