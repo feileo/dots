@@ -35,6 +35,13 @@ my dotfiles
   - `zshrc.local </zsh>`_: 自定义本地配置
 
 
+截图
+----
+
+.. image:: http://cdn.at7h.com/img/mydots_examples.png
+
+查看 `更多</EXAMPLES.rst>`_
+
 使用
 ----
 

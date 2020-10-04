@@ -169,9 +169,8 @@ plugins=(
     extract
     zsh-syntax-highlighting
     zsh-autosuggestions
-    virtualenv
-    virtualenvwrapper
-    catimg
+    # virtualenv
+    # virtualenvwrapper
     )
 
 source $ZSH/oh-my-zsh.sh

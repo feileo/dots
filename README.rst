@@ -36,6 +36,12 @@ Structure:
   - `zshrc </zsh>`_: Zsh configuration
   - `zshrc.local </zsh>`_: Custom user settings
 
+Screenshot
+----------
+
+.. image:: http://cdn.at7h.com/img/mydots_examples.png
+
+See `more </EXAMPLES.rst>`_
 
 Usage
 -----
