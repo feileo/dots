@@ -40,7 +40,7 @@ my dotfiles
 
 .. image:: http://cdn.at7h.com/img/mydots_examples.png
 
-查看 `更多</EXAMPLES.rst>`_
+查看 `更多 </EXAMPLES.rst>`_
 
 使用
 ----
