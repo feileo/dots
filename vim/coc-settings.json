@@ -17,6 +17,6 @@
 
   "python.jediEnabled": false,
   "python.analysis.diagnosticEnabled": true,
-  "python.linting.ignorePatterns": [".vscode/*.py","**/site-packages/**/*.py","**/eggs/**/*.py"],
+  "python.linting.ignorePatterns": [".vscode/*.py", "**/site-packages/**/*.py", "**/eggs/**/*.py"],
   "python.autoComplete.extraPaths": []
 }
