@@ -179,7 +179,7 @@ tmux_conf_theme_right_separator_sub='|'
 #     - #{username_ssh}
 # ❐
 tmux_conf_theme_status_left=' ❐ #S | 💻#{?uptime_d, #{uptime_d}d,}#{?uptime_h, #{uptime_h}h,}#{?uptime_m, #{uptime_m}m,} '
-tmux_conf_theme_status_right='#{prefix}#{pairing}#{synchronized} #{?battery_status,#{battery_status},}#{?battery_bar,#{battery_bar},}#{?battery_percentage, #{battery_percentage},} , 🕰  %Y-%m-%d %R | #{username}#{root} | #{hostname} '
+tmux_conf_theme_status_right='#{prefix}#{pairing}#{synchronized} #{?battery_status, #{battery_status},}#{?battery_bar, #{battery_bar},}#{?battery_percentage, #{battery_percentage},} , 🕰  %Y-%m-%d %R | #{username}#{root} | #{hostname} '
 
 
 # status left style
@@ -253,7 +253,7 @@ tmux_conf_battery_vbar_palette='gradient'
 # tmux_conf_battery_status_discharging='↓'    # U+2193
 # tmux_conf_battery_status_charging='⚡️'
 tmux_conf_battery_status_charging='🔌'       # U+1F50C
-tmux_conf_battery_status_discharging='🔋 '    # U+1F50B
+tmux_conf_battery_status_discharging='🔋'    # U+1F50B
 
 # clock style (when you hit <prefix> + t)
 # you may want to use %I:%M %p in place of %R in tmux_conf_theme_status_right

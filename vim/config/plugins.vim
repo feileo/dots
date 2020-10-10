@@ -35,6 +35,8 @@ call plug#begin($PLUGIN_PATH)
   Plug 'cespare/vim-toml', { 'for': 'toml' }
   Plug 'chr4/nginx.vim', { 'for': 'nginx' }
   Plug 'pearofducks/ansible-vim', { 'for': 'yaml' }
+  Plug 'tpope/vim-endwise', { 'for': ['c', 'cpp', 'lua', 'vim', 'sh'] }
+  Plug 'solarnz/thrift.vim', { 'for': 'thrift' }
   " Plug 'elzr/vim-json', { 'for': 'json' }
   " Plug 'kylef/apiblueprint.vim', { 'for': 'apiblueprint' }
   " Plug 'jparise/vim-graphql', { 'for': 'javascript' }
@@ -45,7 +47,6 @@ call plug#begin($PLUGIN_PATH)
   " Plug 'leafgarland/typescript-vim', { 'for': ['typescript', 'typescript.tsx'] }
   " Plug 'HerringtonDarkholme/yats.vim', { 'for': ['typescript', 'typescript.tsx']}
   " Plug 'MaxMEllon/vim-jsx-pretty', { 'for': ['typescript', 'typescript.tsx']}
-  Plug 'tpope/vim-endwise', { 'for': ['c', 'cpp', 'lua', 'vim', 'sh'] }
 
   " Completion & Code-Analysis
   " ---------------------------------------------------------------------------------------------
@@ -114,7 +115,11 @@ call plug#end()
 " ------------------------------------------------------------------------------------------------
 if plug#is_loaded('python-mode')
   let g:pymode_warnings = 0
-  let g:pymode_paths = reverse(split(globpath(getcwd().'/eggs', '*'), '\n'))
+  if $BUILDOUT_EGGS_PATH != ''
+    let g:pymode_paths = reverse(split(globpath($BUILDOUT_EGGS_PATH, '*'), '\n'))
+  else
+    let g:pymode_paths = reverse(split(globpath(getcwd().'/eggs', '*'), '\n'))
+  endif
   let g:pymode_options_max_line_length = 119
   let g:pymode_options = 0
   let g:pymode_options_colorcolumn = 0

@@ -105,9 +105,13 @@ POWERLEVEL9K_PYTHON_ICON=""
 # POWERLEVEL9K_RBENV_PROMPT_ALWAYS_SHOW=true
 # POWERLEVEL9K_GO_VERSION_PROMPT_ALWAYS_SHOW=true
 
-export TERM="xterm-256color"
-[[ $TMUX = "" ]] && export TERM="tmux-256color"
 
+# colors
+if [[ $TMUX != "" ]] then
+    export TERM="tmux-256color"
+else
+    export TERM="xterm-256color"
+fi
 
 # Set list of themes to pick from when loading at random
 # Setting this variable when ZSH_THEME=random will cause zsh to load

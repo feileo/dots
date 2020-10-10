@@ -29,6 +29,8 @@ augroup filetypedetect
   au BufNewFile,BufRead Brewfile                   setfiletype ruby
   au BufNewFile,BufRead *.ts                       setfiletype typescript
   au BufNewFile,BufRead *.tsx                      setfiletype typescript.tsx
+  au BufNewFile,BufRead *.thrift                   setfiletype thrift
+  au BufNewFile,BufRead *.avdl                     setfiletype avro-idl
 
 augroup END
 
