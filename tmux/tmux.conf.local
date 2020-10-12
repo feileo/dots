@@ -3,6 +3,12 @@
 # From https://github.com/gpakosz/.tmux
 # ==============================================================================
 
+
+# -- colors  -------------------------------------------------------------------
+
+set -g default-terminal "tmux-256color"
+set-option -a terminal-overrides ",*256col*:RGB"
+
 # -- navigation ----------------------------------------------------------------
 
 # if you're running tmux within iTerm2
